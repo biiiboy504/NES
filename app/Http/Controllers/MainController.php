@@ -50,12 +50,18 @@ class MainController extends Controller
             'email'=>'required|unique:admins',
             'username'=>'required|unique:admins',
             'password'=>'required|min:5|max:12',
+            'name'=>'required|min:3|max:50',
+            'address'=>'required|min:5|max:50',
+            'contact'=>'required|min:10|max:11',
         ]);
 
         //Insert Data into Database
         $admin = new Admin;
         $admin->username = $request->username;
         $admin->email = $request->email;
+        $admin->name = $request->name;
+        $admin->contact = $request->contact;
+        $admin->address = $request->address;
         $admin->password = Hash::make($request->password);
 
         $save = $admin->save();
