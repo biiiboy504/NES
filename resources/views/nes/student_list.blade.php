@@ -20,6 +20,7 @@
                                     <th>Course</th>
                                     <th>Year</th>
                                     <th>Section</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                         </table>
