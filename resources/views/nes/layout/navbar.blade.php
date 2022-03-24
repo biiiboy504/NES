@@ -491,8 +491,7 @@
     </script>
     
    
-    <!-- all pie chart -->
-    <script src="{{ asset('assets/js/pie-chart.js')}}"></script>
+    
     <!-- jquery latest version -->
     <script src="{{ asset('assets/js/vendor/jquery-2.2.4.min.js')}}"></script>
     <!-- bootstrap 4 js -->
@@ -517,6 +516,8 @@
     <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
     <!-- all line chart activation -->
     <script src="{{ asset('assets/js/line-chart.js')}}"></script>
+    <!-- all pie chart -->
+    <script src="{{ asset('assets/js/pie-chart.js')}}"></script>
     <!-- others plugins -->
     <script src="{{ asset('assets/js/plugins.js')}}"></script>
     <script src="{{ asset('assets/js/scripts.js')}}"></script>
