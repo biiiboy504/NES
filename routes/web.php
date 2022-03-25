@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login',[MainController::class,'login'])->name('nes.login');
+Route::get('/lopgin',[MainController::class,'login'])->name('nes.login');
 Route::get('/register',[MainController::class,'register'])->name('nes.register');
 Route::post('/save',[MainController::class,'save'])->name('nes.save');
 Route::post('/check',[MainController::class,'check'])->name('nes.check');
