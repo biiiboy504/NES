@@ -4,7 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>NES - Dashboard</title>
+    <title>NES - 
+        {{ Request::is('dashboard') ? 'Dashboard':''}}
+        {{ Request::is('session') ? 'Session':''}}
+        {{ Request::is('courses') ? 'Courses':''}}
+        {{ Request::is('logs') ? 'Logs':''}}
+        {{ Request::is('studentlist') ? 'Student List':''}}
+        {{ Request::is('userlist') ? 'User List':''}}
+        
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/icon/favicon.ico')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}">
@@ -258,17 +266,19 @@
                 <div class="row align-items-center">
                     <div class="col-sm-6">
                         <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">Dashboard</h4>
-                            <ul class="breadcrumbs pull-left">
-                                <li><a href="index.html">Home</a></li>
-                                <li><span>Dashboard</span></li>
-                            </ul>
+                            <h4 class="page-title pull-left">{{ Request::is('dashboard') ? 'Dashboard':''}}</h4>
+                            <h4 class="page-title pull-left">{{ Request::is('session') ? 'Session':''}}</h4>
+                            <h4 class="page-title pull-left">{{ Request::is('courses') ? 'Courses':''}}</h4>
+                            <h4 class="page-title pull-left">{{ Request::is('userlist') ? 'User List':''}}</h4>
+                            <h4 class="page-title pull-left">{{ Request::is('logs') ? 'Logs':''}}</h4>
+                            <h4 class="page-title pull-left">{{ Request::is('studentlist') ? 'Student List':''}}</h4>
+        
                         </div>
                     </div>
                     <div class="col-sm-6 clearfix">
                         <div class="user-profile pull-right">
                             <img class="avatar user-thumb" src="{{ asset('assets/images/author/avatar.png')}}" alt="avatar">
-                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">User <i class="fa fa-angle-down"></i></h4>
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">{{ session('name')}} <i class="fa fa-angle-down"></i></h4>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Message</a>
                                 <a class="dropdown-item" href="#">Settings</a>
