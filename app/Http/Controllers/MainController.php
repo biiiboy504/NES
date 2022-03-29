@@ -27,27 +27,15 @@ class MainController extends Controller
     }
 
     function studentlist(){
-        if(!session('loggedUser')){
-            return redirect('/login');
-        }else{
-            return view('nes.student_list');
-        }
+        
     }
 
     function courses(){
-        if(!session('loggedUser')){
-            return redirect('/login');
-        }else{
-            return view('nes.courses');
-        }
+        
     }
 
     function session(){
-        if(!session('loggedUser')){
-            return redirect('/login');
-        }else{
-            return view('nes.session');
-        }
+        
     }
 
     function userlist(){
@@ -59,11 +47,7 @@ class MainController extends Controller
     }
 
     function logs(){
-        if(!session('loggedUser')){
-            return redirect('/login');
-        }else{
-            return view('nes.logs');
-        }
+       
     }
 
 

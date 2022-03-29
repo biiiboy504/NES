@@ -20,6 +20,24 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
+                            <tbody>
+                                @foreach ($data as $student)
+                                <tr>
+                                    <td>{{$student->id}}</td>
+                                    <td>{{$student->first_name}}</td>
+                                    <td>{{$student->middle_name}}</td>
+                                    <td>{{$student->last_name}}</td>
+                                    <td>Not Avaliable</td>                                    
+                                    
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                        <a href="#" class="btn btn-info">Update</a>
+                                        <a href="#" class="btn btn-danger">Delete</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>

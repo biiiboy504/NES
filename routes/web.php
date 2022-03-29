@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LogsController;
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\EducBackgroundController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +30,9 @@ Route::post('/check',[MainController::class,'check'])->name('nes.check');
 Route::get('/logout',[MainController::class,'logout'])->name('nes.logout');
 
 Route::get('/dashboard',[MainController::class,'dashboard'])->name('dashboard');
-Route::get('/studentlist',[MainController::class,'studentlist'])->name('studentlist');
-Route::get('/courses',[MainController::class,'courses'])->name('courses');
-Route::get('/session',[MainController::class,'session'])->name('session');
+Route::get('/studentlist',[StudentController::class,'index'])->name('studentlist');
+Route::get('/courses',[CourseController::class,'index'])->name('courses');
+Route::get('/session',[SessionController::class,'index'])->name('session');
 Route::get('/userlist',[MainController::class,'userlist'])->name('userlist');
-Route::get('/logs',[MainController::class,'logs'])->name('logs');
+Route::get('/logs',[LogsController::class,'index'])->name('logs');
 
