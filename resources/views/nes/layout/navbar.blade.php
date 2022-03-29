@@ -522,7 +522,39 @@
     <script src="{{ asset('assets/js/plugins.js')}}"></script>
     <script src="{{ asset('assets/js/scripts.js')}}"></script>
 
-    
+    <script>
+    var sites = {!! json_encode($data) !!};
+    console.log(sites);
+    if ($('#seolinecharts').length) {
+        var ctx = document.getElementById("seolinecharts").getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'doughnut',
+            // The data for our dataset
+            data: {
+                labels: ["FB", "ID", sites[0]['id']],
+                datasets: [{
+                    backgroundColor: [
+                        "#8919FE",
+                        "#12C498",
+                        "#E36D68"
+                    ],
+                    borderColor: '#fff',
+                    data: [810, sites[0]['id'], 260],
+                }]
+            },
+            // Configuration options go here
+            options: {
+                legend: {
+                    display: true
+                },
+                animation: {
+                    easing: "easeInOutBack"
+                }
+            }
+        });
+    }
+</script>
 </body>
 
 </html>

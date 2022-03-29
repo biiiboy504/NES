@@ -17,8 +17,9 @@ class MainController extends Controller
     }
 
     function dashboard(){
-        $data = ['LoggedUserInfo'=>Admin::where('id','=',session('LoggedUser'))->first()];
-        return view('nes.dashboard',$data);
+        $data = [Admin::where('id','=',1)->first()];
+        $test = 'asd';
+        return view('nes.dashboard',compact('data','test'));
 
     }
 

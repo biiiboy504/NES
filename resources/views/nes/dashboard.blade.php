@@ -90,10 +90,13 @@
             <div class="card h-full mt-5">
                 <div class="card-body">
                     <h4 class="header-title">Advertising & Marketing</h4>
-                    <canvas id="seolinechart8" height="233"></canvas>
+                    <canvas id="seolinecharts" height="233"></canvas>
+                     {{$test}}
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection()
