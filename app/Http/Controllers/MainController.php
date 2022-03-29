@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class MainController extends Controller
 {
     function login(){
+       
         return view('nes.login');
     }
 
@@ -17,29 +18,36 @@ class MainController extends Controller
     }
 
     function dashboard(){
-        $data = ['LoggedUserInfo'=>Admin::where('id','=',session('LoggedUser'))->first()];
-        return view('nes.dashboard',$data);
-
+        if(!session('loggedUser')){
+            return redirect('/login');
+        }else{
+            $data = ['LoggedUserInfo'=>Admin::where('id','=',session('LoggedUser'))->first()];
+            return view('nes.dashboard',$data);
+        }
     }
 
     function studentlist(){
-        return view('nes.student_list');
+        
     }
 
     function courses(){
-        return view('nes.courses');
+        
     }
 
     function session(){
-        return view('nes.session');
+        
     }
 
     function userlist(){
-        return view('nes.user_list');
+        if(!session('loggedUser')){
+            return redirect('/login');
+        }else{
+            return view('nes.user_list');
+        }
     }
 
     function logs(){
-        return view('nes.logs');
+       
     }
 
 
@@ -90,6 +98,7 @@ class MainController extends Controller
             //check password
             if(Hash::check($request->password, $userInfo->password)){
                 $request->session()->put('loggedUser', $userInfo->id);
+                $request->session()->put('name', $userInfo->name);
                 return redirect('/dashboard');
             }else{
                 return back()->with('fail', 'Incorrect password');
@@ -97,7 +106,10 @@ class MainController extends Controller
         }
     }
     function logout(){
-        return redirect('/login');
+        if(session()->has('loggedUser')){
+            session()->pull('loggedUser');
+            return redirect('/login');
+        }
     }
     
 
