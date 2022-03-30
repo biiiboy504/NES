@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
@@ -17,7 +18,14 @@ class StudentController extends Controller
         if(!session('loggedUser')){
             return redirect('/login');
         }else{
-            $data = Student::all();
+            //select all students with foreign keys
+            $data = DB::table('students')
+            ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')
+            ->select('students.*', 'educ_backgrounds.course')
+            ->get();
+
+            // $data = Student::all();
+
             return view('nes.student_list',compact('data'));
         }
     }

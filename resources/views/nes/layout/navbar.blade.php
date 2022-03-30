@@ -63,28 +63,28 @@
                     <nav>
                         <ul class="metismenu" id="menu">
                             <li class="{{ Request::is('dashboard') ? 'active':''}}">
-                                <a href="{{ route('dashboard')}}"><i class="ti-dashboard"></i><span>dashboard</span></a>
+                                <a href="/dashboard"><i class="ti-dashboard"></i><span>dashboard</span></a>
                             </li>
 
                             <li class="{{ Request::is('studentlist') ? 'active':''}}">
-                                <a href="{{ route('studentlist')}}"><i class="ti-view-list-alt"></i><span>Student List
+                                <a href="/studentlist"><i class="ti-view-list-alt"></i><span>Student List
                                     </span></a>
                             </li>
 
                             <li class="{{ Request::is('courses') ? 'active':''}}">
-                                <a href="{{ route('courses')}}"><i class="ti-book"></i><span>Courses</span></a>
+                                <a href="/courses"><i class="ti-book"></i><span>Courses</span></a>
                             </li>
 
                             <li  class="{{ Request::is('session') ? 'active':''}}">
-                                <a href="{{ route('session')}}"><i class="ti-calendar"></i><span>Session</span></a>
+                                <a href="/session"><i class="ti-calendar"></i><span>Session</span></a>
                             </li>
 
                             <li  class="{{ Request::is('userlist') ? 'active':''}}">
-                                <a href="{{ route('userlist')}}"><i class="fa fa-users"></i><span>User List</span></a>  
+                                <a href="/userlist"><i class="fa fa-users"></i><span>User List</span></a>  
                             </li>
                             
                             <li  class="{{ Request::is('logs') ? 'active':''}}">
-                                <a href="{{ route('logs')}}"><i class="fa fa-file-text-o"></i> <span>Logs</span></a>
+                                <a href="/logs"><i class="fa fa-file-text-o"></i> <span>Logs</span></a>
                             </li>
                             
                         </ul>

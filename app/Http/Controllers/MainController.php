@@ -50,8 +50,6 @@ class MainController extends Controller
        
     }
 
-
-    
     function save(Request $request){
         //Validate requests
         $request->validate([
@@ -111,9 +109,5 @@ class MainController extends Controller
             return redirect('/login');
         }
     }
-    
-
-
-    
     
 }
