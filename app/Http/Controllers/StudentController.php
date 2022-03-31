@@ -37,7 +37,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        
+        return view('nes.add_student_1');
     }
 
     /**
@@ -48,7 +48,26 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $student = new Student;
+        $student->first_name = $request->first_name;
+        $student->middle_name = $request->middle_name;
+        $student->last_name = $request->last_name;
+        $student->address = $request->address;
+        $student->zip_code = $request->zip_code;
+        $student->contact_num = $request->contact_num;
+        $student->landline = $request->landline;
+        $student->civil_status = $request->civil_status;
+        $student->gender = $request->gender;
+        $student->height = $request->height;
+        $student->weight = $request->weight;
+        $student->citizenship = $request->citizenship;
+        $student->birth_place = $request->birth_place;
+        $student->birth_date = $request->birth_date;
+        $student->age = $request->age;
+        $student->batch_num = $request->batch_num;
+        $student->save();
+
+        return Redirect('studentlist')->with('flash_message', 'Student Successfully Added!');
     }
 
     /**

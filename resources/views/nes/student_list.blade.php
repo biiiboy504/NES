@@ -11,7 +11,7 @@
                         <h4 class="header-title">Students List</h4>    
                     </div>
                     <div class="float-right mb-3">
-                        <button class="btn btn-secondary" type="button">Add Student</button>
+                        <a href="/nes/add_student_1" class="btn btn-secondary" type="button">Add Student</a>
                     </div>
                     
                     <div class="data-tables">

@@ -33,7 +33,7 @@ Route::get('/logout',[MainController::class,'logout'])->name('nes.logout');
 //Links
 
 // Route::get('/dashboard',[MainController::class,'dashboard'])->name('dashboard');
-// Route::get('/studentlist',[StudentController::class,'index'])->name('studentlist');
+//Route::get('/studentlist',[StudentController::class,'index'])->name('studentlist');
 // Route::get('/courses',[CourseController::class,'index'])->name('courses');
 // Route::get('/session',[SessionController::class,'index'])->name('session');
 // Route::get('/userlist',[MainController::class,'userlist'])->name('userlist');
