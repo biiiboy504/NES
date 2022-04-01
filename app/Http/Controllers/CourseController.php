@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
 {
@@ -18,7 +19,11 @@ class CourseController extends Controller
             return redirect('/login');
         }else{
             // select query here
-            return view('nes.courses');
+            $courses = DB::table('courses')
+            ->select('courses.*')
+            ->get();
+
+            return view('nes.courses', compact('courses'));
         }
     }
 
@@ -29,7 +34,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        return view('Course.create');
     }
 
     /**
@@ -40,7 +45,12 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $course = new Course;
+        $course->course_name = $request->course_name;
+        $course->description = $request->description;
+        $course->save();
+
+        return Redirect('courses')->with('message', 'Successfully Added!');
     }
 
     /**
@@ -85,6 +95,7 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+        $course->delete();
+        return Redirect('courses')->with('message', 'Successfully Deleted!');
     }
 }
