@@ -35,8 +35,8 @@
     <!-- preloader area end -->
     <!-- login area start -->
     <div class="login-area">
-        <div class="container">
-            <div class="login-box ptb--25">
+        <div class="container ptb--10">
+            <div class="login-box">
                 <form action="{{ route('nes.save')}}" method='post'>
                     
                     @csrf
@@ -56,12 +56,39 @@
                     @endif
 
                     <div class="login-form-body">
+                        
+                        <label for="fullname">
+                            Personal Information
+                        </label>
+                        
+                        <div class="form-gp">
+                            <label for="fullname">Full name</label>
+                            <input type="text" id="fullname" name="name" >
+                            <i class="ti-id-badge"></i>
+                            <div class="text-danger">@error('name') {{ $message}} @enderror</div>
+                        </div>
                         <div class="form-gp">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" id="exampleInputEmail1" name="email" >
                             <i class="ti-email"></i>
                             <div class="text-danger">@error('email') {{ $message}} @enderror</div>
                         </div>
+                        <div class="form-gp">
+                            <label for="contact">Contact No.</label>
+                            <input type="text" id="contact" name="contact" >
+                            <i class="ti-mobile"></i>
+                            <div class="text-danger">@error('contact') {{ $message}} @enderror</div>
+                        </div>
+                        <div class="form-gp">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" name="address" >
+                            <i class="ti-location-pin"></i>
+                            <div class="text-danger">@error('address') {{ $message}} @enderror</div>
+                        </div>
+                        <br>
+                        <label for="username">
+                            Account
+                        </label>
                         <div class="form-gp">
                             <label for="username">Username</label>
                             <input type="text" id="username" name="username" >
@@ -73,17 +100,6 @@
                             <input type="password" id="exampleInputPassword1" name="password" >
                             <i class="ti-lock"></i>
                             <div class="text-danger">@error('password') {{ $message}} @enderror</div>
-                        </div>
-                        <div class="row mb-4 rmber-area">
-                            <div class="col-6">
-                                <div class="custom-control custom-checkbox mr-sm-2">
-                                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                                    <label class="custom-control-label" for="customControlAutosizing">Remember Me</label>
-                                </div>
-                            </div>
-                            <div class="col-6 text-right">
-                                <a href="#">Forgot Password?</a>
-                            </div>
                         </div>
                         <div class="submit-btn-area">
                             <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
