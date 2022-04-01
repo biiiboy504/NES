@@ -29,6 +29,10 @@ class MainController extends Controller
             ->select('students.*', 'educ_backgrounds.course')
             ->get();
 
+            $courses = DB::table('courses')
+            ->select('courses.*')
+            ->get();
+
             $studentCount = count($students);
 
             $maleCount = DB::table('students')
@@ -42,7 +46,7 @@ class MainController extends Controller
             ->get()->count();
 
             $data = ['LoggedUserInfo'=>Admin::where('id','=',session('LoggedUser'))->first()];
-            return view('nes.dashboard',compact('students','data', 'studentCount','maleCount','femaleCount'));
+            return view('nes.dashboard',compact('students','data', 'studentCount','maleCount','femaleCount','courses'));
         }
     }
 

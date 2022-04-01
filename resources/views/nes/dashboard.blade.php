@@ -74,18 +74,23 @@
                                     <thead class="bg-success text-capitalize">
                                         <tr>
                                             <th>Course</th>
-                                            <th>Department</th>
                                             <th>Date added</th>
-                                            <th>Students Enrolled.</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($courses as $course)
                                         <tr>
-                                            <td>BSIT</td>
-                                            <td>CCS</td>
-                                            <td>2008/11/28</td>
-                                            <td>107</td>
+                                            <td>{{$course->course_name}}</td>
+                                            <td>{{$course->created_at}}</td>
+                                            <td>
+                                                <div class="btn-group" role="group">
+                                                <a href="#" class="btn btn-info">Update</a>
+                                                <a href="#" class="btn btn-danger">Delete</a>
+                                                </div>
+                                            </td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
