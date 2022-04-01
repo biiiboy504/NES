@@ -97,13 +97,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 mt-5">
-                    <div class="card mt-5">
-                        <div class="card">
-                            <div id="ampiechart1"></div>
-                        </div>
-                    </div>
-                </div>
                 
             </div>
         </div>
