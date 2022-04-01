@@ -61,7 +61,7 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        //
+        return view('Course.edit')->with('course', $course);
     }
 
     /**
@@ -84,7 +84,11 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        //
+        $course->course_name = $request->course_name;
+        $course->description = $request->description;
+        $course->save();
+
+        return Redirect('courses')->with('message', 'Successfully Updated!');
     }
 
     /**

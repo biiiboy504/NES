@@ -1,0 +1,48 @@
+@extends('nes.layout.navbar')
+
+@section('content')
+<div class="main-content-inner">
+
+    <div class="col-lg-10 mx-auto mt-5">
+        <div class="card text-white mb-3" style="background-color:#8A2BE2;">
+            <!-- Card Header -->
+            <div class="card-header">
+                <div class="float-left mt-2">
+                    <h3>Update Course</h3>
+                </div>
+                <div class="float-right">
+                    <a href="/courses" style="font-weight:700; color:#8A2BE2;" class="btn btn-light">Go to List</a>
+                </div>
+            </div>
+            <!-- Card Body -->
+            <form action="/courses/{{$course->id}}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="card-body bg-white" style="color:#8A2BE2;">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="course_name">Course Name</label>
+                            <input type="text" value="{{$course->course_name}}" id="course_name" name="course_name"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <input type="text" value="{{$course->description}}" id="description" name="description"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="container d-flex justify-content-center align-items-center">
+                        <button type="submit" class="btn btn-success mt-3 mb-3"
+                            style="font-weight: 500; font-size: 15px;">Update</button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+</div>
+@endsection()
