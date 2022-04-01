@@ -7,8 +7,12 @@
         <div class="card text-white mb-3" style="background-color:#8A2BE2;">
             <!-- Card Header -->
             <div class="card-header">
-                <div class="text-center">
+                <div class="float-left mt-2">
                     <h3>Course List</h3>
+                </div>
+                <div class="float-right">
+                    <a href="/courses/create" style="font-weight:700; color:#8A2BE2;" class="btn btn-light">Add
+                        Course</a>
                 </div>
             </div>
             <!-- Card Body -->
@@ -30,6 +34,14 @@
                                 <td>{{$course->id}}</td>
                                 <td>{{$course->course_name}}</td>
                                 <td>{{$course->description}}</td>
+                                <td>test</td>
+                                <td>
+                                    <form action="/courses/{{$course->id}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

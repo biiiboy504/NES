@@ -34,7 +34,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        return view('Course.create');
     }
 
     /**
@@ -45,7 +45,12 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $course = new Course;
+        $course->course_name = $request->course_name;
+        $course->description = $request->description;
+        $course->save();
+
+        return Redirect('courses')->with('message', 'Successfully Added!');
     }
 
     /**
@@ -90,6 +95,7 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+        $course->delete();
+        return Redirect('courses')->with('message', 'Successfully Deleted!');
     }
 }
