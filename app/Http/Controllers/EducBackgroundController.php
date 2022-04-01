@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
+use App\Models\educ_background;
 use Illuminate\Http\Request;
 
-class CourseController extends Controller
+class EducBackgroundController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +14,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        if(!session('loggedUser')){
-            return redirect('/login');
-        }else{
-            // select query here
-            return view('nes.courses');
-        }
+        //
     }
 
     /**
@@ -46,10 +41,10 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Course  $course
+     * @param  \App\Models\educ_background  $educ_background
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course)
+    public function show(educ_background $educ_background)
     {
         //
     }
@@ -57,10 +52,10 @@ class CourseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Course  $course
+     * @param  \App\Models\educ_background  $educ_background
      * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit(educ_background $educ_background)
     {
         //
     }
@@ -69,10 +64,10 @@ class CourseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Course  $course
+     * @param  \App\Models\educ_background  $educ_background
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Request $request, educ_background $educ_background)
     {
         //
     }
@@ -80,10 +75,10 @@ class CourseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Course  $course
+     * @param  \App\Models\educ_background  $educ_background
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy(educ_background $educ_background)
     {
         //
     }

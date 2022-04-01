@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+
 
 class MainController extends Controller
 {
@@ -21,33 +23,43 @@ class MainController extends Controller
         if(!session('loggedUser')){
             return redirect('/login');
         }else{
+
+            $students = DB::table('students')
+            ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')
+            ->select('students.*', 'educ_backgrounds.course')
+            ->get();
+
+            $courses = DB::table('courses')
+            ->select('courses.*')
+            ->get();
+
+            $studentCount = count($students);
+
+            $maleCount = DB::table('students')
+            ->select('gender')
+            ->where('gender','=','male')
+            ->get()->count();
+
+            $femaleCount = DB::table('students')
+            ->select('gender')
+            ->where('gender','=','female')
+            ->get()->count();
+
             $data = ['LoggedUserInfo'=>Admin::where('id','=',session('LoggedUser'))->first()];
-            return view('nes.dashboard',$data);
+            return view('nes.dashboard',compact('students','data', 'studentCount','maleCount','femaleCount','courses'));
         }
     }
 
     function studentlist(){
-        if(!session('loggedUser')){
-            return redirect('/login');
-        }else{
-            return view('nes.student_list');
-        }
+        
     }
 
     function courses(){
-        if(!session('loggedUser')){
-            return redirect('/login');
-        }else{
-            return view('nes.courses');
-        }
+        
     }
 
     function session(){
-        if(!session('loggedUser')){
-            return redirect('/login');
-        }else{
-            return view('nes.session');
-        }
+        
     }
 
     function userlist(){
@@ -59,27 +71,27 @@ class MainController extends Controller
     }
 
     function logs(){
-        if(!session('loggedUser')){
-            return redirect('/login');
-        }else{
-            return view('nes.logs');
-        }
+       
     }
 
-
-    
     function save(Request $request){
         //Validate requests
         $request->validate([
             'email'=>'required|unique:admins',
             'username'=>'required|unique:admins',
             'password'=>'required|min:5|max:12',
+            'name'=>'required|min:3|max:50',
+            'address'=>'required|min:5|max:50',
+            'contact'=>'required|min:10|max:11',
         ]);
 
         //Insert Data into Database
         $admin = new Admin;
         $admin->username = $request->username;
         $admin->email = $request->email;
+        $admin->name = $request->name;
+        $admin->contact = $request->contact;
+        $admin->address = $request->address;
         $admin->password = Hash::make($request->password);
 
         $save = $admin->save();
@@ -121,9 +133,5 @@ class MainController extends Controller
             return redirect('/login');
         }
     }
-    
-
-
-    
     
 }
