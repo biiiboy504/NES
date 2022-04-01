@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
 {
@@ -18,7 +19,11 @@ class CourseController extends Controller
             return redirect('/login');
         }else{
             // select query here
-            return view('nes.courses');
+            $courses = DB::table('courses')
+            ->select('courses.*')
+            ->get();
+
+            return view('nes.courses', compact('courses'));
         }
     }
 

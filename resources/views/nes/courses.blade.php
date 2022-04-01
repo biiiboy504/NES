@@ -24,6 +24,15 @@
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            @foreach ($courses as $course)
+                            <tr>
+                                <td>{{$course->id}}</td>
+                                <td>{{$course->course_name}}</td>
+                                <td>{{$course->description}}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
