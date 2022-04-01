@@ -406,7 +406,7 @@ if ($('#seolinechart8').length) {
         type: 'doughnut',
         // The data for our dataset
         data: {
-            labels: ["FB", "TW", "G+", "INS"],
+            labels: ["FB", "TW", "G+", "Male"],
             datasets: [{
                 backgroundColor: [
                     "#8919FE",

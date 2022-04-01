@@ -4,7 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>NES - Dashboard</title>
+    <title>NES - 
+        {{ Request::is('dashboard') ? 'Dashboard':''}}
+        {{ Request::is('session') ? 'Session':''}}
+        {{ Request::is('courses') ? 'Courses':''}}
+        {{ Request::is('logs') ? 'Logs':''}}
+        {{ Request::is('studentlist') ? 'Student List':''}}
+        {{ Request::is('userlist') ? 'User List':''}}
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/icon/favicon.ico')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}">
@@ -56,28 +63,28 @@
                     <nav>
                         <ul class="metismenu" id="menu">
                             <li class="{{ Request::is('dashboard') ? 'active':''}}">
-                                <a href="{{ route('dashboard')}}"><i class="ti-dashboard"></i><span>dashboard</span></a>
+                                <a href="/dashboard"><i class="ti-dashboard"></i><span>dashboard</span></a>
                             </li>
 
                             <li class="{{ Request::is('studentlist') ? 'active':''}}">
-                                <a href="{{ route('studentlist')}}"><i class="ti-view-list-alt"></i><span>Student List
+                                <a href="/studentlist"><i class="ti-view-list-alt"></i><span>Student List
                                     </span></a>
                             </li>
 
                             <li class="{{ Request::is('courses') ? 'active':''}}">
-                                <a href="{{ route('courses')}}"><i class="ti-book"></i><span>Courses</span></a>
+                                <a href="/courses"><i class="ti-book"></i><span>Courses</span></a>
                             </li>
 
                             <li  class="{{ Request::is('session') ? 'active':''}}">
-                                <a href="{{ route('session')}}"><i class="ti-calendar"></i><span>Session</span></a>
+                                <a href="/session"><i class="ti-calendar"></i><span>Session</span></a>
                             </li>
 
                             <li  class="{{ Request::is('userlist') ? 'active':''}}">
-                                <a href="{{ route('userlist')}}"><i class="fa fa-users"></i><span>User List</span></a>  
+                                <a href="/userlist"><i class="fa fa-users"></i><span>User List</span></a>  
                             </li>
                             
                             <li  class="{{ Request::is('logs') ? 'active':''}}">
-                                <a href="{{ route('logs')}}"><i class="fa fa-file-text-o"></i> <span>Logs</span></a>
+                                <a href="/logs"><i class="fa fa-file-text-o"></i> <span>Logs</span></a>
                             </li>
                             
                         </ul>
@@ -260,17 +267,19 @@
                 <div class="row align-items-center">
                     <div class="col-sm-6">
                         <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">Dashboard</h4>
-                            <ul class="breadcrumbs pull-left">
-                                <li><a href="index.html">Home</a></li>
-                                <li><span>Dashboard</span></li>
-                            </ul>
+                            <h4 class="page-title pull-left">{{ Request::is('dashboard') ? 'Dashboard':''}}</h4>
+                            <h4 class="page-title pull-left">{{ Request::is('session') ? 'Session':''}}</h4>
+                            <h4 class="page-title pull-left">{{ Request::is('courses') ? 'Courses':''}}</h4>
+                            <h4 class="page-title pull-left">{{ Request::is('userlist') ? 'User List':''}}</h4>
+                            <h4 class="page-title pull-left">{{ Request::is('logs') ? 'Logs':''}}</h4>
+                            <h4 class="page-title pull-left">{{ Request::is('studentlist') ? 'Student List':''}}</h4>
+        
                         </div>
                     </div>
                     <div class="col-sm-6 clearfix">
                         <div class="user-profile pull-right">
                             <img class="avatar user-thumb" src="{{ asset('assets/images/author/avatar.png')}}" alt="avatar">
-                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">User <i class="fa fa-angle-down"></i></h4>
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">{{ session('name')}} <i class="fa fa-angle-down"></i></h4>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Message</a>
                                 <a class="dropdown-item" href="#">Settings</a>
@@ -521,40 +530,9 @@
     <!-- others plugins -->
     <script src="{{ asset('assets/js/plugins.js')}}"></script>
     <script src="{{ asset('assets/js/scripts.js')}}"></script>
+    @yield('scripts')
 
-    <script>
-    var sites = {!! json_encode($data) !!};
-    console.log(sites);
-    if ($('#seolinecharts').length) {
-        var ctx = document.getElementById("seolinecharts").getContext('2d');
-        var chart = new Chart(ctx, {
-            // The type of chart we want to create
-            type: 'doughnut',
-            // The data for our dataset
-            data: {
-                labels: ["FB", "ID", sites[0]['id']],
-                datasets: [{
-                    backgroundColor: [
-                        "#8919FE",
-                        "#12C498",
-                        "#E36D68"
-                    ],
-                    borderColor: '#fff',
-                    data: [810, sites[0]['id'], 260],
-                }]
-            },
-            // Configuration options go here
-            options: {
-                legend: {
-                    display: true
-                },
-                animation: {
-                    easing: "easeInOutBack"
-                }
-            }
-        });
-    }
-</script>
+    
 </body>
 
 </html>

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
+use App\Models\Logs;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class StudentController extends Controller
+class LogsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,15 +17,7 @@ class StudentController extends Controller
         if(!session('loggedUser')){
             return redirect('/login');
         }else{
-            //select all students with foreign keys
-            $data = DB::table('students')
-            ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')
-            ->select('students.*', 'educ_backgrounds.course')
-            ->get();
-
-            // $data = Student::all();
-
-            return view('nes.student_list',compact('data'));
+            return view('nes.logs');
         }
     }
 
@@ -37,7 +28,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -54,10 +45,10 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Student  $student
+     * @param  \App\Models\Logs  $logs
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show(Logs $logs)
     {
         //
     }
@@ -65,10 +56,10 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Student  $student
+     * @param  \App\Models\Logs  $logs
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit(Logs $logs)
     {
         //
     }
@@ -77,10 +68,10 @@ class StudentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Student  $student
+     * @param  \App\Models\Logs  $logs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, Logs $logs)
     {
         //
     }
@@ -88,10 +79,10 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Student  $student
+     * @param  \App\Models\Logs  $logs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy(Logs $logs)
     {
         //
     }

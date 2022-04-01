@@ -10,7 +10,7 @@
                         <div class="seo-fact sbg1">
                             <div class="p-4 d-flex justify-content-between align-items-center">
                                 <div class="seofct-icon"><i class="ti-user"></i> Students</div>
-                                <h2>2,315</h2>
+                                <h2>{{$studentCount}}</h2>
                             </div>
                             <canvas id="seolinechart1" height="50"></canvas>
                         </div>
@@ -37,20 +37,28 @@
                                 <table id="dataTable" class="text-center">
                                     <thead class="text-capitalize">
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Section</th>
-                                            <th>Date added</th>
-                                            <th>Student No.</th>
-                                        </tr>
+                                        <th>Id</th>
+                                        <th>Student</th>
+                                        <th>Course</th>
+                                        <th>Date Added</th>
+                                        <th>Action</th>
+                                    </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($students as $student)
                                         <tr>
-                                            <td>Jhon Mark del Rosario</td>
-                                            <td>BSIT 4-B</td>
-
-                                            <td>2008/11/28</td>
-                                            <td>12-c0682</td>
+                                            <td>{{$student->id}}</td>
+                                            <td>{{$student->first_name}} {{$student->last_name}}</td>
+                                            <td>{{$student->course}}</td>                                    
+                                            <td>{{$student->created_at}}</td>
+                                            <td>
+                                                <div class="btn-group" role="group">
+                                                <a href="#" class="btn btn-info">Update</a>
+                                                <a href="#" class="btn btn-danger">Delete</a>
+                                                </div>
+                                            </td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -84,19 +92,61 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-12 mt-5">
+                    <div class="card mt-5">
+                        <div class="card">
+                            <div id="ampiechart1"></div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="card h-full mt-5">
+            <div class="card mt-5">
                 <div class="card-body">
-                    <h4 class="header-title">Advertising & Marketing</h4>
-                    <canvas id="seolinecharts" height="233"></canvas>
-                     {{$test}}
-
+                    <h4 class="header-title">Gender</h4>
+                    <canvas id="genderChart" height="233"></canvas>
                 </div>
             </div>
+            
         </div>
     </div>
 </div>
 
+@endsection()
+
+@section('scripts')
+<script>
+    var male = {!! json_encode($maleCount) !!};
+    var female = {!! json_encode($femaleCount) !!};
+    if ($('#genderChart').length) {
+        var ctx = document.getElementById("genderChart").getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'doughnut',
+            // The data for our dataset
+            data: {
+                labels: ["Female", "Male"],
+                datasets: [{
+                    backgroundColor: [           
+                        "#E36D68",
+                        "#8919FE"
+                    ],
+                    borderColor: '#fff',
+                    data: [ female, male],
+                }]
+            },
+            // Configuration options go here
+            options: {
+                legend: {
+                    display: true
+                },
+                animation: {
+                    easing: "easeInOutBack"
+                }
+            }
+        });
+    }
+</script>
 @endsection()
