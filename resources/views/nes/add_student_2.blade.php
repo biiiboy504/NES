@@ -5,13 +5,16 @@
         <div class="row mt-5 mb-5">
             <div class="col-lg mx-auto">
                 <div class="card">
-                    <div class="card-header" style="background-color: #1F3363;">
+                    <div class="card-header" style="background-color: #8A2BE2;">
                         <h4 class="text-light">Educational Background</h4>
                     </div>
-                    <form action="" method="POST">
+                    <form action="/create_student_2" method="POST">
                         @csrf
                         <div class="card-body">
-                            <div class="row pt-2 px-4 mb-2" style="background-color: #E7E0C9;">
+                        <div>
+                        <input type="hidden" value="{{Session::get('studentId')}}" name="studentId">
+                        </div>
+                            <div class="row pt-2 px-4 mb-2">
                                 <div class="col">
                                         <label for="" class="pl-4"><b>Level</b></label>
                                     </div>
@@ -80,8 +83,8 @@
                             </div>
                         </div>
                         <div class="card-footer cfooter">
-                                <a href="" class="btn btn-secondary">Back</a>
-                                <button type="submit" class="btn btn-success" style="float:right;">Next</button>
+                                <a href="/add_student_1" class="btn btn-secondary">Back</a>
+                                <button type="submit" class="btn btn-success" style="float:right;">Submit</button>
                         </div>
                 </form>
             </div>

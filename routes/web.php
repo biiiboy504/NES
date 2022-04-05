@@ -45,3 +45,10 @@ Route::resource('/studentlist','App\Http\Controllers\StudentController');
 Route::resource('/courses','App\Http\Controllers\CourseController');
 Route::resource('/session','App\Http\Controllers\SessionController');
 Route::resource('/logs','App\Http\Controllers\LogsController');
+
+Route::get('/add_student_1',[StudentController::class, 'create']);
+Route::post('/create_student',[StudentController::class, 'store']);
+
+Route::get('/add_student_2',[EducBackgroundController::class, 'create']);
+Route::post('/create_student_2',[EducBackgroundController::class, 'store']);
+

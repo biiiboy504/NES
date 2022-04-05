@@ -11,7 +11,7 @@
                         <h4 class="header-title">Students List</h4>    
                     </div>
                     <div class="float-right mb-3">
-                        <a href="/nes/add_student_1" class="btn btn-secondary" type="button">Add Student</a>
+                        <a href="/add_student_1" class="btn text-light" type="button" style="background-color: #8A2BE2;">Add Student</a>
                     </div>
                     
                     <div class="data-tables">
@@ -36,10 +36,14 @@
                                     <td>{{$student->course}}</td>                                    
                                     
                                     <td>
-                                        <div class="btn-group" role="group">
-                                        <a href="#" class="btn btn-info">Update</a>
-                                        <a href="#" class="btn btn-danger">Delete</a>
-                                        </div>
+                                        <form action="/studentlist/{{$student->id}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <div class="btn-group" role="group">
+                                            <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this Student?');">Delete</button>
+                                            <a href="/studentlist/{{$student->id}}" class="btn btn-info">Update</a>
+                                            </div>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach
