@@ -41,7 +41,7 @@
                                             @method('DELETE')
                                             <div class="btn-group" role="group">
                                             <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this Student?');">Delete</button>
-                                            <a href="/studentlist/{{$student->id}}" class="btn btn-info">Update</a>
+                                            <a href="/update_student/{{$student->id}}" class="btn btn-info">Update</a>
                                             </div>
                                         </form>
                                     </td>

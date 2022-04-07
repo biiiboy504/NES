@@ -43,17 +43,17 @@
                                     <div class="col-4">
                                         <label for="">Civil Status:</label>
                                         <select class="form-control form-control-lg mb-3" name="civil_status">
-                                        <option>---Select Civil Status---</option>
-                                        <option>Married</option>
-                                        <option>Single</option>
+                                        <option value="">---Select Civil Status---</option>
+                                        <option value="married">Married</option>
+                                        <option value="single">Single</option>
                                         </select>
                                     </div>
                                     <div class="col-3">
                                         <label for="">Gender:</label>
                                         <select class="form-control form-control-lg mb-3" name="gender" required>
-                                        <option>-Select Gender-</option>
-                                        <option>Male</option>
-                                        <option>Female</option>
+                                        <option value="">-Select Gender-</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
                                         </select>
                                     </div>
                                     <div class="col-3">
