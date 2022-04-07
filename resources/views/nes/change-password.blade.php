@@ -33,25 +33,25 @@
                                             @endif
 
                                         <div class="mb-3">
-                                            <label for="oldPasswordInput" class="form-label">Old Password</label>
-                                            <input name="old_password" type="password" class="form-control @error('old_password') is-invalid @enderror" id="oldPasswordInput" placeholder="Old Password">
-                                        @error('old_password')
+                                            <label for="newContactInput" class="form-label">New Contact No.</label>
+                                            <input name="new_contact" type="contact" class="form-control @error('new_contact') is-invalid @enderror" id="newContactInput"placeholder="Contact No.">
+                                        @error('new_password') 
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                         </div>
-                                    <div class="mb-3">
-                                        <label for="newPasswordInput" class="form-label">New Password</label>
-                                        <input name="new_password" type="password" class="form-control @error('new_password') is-invalid @enderror" id="newPasswordInput"
-                                            placeholder="New Password">
-                                        @error('new_password')
+                                        <div class="mb-3">
+                                            <label for="newEmailInput" class="form-label">New Email Address</label>
+                                            <input name="new_email" type="email" class="form-control @error('new_email') is-invalid @enderror" id="newEmailInput"placeholder="Email Address">
+                                        @error('new_email') 
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
-                                    </div>
-                                    <div class="mb-3">
+                                        </div>
+
+                                    <!-- <div class="mb-3">
                                         <label for="confirmNewPasswordInput" class="form-label">Confirm New Password</label>
                                         <input name="new_password_confirmation" type="password" class="form-control" id="confirmNewPasswordInput"
                                             placeholder="Confirm New Password">
-                                    </div>
+                                    </div> -->
 
                                 
 

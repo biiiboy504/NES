@@ -273,6 +273,7 @@
                             <h4 class="page-title pull-left">{{ Request::is('userlist') ? 'User List':''}}</h4>
                             <h4 class="page-title pull-left">{{ Request::is('logs') ? 'Logs':''}}</h4>
                             <h4 class="page-title pull-left">{{ Request::is('studentlist') ? 'Student List':''}}</h4>
+                            <h4 class="page-title pull-left">{{ Request::is('settings') ? 'Settings':''}}</h4>
         
                         </div>
                     </div>
@@ -282,7 +283,7 @@
                             <h4 class="user-name dropdown-toggle" data-toggle="dropdown">{{ session('name')}} <i class="fa fa-angle-down"></i></h4>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Message</a>
-                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="{{ route ('change-password')}}">Settings</a>
                                 <a class="dropdown-item" href="{{ route('nes.logout')}}">Log Out</a>
                             </div>
                         </div>
