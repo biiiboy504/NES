@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
+use App\Models\Session;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class CourseController extends Controller
+class SessionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,11 +18,7 @@ class CourseController extends Controller
             return redirect('/login');
         }else{
             // select query here
-            $courses = DB::table('courses')
-            ->select('courses.*')
-            ->get();
-
-            return view('nes.courses', compact('courses'));
+            return view('nes.session');
         }
     }
 
@@ -34,7 +29,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('Course.create');
+        //
     }
 
     /**
@@ -45,32 +40,27 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        $course = new Course;
-        $course->course_name = $request->course_name;
-        $course->description = $request->description;
-        $course->save();
-
-        return Redirect('courses')->with('message', 'Successfully Added!');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Course  $course
+     * @param  \App\Models\Session  $session
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course)
+    public function show(Session $session)
     {
-        return view('Course.edit')->with('course', $course);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Course  $course
+     * @param  \App\Models\Session  $session
      * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit(Session $session)
     {
         //
     }
@@ -79,27 +69,22 @@ class CourseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Course  $course
+     * @param  \App\Models\Session  $session
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Request $request, Session $session)
     {
-        $course->course_name = $request->course_name;
-        $course->description = $request->description;
-        $course->save();
-
-        return Redirect('courses')->with('message', 'Successfully Updated!');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Course  $course
+     * @param  \App\Models\Session  $session
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy(Session $session)
     {
-        $course->delete();
-        return Redirect('courses')->with('message', 'Successfully Deleted!');
+        //
     }
 }
