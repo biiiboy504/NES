@@ -45,8 +45,16 @@ class MainController extends Controller
             ->where('gender','=','female')
             ->get()->count();
 
+            $courses = DB::table('courses')
+            ->select('courses.*')
+            ->get();
+
+            $courseCount = count($courses);
+
+
+
             $data = ['LoggedUserInfo'=>Admin::where('id','=',session('LoggedUser'))->first()];
-            return view('nes.dashboard',compact('students','data', 'studentCount','maleCount','femaleCount','courses'));
+            return view('nes.dashboard',compact('students','data', 'studentCount','maleCount','femaleCount','courses','data','courseCount'));
         }
     }
 
