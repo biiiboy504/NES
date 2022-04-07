@@ -33,7 +33,7 @@ Route::get('/logout',[MainController::class,'logout'])->name('nes.logout');
 //Links
 
 // Route::get('/dashboard',[MainController::class,'dashboard'])->name('dashboard');
-// Route::get('/studentlist',[StudentController::class,'index'])->name('studentlist');
+//Route::get('/studentlist',[StudentController::class,'index'])->name('studentlist');
 // Route::get('/courses',[CourseController::class,'index'])->name('courses');
 // Route::get('/session',[SessionController::class,'index'])->name('session');
 // Route::get('/userlist',[MainController::class,'userlist'])->name('userlist');
@@ -47,5 +47,11 @@ Route::resource('/session','App\Http\Controllers\SessionController');
 Route::resource('/logs','App\Http\Controllers\LogsController');
 
 Route::get('/add_student_1',[StudentController::class, 'create']);
-Route::get('/create_student',[StudentController::class, 'store']);
+Route::post('/create_student',[StudentController::class, 'store']);
+
 Route::get('/add_student_2',[EducBackgroundController::class, 'create']);
+Route::post('/create_student_2',[EducBackgroundController::class, 'store']);
+
+Route::get('/update_student/{id}',[StudentController::class, 'view_student']);
+Route::post('/save_update/{id}',[StudentController::class, 'save_update']);
+

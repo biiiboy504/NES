@@ -19,7 +19,6 @@ class CreateCoursesTable extends Migration
             $table->string('description');
             $table->timestamps();
         });
-
     }
 
     /**
@@ -31,5 +30,4 @@ class CreateCoursesTable extends Migration
     {
         Schema::dropIfExists('courses');
     }
-    
 }

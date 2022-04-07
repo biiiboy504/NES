@@ -13,13 +13,14 @@
                                 <h4 class="header-title">Students List</h4>    
                             </div>
                             <div class="float-right mb-3">
-                                <button class="btn btn-secondary" type="button">Add Student</button>
+                                <a href="/add_student_1" class="btn text-light" type="button" style="background-color: #8A2BE2;">Add Student</a>
                             </div>
                         </div>
-                            
-                    </div>    
-                    <table id="dataTable1" class="table table-bordered table-striped text-center">
-                        <thead class="text-capitalize">
+                    </div>
+                    
+                    
+                    <table id="dataTable1" class="table table-bordered table-hover text-center">
+                        <thead class="bg-light text-capitalize">
                             <tr>
                                 <th>Id</th>
                                 <th>First Name</th>
@@ -39,16 +40,19 @@
                                 <td>{{$student->course}}</td>                                    
                                 
                                 <td>
-                                    <div class="btn-group" role="group">
-                                    <a href="#" class="btn btn-info">Update</a>
-                                    <a href="#" class="btn btn-danger">Delete</a>
-                                    </div>
+                                    <form action="/studentlist/{{$student->id}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <div class="btn-group" role="group">
+                                        <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this Student?');">Delete</button>
+                                        <a href="/update_student/{{$student->id}}" class="btn btn-info">Update</a>
+                                        </div>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
-                
                 </div>
             </div>
         </div>
