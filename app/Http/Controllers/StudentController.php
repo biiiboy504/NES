@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class StudentController extends Controller
 {
@@ -37,7 +38,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        
+        return view('nes.add_student_1');
     }
 
     /**
@@ -48,7 +49,29 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $student = new Student;
+        $student->first_name = $request->first_name;
+        $student->middle_name = $request->middle_name;
+        $student->last_name = $request->last_name;
+        $student->address = $request->address;
+        $student->zip_code = $request->zip_code;
+        $student->contact_num = $request->contact_num;
+        $student->landline = $request->landline;
+        $student->civil_status = $request->civil_status;
+        $student->gender = $request->gender;
+        $student->height = $request->height;
+        $student->weight = $request->weight;
+        $student->citizenship = $request->citizenship;
+        $student->birth_place = $request->birth_place;
+        $student->birth_date = $request->birth_date;
+        $student->age = $request->age;
+        $student->batch_num = $request->batch_num;
+        $student->save();
+        $studentId = $student->id;
+
+        Session::put('studentId', $studentId);
+
+        return Redirect('add_student_2')->with('flash_message', 'Student Successfully Added!');
     }
 
     /**
@@ -59,7 +82,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        return view('nes.update_student')->with('student',$student);
     }
 
     /**
@@ -82,7 +105,30 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        $student->first_name = $request->first_name;
+        $student->middle_name = $request->middle_name;
+        $student->last_name = $request->last_name;
+        $student->address = $request->address;
+        $student->zip_code = $request->zip_code;
+        $student->contact_num = $request->contact_num;
+        $student->landline = $request->landline;
+        $student->civil_status = $request->civil_status;
+        $student->gender = $request->gender;
+        $student->height = $request->height;
+        $student->weight = $request->weight;
+        $student->citizenship = $request->citizenship;
+        $student->birth_place = $request->birth_place;
+        $student->birth_date = $request->birth_date;
+        $student->age = $request->age;
+        $student->batch_num = $request->batch_num;
+        $student->save();
+        $studentId = $student->id;
+
+        Session::put('studentId', $studentId);
+
+        return view('nes.student_list',compact('data'));
+
+        return Redirect('add_student_2')->with('flash_message', 'Student Successfully Added!');
     }
 
     /**
@@ -93,6 +139,21 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        $student->delete();
+        return Redirect('studentlist')->with('message', 'Successfully Deleted!');
+    }
+
+    public function view_student($id)
+    {
+        $student_data = Student::find($id);
+
+        return view('nes.update_student', compact('student_data'));
+    }
+
+    public function save_update(Request $request )
+    {
+        $student_data = Student::find($id);
+
+        return view('nes.update_student_2', compact('student_data'));
     }
 }

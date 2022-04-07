@@ -24,10 +24,9 @@
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
     
     <!-- Start datatable css -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
+    <link rel="stylesheet" href="{{ asset('datatable-plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('datatable-plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('datatable-plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 
     <!-- others css -->
     <link rel="stylesheet" href="{{ asset('assets/css/typography.css')}}">
@@ -273,6 +272,7 @@
                             <h4 class="page-title pull-left">{{ Request::is('userlist') ? 'User List':''}}</h4>
                             <h4 class="page-title pull-left">{{ Request::is('logs') ? 'Logs':''}}</h4>
                             <h4 class="page-title pull-left">{{ Request::is('studentlist') ? 'Student List':''}}</h4>
+                            <h4 class="page-title pull-left">{{ Request::is('settings') ? 'Settings':''}}</h4>
         
                         </div>
                     </div>
@@ -282,7 +282,7 @@
                             <h4 class="user-name dropdown-toggle" data-toggle="dropdown">{{ session('name')}} <i class="fa fa-angle-down"></i></h4>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Message</a>
-                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="{{ route ('change-password')}}">Settings</a>
                                 <a class="dropdown-item" href="{{ route('nes.logout')}}">Log Out</a>
                             </div>
                         </div>
@@ -511,11 +511,18 @@
     <script src="{{ asset('assets/js/jquery.slimscroll.min.js')}}"></script>
     <script src="{{ asset('assets/js/jquery.slicknav.min.js')}}"></script>
     <!-- Start datatable js -->
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+    <script src="{{ asset('datatable-plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('datatable-plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('datatable-plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+    <script src="{{ asset('datatable-plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('datatable-plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+    <script src="{{ asset('datatable-plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('datatable-plugins/jszip/jszip.min.js')}}"></script>
+    <script src="{{ asset('datatable-plugins/pdfmake/pdfmake.min.js')}}"></script>
+    <script src="{{ asset('datatable-plugins/pdfmake/vfs_fonts.js')}}"></script>
+    <script src="{{ asset('datatable-plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
+    <script src="{{ asset('datatable-plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+    <script src="{{ asset('datatable-plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 
     <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
     <script src="https://www.amcharts.com/lib/3/ammap.js"></script>

@@ -17,39 +17,35 @@
             </div>
             <!-- Card Body -->
             <div class="card-body bg-white" style="color:#8A2BE2;">
-                <div class="data-tables table-responsive">
-                    <table id="dataTable" class="table table-bordered table-hover table-striped">
-                        <thead>
-                            <tr>
-                                <th class="text-center">ID</th>
-                                <th class="text-center">Course Name</th>
-                                <th class="text-center">Description</th>
-                                <th class="text-center">No. of Students</th>
-                                <th class="text-center">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($courses as $course)
-                            <tr>
-                                <td>{{$course->id}}</td>
-                                <td>{{$course->course_name}}</td>
-                                <td>{{$course->description}}</td>
-                                <td>test</td>
-                                <td>
-                                    <div class="btn-group" role="group" aria-label="...">
-                                        <a href="/courses/{{$course->id}}" class="btn btn-info">Update</a>
-                                        <form action="/courses/{{$course->id}}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-danger">Delete</button>
-                                        </form>
-                                    </div>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
+                <table id="dataTable3" class="table table-bordered table-hover text-center">
+                    <thead>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <th class="text-center">Course Name</th>
+                            <th class="text-center">Description</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($courses as $course)
+                        <tr>
+                            <td>{{$course->id}}</td>
+                            <td>{{$course->course_name}}</td>
+                            <td>{{$course->description}}</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <a href="/courses/{{$course->id}}" class="btn btn-info">Update</a>
+                                    <form action="/courses/{{$course->id}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
 
 
@@ -57,4 +53,18 @@
     </div>
 
 </div>
+@endsection()
+
+@section('scripts')
+<script>
+    $(function () {
+        $("#dataTable3").DataTable({
+            "responsive": true, 
+            "lengthChange": false, 
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "pdf", "print", "colvis"],
+            "bDestroy": true
+        }).buttons().container().appendTo('#dataTable3_wrapper .col-md-6:eq(0)');        
+    });
+</script>
 @endsection()
