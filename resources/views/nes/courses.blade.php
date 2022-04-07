@@ -24,7 +24,6 @@
                                 <th class="text-center">ID</th>
                                 <th class="text-center">Course Name</th>
                                 <th class="text-center">Description</th>
-                                <th class="text-center">No. of Students</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
@@ -34,7 +33,6 @@
                                 <td>{{$course->id}}</td>
                                 <td>{{$course->course_name}}</td>
                                 <td>{{$course->description}}</td>
-                                <td>test</td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="...">
                                         <a href="/courses/{{$course->id}}" class="btn btn-info">Update</a>
