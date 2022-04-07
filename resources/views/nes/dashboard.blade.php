@@ -33,35 +33,27 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="header-title">Students Table</h4>
-                            <div class="data-tables datatable-primary table-responsive">
-                                <table id="dataTable" class="text-center">
-                                    <thead class="text-capitalize">
-                                        <tr>
+                            <table id="dataTable1" class="table table-bordered table-hover text-center">
+                                <thead class="text-capitalize">
+                                    <tr>
                                         <th>Id</th>
                                         <th>Student</th>
                                         <th>Course</th>
                                         <th>Date Added</th>
-                                        <th>Action</th>
                                     </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($students as $student)
-                                        <tr>
-                                            <td>{{$student->id}}</td>
-                                            <td>{{$student->first_name}} {{$student->last_name}}</td>
-                                            <td>{{$student->course}}</td>                                    
-                                            <td>{{$student->created_at}}</td>
-                                            <td>
-                                                <div class="btn-group" role="group">
-                                                <a href="#" class="btn btn-info">Update</a>
-                                                <a href="#" class="btn btn-danger">Delete</a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
+                                </thead>
+                                <tbody>
+                                    @foreach ($students as $student)
+                                    <tr>
+                                        <td>{{$student->id}}</td>
+                                        <td>{{$student->first_name}} {{$student->last_name}}</td>
+                                        <td>{{$student->course}}</td>                                    
+                                        <td>{{$student->created_at}}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            
                         </div>
                     </div>
                 </div>
@@ -69,8 +61,8 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="header-title">Courses Table</h4>
-                            <div class="data-tables datatable-primary table-responsive">
-                                <table id="dataTable2" class="text-center">
+                            
+                                <table id="dataTable2" class="table table-bordered table-hover text-center">
                                     <thead class="bg-success text-capitalize">
                                         <tr>
                                             <th>Course</th>
@@ -88,17 +80,11 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
+
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 mt-5">
-                    <div class="card mt-5">
-                        <div class="card">
-                            <div id="ampiechart1"></div>
-                        </div>
-                    </div>
-                </div>
+                
                 
             </div>
         </div>
@@ -148,5 +134,22 @@
             }
         });
     }
+    $(function () {
+        $("#dataTable1").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["colvis"],
+            "bDestroy": true
+        }).buttons().container().appendTo('#dataTable1_wrapper .col-md-6:eq(0)');
+
+        $("#dataTable2").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["colvis"],
+            "ordering": true,
+            "info": false,
+            "paging": true,
+            "bDestroy": true
+        }).buttons().container().appendTo('#dataTable2_wrapper .col-md-6:eq(0)');
+        
+    });
 </script>
 @endsection()
