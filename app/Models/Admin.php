@@ -8,7 +8,8 @@ use OwenIt\Auditing\Contracts\Auditable;
 
 class Admin extends Model implements Auditable
 {
-    use HasFactory, \OwenIt\Auditing\Auditable;
+    use HasFactory;
+    use \OwenIt\Auditing\Auditable;
      
     
     public static $logCustomFields = [
