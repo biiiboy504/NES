@@ -3,7 +3,7 @@
 @section('content')
 <div class="main-content-inner">
     <div class="row">
-    <!-- data table start -->
+        <!-- data table start -->
         <div class="col-12 mt-5">
             <div class="card">
                 <div class="card-body">
@@ -69,8 +69,7 @@
             "responsive": true, 
             "lengthChange": false, 
             "autoWidth": false,
-            "info":false,
-            "fizedColumns":false,
+            
             "buttons": ["copy", "csv", "pdf", "print", "colvis"],
             "bDestroy": true
         }).buttons().container().appendTo('#dataTable1_wrapper .col-md-6:eq(0)');        
