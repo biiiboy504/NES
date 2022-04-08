@@ -17,14 +17,18 @@ class CreateEducBackgroundsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('students_id');
             $table->foreign('students_id')->references('id')->on('students');
-            $table->string('elem_name');
-            $table->string('highschool_name');
-            $table->string('vocational_name');
-            $table->string('collage_name');
-            $table->integer('date_graduated');
-            $table->string('course');
-            $table->integer('num_units');
-            $table->integer('post_grad');
+            $table->string('elem_name')->nullable();
+            $table->string('elem_date')->nullable();
+            $table->string('hs_name')->nullable();
+            $table->string('hs_date')->nullable();
+            $table->string('voc_name')->nullable();
+            $table->string('voc_date')->nullable();
+            $table->string('college_name')->nullable();
+            $table->string('college_date')->nullable();
+            $table->string('course')->nullable();
+            $table->string('units')->nullable();
+            $table->string('post_grad')->nullable();
+            $table->string('post_date')->nullable();
             $table->timestamps();
         });
     }
