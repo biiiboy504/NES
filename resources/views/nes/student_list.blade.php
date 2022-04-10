@@ -36,7 +36,7 @@
                                     <td>{{$student->course}}</td>                                    
                                     
                                     <td>
-                                        <form action="/studentlist/{{$student->id}}" method="POST">
+                                        <form action="/student/{{$student->id}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <div class="btn-group" role="group">
