@@ -142,13 +142,13 @@ class MainController extends Controller
         }
     }
 
-function changePassword()
+    function changePassword()
     {
         return view('nes.change-password');
     }
 
-public function updatePassword(Request $request)
-{
+    public function updatePassword(Request $request)
+    {
         # Validation
         $request->validate([
             'old_password' => 'required',
