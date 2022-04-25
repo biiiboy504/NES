@@ -34,11 +34,12 @@
                             <td>{{$course->description}}</td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="...">
-                                    <a href="/courses/{{$course->id}}" class="btn btn-info">Update</a>
+                                    
                                     <form action="/courses/{{$course->id}}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger">Delete</button>
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                                        <a href="/courses/{{$course->id}}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> </a>
                                     </form>
                                 </div>
                             </td>
@@ -47,7 +48,6 @@
                     </tbody>
                 </table>
             </div>
-
 
         </div>
     </div>
@@ -62,7 +62,7 @@
             "responsive": true, 
             "lengthChange": false, 
             "autoWidth": false,
-            "buttons": ["copy", "csv", "pdf", "print", "colvis"],
+            "buttons": ["csv", "pdf", "print", "colvis"],
             "bDestroy": true
         }).buttons().container().appendTo('#dataTable3_wrapper .col-md-6:eq(0)');        
     });

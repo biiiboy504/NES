@@ -126,7 +126,6 @@ class StudentController extends Controller
 
         Session::put('studentId', $studentId);
 
-        return view('nes.student_list',compact('data'));
 
         return Redirect('add_student_2')->with('flash_message', 'Student Successfully Added!');
     }
@@ -150,7 +149,7 @@ class StudentController extends Controller
         return view('nes.update_student', compact('student_data'));
     }
 
-    public function save_update(Request $request )
+    public function save_update($id )
     {
         $student_data = Student::find($id);
 

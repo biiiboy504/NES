@@ -44,9 +44,9 @@
                                         @csrf
                                         @method('DELETE')
                                         <div class="btn-group" role="group">
-                                        <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this Student?');">Delete</button>
+                                        <button class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this Student?');"><i class="fa fa-trash"></i></button>
                                         <!-- <a href="/update_student/{{$student->id}}" class="btn btn-info">Update</a> -->
-                                        <a href="#" class="btn btn-info">Update</a>
+                                        <a href="#" class="btn btn-info btn-xs" ><i class="fa fa-pencil"></i> </a>
                                         </div>
                                     </form>
                                 </td>
@@ -70,7 +70,7 @@
             "lengthChange": false, 
             "autoWidth": false,
             
-            "buttons": ["copy", "csv", "pdf", "print", "colvis"],
+            "buttons": ["csv", "pdf", "print", "colvis"],
             "bDestroy": true
         }).buttons().container().appendTo('#dataTable1_wrapper .col-md-6:eq(0)');        
     });
