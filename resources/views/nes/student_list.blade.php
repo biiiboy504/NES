@@ -36,9 +36,9 @@
                                     <td>{{$student->course}}</td>                                    
                                     
                                     <td>
-                                        <form action="/student/{{$student->id}}" method="POST">
-                                            @csrf
+                                        <form method="POST" action="/student/{{$student->id}}">
                                             @method('DELETE')
+                                            @csrf
                                             <div class="btn-group" role="group">
                                             <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this Student?');">Delete</button>
                                             <a href="/update_student/{{$student->id}}" class="btn btn-info">Update</a>

@@ -8,9 +8,8 @@
                     <div class="card-header" style="background-color: #8A2BE2;">
                         <h4 class="text-light">Update Student Personal Information</h4>
                     </div>
-                    <form action="/save_update" method="POST">
+                    <form action="/edit_student/{{$student_data->id}}" method="POST">
                         @csrf
-                        @method('PUT')
                         <div class="card-body">
                         <div>
                         <input type="hidden" value="{{$student_data->id}}" name="studentId">

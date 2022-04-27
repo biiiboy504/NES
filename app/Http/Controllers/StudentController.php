@@ -105,6 +105,31 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
+       
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Student  $student
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Student $student)
+    {
+        $student->delete();
+
+        return Redirect('studentlist')->with('message', 'Successfully Deleted!');
+    }
+
+    public function view_student($id)
+    {
+        $student_data = Student::find($id);
+
+        return view('nes.update_student', compact('student_data'));
+    }
+
+    public function save_update(Request $request, Student $student)
+    {
         $student->first_name = $request->first_name;
         $student->middle_name = $request->middle_name;
         $student->last_name = $request->last_name;
@@ -122,40 +147,10 @@ class StudentController extends Controller
         $student->age = $request->age;
         $student->batch_num = $request->batch_num;
         $student->save();
-        $studentId = $student->id;
 
+        $studentId = $student->id;
         Session::put('studentId', $studentId);
 
-        return view('nes.student_list',compact('data'));
-
-        return Redirect('add_student_2')->with('flash_message', 'Student Successfully Added!');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Student  $student
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $student_data = Student::find($id);
-        $student->delete();
-        
-        return Redirect('studentlist')->with('message', 'Successfully Deleted!');
-    }
-
-    public function view_student($id)
-    {
-        $student_data = Student::find($id);
-
-        return view('nes.update_student', compact('student_data'));
-    }
-
-    public function save_update(Request $request )
-    {
-        $student_data = Student::find($id);
-
-        return view('nes.update_student_2', compact('student_data'));
+        return Redirect('studentlist')->with('message', 'Successfully Updated!');
     }
 }
