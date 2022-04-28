@@ -106,7 +106,6 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-    
         $student->first_name = $request->first_name;
         $student->middle_name = $request->middle_name;
         $student->last_name = $request->last_name;
@@ -125,7 +124,7 @@ class StudentController extends Controller
         $student->batch_num = $request->batch_num;
         $student->save();
 
-        return Redirect('update_student_2')->with('message', 'Successfully Updated!');
+        return Redirect('studentlist')->with('message', 'Successfully Updated!');
     }
 
     /**
@@ -148,12 +147,8 @@ class StudentController extends Controller
         return view('Student.update_student', compact('student_data'));
     }
 
-    public function save_update($id)
+    public function save_update(Request $request, Student $student)
     {
-        
-
-        $studentId = $student->id;
-        Session::put('studentId', $studentId);
 
         
     }
