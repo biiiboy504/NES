@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+
 
 class MainController extends Controller
 {
@@ -21,8 +23,30 @@ class MainController extends Controller
         if(!session('loggedUser')){
             return redirect('/login');
         }else{
+
+            $students = DB::table('students')
+            ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')
+            ->select('students.*', 'educ_backgrounds.course')
+            ->get();
+
+            $courses = DB::table('courses')
+            ->select('courses.*')
+            ->get();
+
+            $studentCount = count($students);
+
+            $maleCount = DB::table('students')
+            ->select('gender')
+            ->where('gender','=','male')
+            ->get()->count();
+
+            $femaleCount = DB::table('students')
+            ->select('gender')
+            ->where('gender','=','female')
+            ->get()->count();
+
             $data = ['LoggedUserInfo'=>Admin::where('id','=',session('LoggedUser'))->first()];
-            return view('nes.dashboard',$data);
+            return view('nes.dashboard',compact('students','data', 'studentCount','maleCount','femaleCount','courses'));
         }
     }
 
@@ -108,6 +132,34 @@ class MainController extends Controller
             session()->pull('loggedUser');
             return redirect('/login');
         }
+    }
+
+function changePassword()
+    {
+        return view('nes.change-password');
+    }
+
+public function updatePassword(Request $request)
+{
+        # Validation
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed',
+        ]);
+
+
+        #Match The Old Password
+        if(!Hash::check($request->old_password, auth()->user()->password)){
+            return back()->with("error", "Old Password Doesn't match!");
+        }
+
+
+        #Update the new Password
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+
+        return back()->with("status", "Password changed successfully!");
     }
     
 }

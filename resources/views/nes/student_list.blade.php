@@ -3,15 +3,19 @@
 @section('content')
 <div class="main-content-inner">
     <div class="row">
-    <!-- data table start -->
+        <!-- data table start -->
         <div class="col-12 mt-5">
             <div class="card">
                 <div class="card-body">
-                    <div class="float-left">
-                        <h4 class="header-title">Students List</h4>    
-                    </div>
-                    <div class="float-right mb-3">
-                        <a href="/add_student_1" class="btn text-light" type="button" style="background-color: #8A2BE2;">Add Student</a>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="float-left">
+                                <h4 class="header-title">Students List</h4>    
+                            </div>
+                            <div class="float-right mb-3">
+                                <a href="/add_student_1" class="btn text-light" type="button" style="background-color: #8A2BE2;">Add Student</a>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="data-tables">
@@ -56,4 +60,19 @@
     </div>
 </div>
 
+@endsection()
+
+@section('scripts')
+<script>
+    $(function () {
+        $("#dataTable1").DataTable({
+            "responsive": true, 
+            "lengthChange": false, 
+            "autoWidth": false,
+            
+            "buttons": ["copy", "csv", "pdf", "print", "colvis"],
+            "bDestroy": true
+        }).buttons().container().appendTo('#dataTable1_wrapper .col-md-6:eq(0)');        
+    });
+</script>
 @endsection()
