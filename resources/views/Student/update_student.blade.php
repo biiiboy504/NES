@@ -9,6 +9,7 @@
                         <h4 class="text-light">Update Student Personal Information</h4>
                     </div>
                     <form action="{{url('student/'.$student_data->id)}}" method="POST">
+                        @method('put')
                         @csrf
                         <div class="card-body">
                         <div>
