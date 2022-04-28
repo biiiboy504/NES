@@ -56,4 +56,4 @@ Route::get('/add_student_2',[EducBackgroundController::class, 'create']);
 Route::post('/create_student_2',[EducBackgroundController::class, 'store']);
 
 Route::get('/update_student/{id}',[StudentController::class, 'view_student']);
-Route::post('/edit_student/{id}',[StudentController::class, 'update']);
+Route::post('/edit_student/{id}',[StudentController::class, 'save_update']);

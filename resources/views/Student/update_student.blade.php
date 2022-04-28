@@ -8,7 +8,7 @@
                     <div class="card-header" style="background-color: #8A2BE2;">
                         <h4 class="text-light">Update Student Personal Information</h4>
                     </div>
-                    <form action="/edit_student/{{$student_data->id}}" method="POST">
+                    <form action="{{url('student/'.$student_data->id)}}" method="POST">
                         @csrf
                         <div class="card-body">
                         <div>

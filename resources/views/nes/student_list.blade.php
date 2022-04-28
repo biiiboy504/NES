@@ -46,7 +46,7 @@
                                         <div class="btn-group" role="group">
                                         <button class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this Student?');"><i class="fa fa-trash"></i></button>
                                         <!-- <a href="/update_student/{{$student->id}}" class="btn btn-info">Update</a> -->
-                                        <a href="#" class="btn btn-info btn-xs" ><i class="fa fa-pencil"></i> </a>
+                                        <a href="/update_student/{{$student->id}" class="btn btn-info btn-xs" ><i class="fa fa-pencil"></i> </a>
                                         </div>
                                     </form>
                                 </td>

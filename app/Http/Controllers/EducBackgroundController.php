@@ -25,7 +25,7 @@ class EducBackgroundController extends Controller
      */
     public function create()
     {
-        return view('nes.add_student_2');
+        return view('Student.add_student_2');
     }
 
     /**

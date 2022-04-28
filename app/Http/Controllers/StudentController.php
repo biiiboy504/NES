@@ -38,7 +38,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('student.add_student_1');
+        return view('Student.add_student_1');
     }
 
     /**
@@ -72,7 +72,7 @@ class StudentController extends Controller
 
         Session::put('studentId', $studentId);
 
-        return Redirect('Student.add_student_2')->with('flash_message', 'Student Successfully Added!');
+        return Redirect('add_student_2')->with('flash_message', 'Student Successfully Added!');
     }
 
     /**
@@ -83,7 +83,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        return view('student.update_student')->with('student',$student);
+        return view('Student.update_student')->with('student',$student);
     }
 
     /**
@@ -107,6 +107,8 @@ class StudentController extends Controller
     public function update(Request $request, Student $student)
     {
     
+        $student_data = Student::find($id);
+
         $student->first_name = $request->first_name;
         $student->middle_name = $request->middle_name;
         $student->last_name = $request->last_name;
@@ -125,7 +127,7 @@ class StudentController extends Controller
         $student->batch_num = $request->batch_num;
         $student->save();
 
-        return Redirect('student.update_student_2')->with('message', 'Successfully Updated!');
+        return Redirect('update_student_2')->with('message', 'Successfully Updated!');
     }
 
     /**
@@ -145,34 +147,16 @@ class StudentController extends Controller
     {
         $student_data = Student::find($id);
 
-        return view('student.update_student', compact('student_data'));
+        return view('Student.update_student', compact('student_data'));
     }
 
     public function save_update($id)
     {
-        $student_data = Student::find($id);
-
-        $student->first_name = $request->first_name;
-        $student->middle_name = $request->middle_name;
-        $student->last_name = $request->last_name;
-        $student->address = $request->address;
-        $student->zip_code = $request->zip_code;
-        $student->contact_num = $request->contact_num;
-        $student->landline = $request->landline;
-        $student->civil_status = $request->civil_status;
-        $student->gender = $request->gender;
-        $student->height = $request->height;
-        $student->weight = $request->weight;
-        $student->citizenship = $request->citizenship;
-        $student->birth_place = $request->birth_place;
-        $student->birth_date = $request->birth_date;
-        $student->age = $request->age;
-        $student->batch_num = $request->batch_num;
-        $student->save();
+        
 
         $studentId = $student->id;
         Session::put('studentId', $studentId);
 
-        return Redirect('student.update_student_2')->with('message', 'Successfully Updated!');
+        
     }
 }
