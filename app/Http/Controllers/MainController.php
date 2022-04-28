@@ -142,24 +142,37 @@ function changePassword()
 public function updatePassword(Request $request)
 {
         # Validation
-        $request->validate([
-            'old_password' => 'required',
-            'new_password' => 'required|confirmed',
-        ]);
+    $request->validate([
+    'old_password' => 'required|min:6|max:100',
+    'new_password' => 'required|min:6|max:100',
+    'confirm_password' => 'required|same:new_password'
+    ]);
 
 
         #Match The Old Password
-        if(!Hash::check($request->old_password, auth()->user()->password)){
-            return back()->with("error", "Old Password Doesn't match!");
-        }
+    $current_user = auth()->user();
+
+    if(Hash::check($request->old_password, $current_user->password)){
+        $current_user->update([
+            'password'=>bcrypt($request->new_password)
+        ]);
+
+        return redirect()->back()->with('success','Password successfully updated!');
+    }
+    else
+    {
+        return redirect()->back()->with('error', 'Old Password Does not matched!');
+    }
+    
+}
 
 
         #Update the new Password
-        User::whereId(auth()->user()->id)->update([
-            'password' => Hash::make($request->new_password)
-        ]);
+    //     User::whereId(session('LoggedUser'))->update([
+    //         'password' => Hash::make($request->new_password)
+    //     ]);
 
-        return back()->with("status", "Password changed successfully!");
-    }
+    //     return back()->with("status", "Password changed successfully!");
+    // }
     
 }
