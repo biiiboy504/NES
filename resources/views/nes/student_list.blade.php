@@ -18,42 +18,42 @@
                         </div>
                     </div>
                     
-                    <div class="data-tables">
-                        <table id="dataTable" class="text-center">
-                            <thead class="bg-light text-capitalize">
-                                <tr>
-                                    <th>Id</th>
-                                    <th>First Name</th>
-                                    <th>Middle Name</th>
-                                    <th>Last Name</th>
-                                    <th>Course</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($data as $student)
-                                <tr>
-                                    <td>{{$student->id}}</td>
-                                    <td>{{$student->first_name}}</td>
-                                    <td>{{$student->middle_name}}</td>
-                                    <td>{{$student->last_name}}</td>
-                                    <td>{{$student->course}}</td>                                    
-                                    
-                                    <td>
-                                        <form method="POST" action="/student/{{$student->id}}">
-                                            @method('DELETE')
-                                            @csrf
-                                            <div class="btn-group" role="group">
-                                            <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this Student?');">Delete</button>
-                                            <a href="/update_student/{{$student->id}}" class="btn btn-info">Update</a>
-                                            </div>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+                    
+                    <table id="dataTable1" class="table table-bordered table-hover text-center">
+                        <thead class="bg-light text-capitalize">
+                            <tr>
+                                <th>Id</th>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>Last Name</th>
+                                <th>Course</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($data as $student)
+                            <tr>
+                                <td>{{$student->id}}</td>
+                                <td>{{$student->first_name}}</td>
+                                <td>{{$student->middle_name}}</td>
+                                <td>{{$student->last_name}}</td>
+                                <td>{{$student->course}}</td>                                    
+                                
+                                <td>
+                                    <form action="/studentlist/{{$student->id}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <div class="btn-group" role="group">
+                                        <button class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this Student?');"><i class="fa fa-trash"></i></button>
+                                        <!-- <a href="/update_student/{{$student->id}}" class="btn btn-info">Update</a> -->
+                                        <a href="#" class="btn btn-info btn-xs" ><i class="fa fa-pencil"></i> </a>
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
             "lengthChange": false, 
             "autoWidth": false,
             
-            "buttons": ["copy", "csv", "pdf", "print", "colvis"],
+            "buttons": ["csv", "pdf", "print", "colvis"],
             "bDestroy": true
         }).buttons().container().appendTo('#dataTable1_wrapper .col-md-6:eq(0)');        
     });

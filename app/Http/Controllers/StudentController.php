@@ -38,7 +38,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('nes.add_student_1');
+        return view('student.add_student_1');
     }
 
     /**
@@ -72,7 +72,7 @@ class StudentController extends Controller
 
         Session::put('studentId', $studentId);
 
-        return Redirect('add_student_2')->with('flash_message', 'Student Successfully Added!');
+        return Redirect('Student.add_student_2')->with('flash_message', 'Student Successfully Added!');
     }
 
     /**
@@ -83,7 +83,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        return view('nes.update_student')->with('student',$student);
+        return view('student.update_student')->with('student',$student);
     }
 
     /**
@@ -125,7 +125,7 @@ class StudentController extends Controller
         $student->batch_num = $request->batch_num;
         $student->save();
 
-        return Redirect('update_student_2')->with('message', 'Successfully Updated!');
+        return Redirect('student.update_student_2')->with('message', 'Successfully Updated!');
     }
 
     /**
@@ -145,7 +145,7 @@ class StudentController extends Controller
     {
         $student_data = Student::find($id);
 
-        return view('nes.update_student', compact('student_data'));
+        return view('student.update_student', compact('student_data'));
     }
 
     public function save_update($id)
@@ -173,6 +173,6 @@ class StudentController extends Controller
         $studentId = $student->id;
         Session::put('studentId', $studentId);
 
-        return Redirect('update_student_2')->with('message', 'Successfully Updated!');
+        return Redirect('student.update_student_2')->with('message', 'Successfully Updated!');
     }
 }
