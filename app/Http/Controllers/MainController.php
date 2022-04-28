@@ -150,11 +150,22 @@ public function updatePassword(Request $request)
 
 
         #Match The Old Password
+<<<<<<< HEAD
     $current_user = auth()->user();
 
     if(Hash::check($request->old_password, $current_user->password)){
         $current_user->update([
             'password'=>bcrypt($request->new_password)
+=======
+        if(!Hash::check($request->old_password, auth()->admins()->password)){
+            return back()->with("error", "Old Password Doesn't match!");
+        }
+
+
+        #Update the new Password
+        User::whereId(auth()->admins()->id)->update([
+            'password' => Hash::make($request->new_password)
+>>>>>>> 75e6cadeb5d1c378bf0051f9ae2230b1096a6e08
         ]);
 
         return redirect()->back()->with('success','Password successfully updated!');
@@ -164,6 +175,7 @@ public function updatePassword(Request $request)
         return redirect()->back()->with('error', 'Old Password Does not matched!');
     }
     
+<<<<<<< HEAD
 }
 
 
@@ -176,3 +188,6 @@ public function updatePassword(Request $request)
     // }
     
 }
+=======
+}
+>>>>>>> 75e6cadeb5d1c378bf0051f9ae2230b1096a6e08
