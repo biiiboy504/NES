@@ -21,12 +21,11 @@
                         </div>
                     @endif
 
-                    <form action="/{{url('educ_background/'.$student_data->id)}}" method="POST">
-                        @method('put')
+                    <form action="/edit_student_2/{{$student_data->id}}" method="POST">
                         @csrf
                         <div class="card-body">
                         <div>
-                        <input type="hidden" value="{{Session::get('studentId')}}" name="studentId">
+                        <input type="hidden" value="{{$student_data->students_id}}" name="studentId">
                         </div>
                             <div class="row pt-2 px-4 mb-2">
                                 <div class="col">

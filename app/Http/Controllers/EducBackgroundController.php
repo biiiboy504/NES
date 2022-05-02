@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\educ_background;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
+
 
 class EducBackgroundController extends Controller
 {
@@ -85,9 +88,9 @@ class EducBackgroundController extends Controller
      * @param  \App\Models\educ_background  $educ_background
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, educ_background $educ_background)
+    public function update(Request $request, $id)
     {
-
+        $student = educ_background::find($id);
         $student->elem_name = $request->elem_name;
         $student->elem_date = $request->elem_date;
         $student->hs_name = $request->hs_name;
@@ -116,6 +119,17 @@ class EducBackgroundController extends Controller
     public function destroy(educ_background $educ_background)
     {
         //
+    }
+
+    public function view_student_2($id)
+    {
+        $student_data = Student::find($id);
+
+        $student_data = DB::table('educ_backgrounds')
+        ->where('students_id','=',$student_data->id)
+        ->select('*')
+        ->first();
+        return view('Student.update_student_2', compact('student_data'));
     }
 
 }

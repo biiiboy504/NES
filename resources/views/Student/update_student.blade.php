@@ -21,8 +21,7 @@
                         </div>
                     @endif
 
-                    <form action="{{url('student/'.$student_data->id)}}" method="POST">
-                        @method('put')
+                    <form action="/edit_student/{{$student_data->id}}" method="POST">
                         @csrf
                         <div class="card-body">
                         <div>
