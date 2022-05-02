@@ -76,7 +76,7 @@
 }
 
 .card:hover {
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 5px 30px rgba(102, 255, 153);
 }
 
 .card-body {
@@ -110,8 +110,8 @@
     height: 100vh;
     width: 280px;
     overflow: hidden;
-    background: #303641;
-    box-shadow: 2px 0 32px rgba(0, 0, 0, 0.05);
+    background: #66ff99;
+    box-shadow: 2px 0 32px rgba(245, 240, 240, 0.05);
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
@@ -140,8 +140,8 @@
 
 .sidebar-header {
     padding: 19px 32px 20px;
-    background: #303641;
-    border-bottom: 1px solid #343e50;
+    background: #66ff99;
+    border-bottom: 1px solid #66ff99;
 }
 .sidebar-menu .logo{
     text-align: center;
@@ -157,8 +157,8 @@
 .metismenu li a {
     position: relative;
     display: block;
-    color: #8d97ad;
-    font-size: 15px;
+    color: #053819;
+    font-size: 18px;
     text-transform: capitalize;
     padding: 15px 15px;
     letter-spacing: 0;
@@ -166,7 +166,7 @@
 }
 
 .metismenu li a i {
-    color: #6a56a5;
+    color: #053819;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
@@ -177,7 +177,7 @@
     font-family: fontawesome;
     right: 15px;
     top: 12px;
-    color: #8d97ad;
+    color: #8dad9d;
     font-size: 20px;
 }
 
@@ -209,7 +209,7 @@
 .metismenu >li:hover>a,
 .metismenu >li.active>a {
     color: #fff;
-    background: #343942;
+    background: #66ff99;
 }
 
 .metismenu li:hover>a,
@@ -267,7 +267,7 @@
 }
 
 .mainheader-area .logo a span {
-    color: #843df9;
+    color: #66ff99;
 }
 
 .horizontal-menu {
@@ -345,7 +345,7 @@
 /* mobile menu */
 
 .slicknav_menu {
-    background: #8255f7;
+    background: #66ff99;
     padding: 0;
     margin-top: 20px;
 }
@@ -378,7 +378,7 @@
 
 .slicknav_nav .slicknav_row:hover {
     border-radius: 0;
-    background: #8e66f7;
+    background: #66ff99;
 }
 
 .slicknav_nav li i {
@@ -410,7 +410,7 @@
     display: block;
     width: 22px;
     height: 2px;
-    background: #b3aaaa;
+    background: #aab3ae;
     margin: 4px 0;
     border-radius: 15px;
     -webkit-transition: all 0.3s ease 0s;
@@ -717,8 +717,8 @@ ul.breadcrumbs {
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    background: -webkit-linear-gradient(left, #8914fe 0%, #8063f5 100%);
-    background: linear-gradient(to right, #8914fe 0%, #8063f5 100%);
+    background: -webkit-linear-gradient(left, #09aa47 0%, #099c42 100%);
+    background: linear-gradient(to right, #09aa47 0%, #099c42 100%);
     padding: 17px 38px;
     position: relative;
 }
