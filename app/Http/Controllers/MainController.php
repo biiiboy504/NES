@@ -160,4 +160,36 @@ class MainController extends Controller
             }
         }
 
+        function changeContact()
+        {
+            return view('nes.change-contact');
+        }
+        
+        public function updateContacts(Request $request)
+        {
+        # Validation
+            $request->validate([
+                'new_contact' => 'required|confirmed',
+                // 'new_email' => 'required|confirmed',
+            ]); 
+
+            $admin = Admin::find(session('loggedUser'));
+
+            if($admin->contact = Hash::make($request->new_contact)){
+                $admin->save();
+                return back()->with("status","Contact successfully change!");
+            }
+            else {
+                return back()->with("status","Contacts doesn't change");
+            }
+
+            // if(!Hash::check($request->old_contact, $admin->contact)){
+            //     return back()->with("error", "Old contact Doesn't match!");
+            // else {
+            //     $admin->contact = Hash::make($request->new_contact);
+            //     $admin->save();
+            //     return back()->with("status", "Contacts change successfully!");
+            // }
+        }
+    
 }
