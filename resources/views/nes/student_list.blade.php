@@ -13,7 +13,7 @@
                                 <h4 class="header-title">Students List</h4>    
                             </div>
                             <div class="float-right mb-3">
-                                <a href="/add_student_1" class="btn text-light" type="button" style="background-color: #8A2BE2;">Add Student</a>
+                                <a href="/add_student_1" class="btn text-light" type="button" style="background-color: #FF66CC;">Add Student</a>
                             </div>
                         </div>
                     </div>

@@ -54,7 +54,7 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="index.html"><h1 style="color:white;">NES</h1></a>
+                    <a href="/dashboard"><img src="{{ asset('assets/images/logo/nolitc.png')}}" height="100" alt=""></a>
                 </div>
             </div>
             <div class="main-menu">
