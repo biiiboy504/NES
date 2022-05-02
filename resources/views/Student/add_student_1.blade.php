@@ -8,6 +8,19 @@
                     <div class="card-header" style="background-color: #8A2BE2;">
                         <h4 class="text-light">Personal Information</h4>
                     </div>
+
+                    @if(Session::get('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{Session::get('success')}}
+                        </div>
+                    @endif
+
+                    @if(Session::get('fail'))
+                        <div class="alert alert-danger" role="alert">
+                            {{Session::get('fail')}}
+                        </div>
+                    @endif
+
                     <form action="/create_student" method="POST">
                         @csrf
                         <div class="card-body">

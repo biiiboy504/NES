@@ -16,7 +16,7 @@ class CreateEducBackgroundsTable extends Migration
         Schema::create('educ_backgrounds', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('students_id');
-            $table->foreign('students_id')->references('id')->on('students');
+            $table->foreign('students_id')->references('id')->on('students')->onDelete('cascade');
             $table->string('elem_name')->nullable();
             $table->string('elem_date')->nullable();
             $table->string('hs_name')->nullable();

@@ -21,7 +21,7 @@
                         </div>
                     @endif
 
-                    <form action="/create_student_2" method="POST">
+                    <form action="/read_2" method="POST">
                         @csrf
                         <div class="card-body">
                         <div>
@@ -43,54 +43,54 @@
                                         <label for="" style="float: right;">Elementary:</label>
                                     </div>
                                     <div class="col-8">
-                                        <input type="text" name="elem_name" class="form-control mb-3">
+                                        <input type="text" name="elem_name" class="form-control mb-3" readonly>
                                     </div>
                                     <div class="col-2">
-                                        <input type="text" name="elem_date" class="form-control mb-3" placeholder="Month & Year/Year">
+                                        <input type="text" name="elem_date" class="form-control mb-3" placeholder="Month & Year/Year" readonly>
                                     </div>
                                     <div class="col-2">
                                         <label for="" style="float: right;">High School:</label>
                                     </div>
                                     <div class="col-8">
-                                        <input type="text" name="hs_name" class="form-control mb-3">
+                                        <input type="text" name="hs_name" class="form-control mb-3" readonly>
                                     </div>
                                     <div class="col-2">
-                                        <input type="text" name="hs_date" class="form-control mb-3" placeholder="Month & Year/Year">
+                                        <input type="text" name="hs_date" class="form-control mb-3" placeholder="Month & Year/Year" readonly>
                                     </div>
                                     <div class="col-2">
                                         <label for="" style="float: right;">Vocational:</label>
                                     </div>
                                     <div class="col-8">
-                                        <input type="text" name="voc_name" class="form-control mb-3">
+                                        <input type="text" name="voc_name" class="form-control mb-3" readonly>
                                     </div>
                                     <div class="col-2">
-                                        <input type="text" name="voc_date" class="form-control mb-3" placeholder="Month & Year/Year">
+                                        <input type="text" name="voc_date" class="form-control mb-3" placeholder="Month & Year/Year" readonly>
                                     </div>
                                     <div class="col-2">
                                         <label for="" style="float: right;">College:</label>
                                     </div>
                                     <div class="col-8">
-                                        <input type="text" name="college_name" class="form-control mb-3">
+                                        <input type="text" name="college_name" class="form-control mb-3" readonly>
                                     </div>
                                     <div class="col-2">
-                                        <input type="text" name="college_date" class="form-control mb-3" placeholder="Month & Year/Year">
+                                        <input type="text" name="college_date" class="form-control mb-3" placeholder="Month & Year/Year" readonly>
                                     </div>
                                     <div class="col-5">
                                         <label for="">Course/Degree:</label>
-                                        <input type="text" name="course" class="form-control mb-3">
+                                        <input type="text" name="course" class="form-control mb-3" readonly>
                                     </div>
                                     <div class="col-7">
                                         <label for="">No. of units Completed (for Undergraduate):</label>
-                                        <input type="text" name="units" class="form-control mb-3" >
+                                        <input type="text" name="units" class="form-control mb-3" readonly >
                                     </div>
                                     <div class="col-2">
                                         <label for="" style="float: right;">Post Graduate:</label>
                                     </div>
                                     <div class="col-8">
-                                        <input type="text" name="post_grad" class="form-control mb-3">
+                                        <input type="text" name="post_grad" class="form-control mb-3" readonly>
                                     </div>
                                     <div class="col-2">
-                                        <input type="text" name="post_date" class="form-control mb-3" placeholder="Month & Year/Year">
+                                        <input type="text" name="post_date" class="form-control mb-3" placeholder="Month & Year/Year" readonly>
                                     </div>
                                 </div>  
                             </div>

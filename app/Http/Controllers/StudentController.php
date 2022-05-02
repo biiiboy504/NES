@@ -124,7 +124,7 @@ class StudentController extends Controller
         $student->batch_num = $request->batch_num;
         $student->save();
 
-        return Redirect('studentlist')->with('message', 'Successfully Updated!');
+        return Redirect('update_student_2')->with('message', 'Successfully Updated!');
     }
 
     /**
@@ -147,9 +147,18 @@ class StudentController extends Controller
         return view('Student.update_student', compact('student_data'));
     }
 
-    public function save_update(Request $request, Student $student)
+    public function read_1($id)
     {
+        $student_data = Student::find($id);
 
-        
+        return view('Student.view', compact('student_data'));
     }
+
+    public function read_2($id)
+    {
+        $student_data = Student::find($id);
+
+        return view('Student.view_2', compact('student_data'));
+    }
+
 }

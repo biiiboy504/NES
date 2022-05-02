@@ -103,7 +103,8 @@ class EducBackgroundController extends Controller
         $student->students_id = $request->studentId;
         $student->save();
 
-        return Redirect('studentlist')->with('flash_message', 'Student Successfully Added!');
+        return Redirect('studentlist')->with('message', 'Successfully Updated!');
+
     }
 
     /**
@@ -116,4 +117,5 @@ class EducBackgroundController extends Controller
     {
         //
     }
+
 }
