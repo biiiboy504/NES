@@ -8,6 +8,19 @@
                     <div class="card-header" style="background-color: #8A2BE2;">
                         <h4 class="text-light">Personal Information</h4>
                     </div>
+
+                    @if(Session::get('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{Session::get('success')}}
+                        </div>
+                    @endif
+
+                    @if(Session::get('fail'))
+                        <div class="alert alert-danger" role="alert">
+                            {{Session::get('fail')}}
+                        </div>
+                    @endif
+
                     <form action="/create_student" method="POST">
                         @csrf
                         <div class="card-body">
@@ -44,16 +57,16 @@
                                         <label for="">Civil Status:</label>
                                         <select class="form-control form-control-lg mb-3" name="civil_status">
                                         <option value="">---Select Civil Status---</option>
-                                        <option value="married">Married</option>
-                                        <option value="single">Single</option>
+                                        <option value="Married">Married</option>
+                                        <option value="Single">Single</option>
                                         </select>
                                     </div>
                                     <div class="col-3">
                                         <label for="">Gender:</label>
                                         <select class="form-control form-control-lg mb-3" name="gender" required>
                                         <option value="">-Select Gender-</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
                                         </select>
                                     </div>
                                     <div class="col-3">

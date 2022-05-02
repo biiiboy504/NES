@@ -38,7 +38,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('nes.add_student_1');
+        return view('Student.add_student_1');
     }
 
     /**
@@ -49,6 +49,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+        
         $student = new Student;
         $student->first_name = $request->first_name;
         $student->middle_name = $request->middle_name;
@@ -82,7 +83,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        return view('nes.update_student')->with('student',$student);
+        return view('Student.update_student')->with('student',$student);
     }
 
     /**
@@ -103,8 +104,9 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, $id)
     {
+        $student = Student::find($id);
         $student->first_name = $request->first_name;
         $student->middle_name = $request->middle_name;
         $student->last_name = $request->last_name;
@@ -122,12 +124,8 @@ class StudentController extends Controller
         $student->age = $request->age;
         $student->batch_num = $request->batch_num;
         $student->save();
-        $studentId = $student->id;
 
-        Session::put('studentId', $studentId);
-
-
-        return Redirect('add_student_2')->with('flash_message', 'Student Successfully Added!');
+        return Redirect('/update_student_2/'.$id)->with('message', 'Successfully Updated!');
     }
 
     /**
@@ -136,9 +134,10 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy($id)
     {
-        $student->delete();
+        Student::where('id', $id)->delete();
+
         return Redirect('studentlist')->with('message', 'Successfully Deleted!');
     }
 
@@ -146,13 +145,20 @@ class StudentController extends Controller
     {
         $student_data = Student::find($id);
 
-        return view('nes.update_student', compact('student_data'));
+        return view('Student.update_student', compact('student_data'));
     }
 
-    public function save_update($id )
+    public function read_1($id)
     {
         $student_data = Student::find($id);
 
-        return view('nes.update_student_2', compact('student_data'));
+        return view('Student.view', compact('student_data'));
+    }
+
+    public function read_2($id)
+    {
+        $student_data = Student::find($id);
+
+        return view('Student.view_2', compact('student_data'));
     }
 }

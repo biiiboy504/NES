@@ -8,11 +8,24 @@
                     <div class="card-header" style="background-color: #8A2BE2;">
                         <h4 class="text-light">Educational Background</h4>
                     </div>
-                    <form action="" method="POST">
+
+                    @if(Session::get('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{Session::get('success')}}
+                        </div>
+                    @endif
+
+                    @if(Session::get('fail'))
+                        <div class="alert alert-danger" role="alert">
+                            {{Session::get('fail')}}
+                        </div>
+                    @endif
+
+                    <form action="/edit_student_2/{{$student_data->id}}" method="POST">
                         @csrf
                         <div class="card-body">
                         <div>
-                        <input type="hidden" value="{{Session::get('studentId')}}" name="studentId">
+                        <input type="hidden" value="{{$student_data->students_id}}" name="studentId">
                         </div>
                             <div class="row pt-2 px-4 mb-2">
                                 <div class="col">
@@ -83,7 +96,7 @@
                             </div>
                         </div>
                         <div class="card-footer cfooter">
-                                <a href="/add_student_1" class="btn btn-secondary">Back</a>
+                                <a href="/update_student" class="btn btn-secondary">Back</a>
                                 <button type="submit" class="btn btn-success" style="float:right;">Submit</button>
                         </div>
                 </form>
