@@ -96,7 +96,7 @@
                             </div>
                         </div>
                         <div class="card-footer cfooter">
-                                <a href="/update_student" class="btn btn-secondary">Back</a>
+                                <a href="/update_student/{{$student_data->id}}" class="btn btn-secondary">Back</a>
                                 <button type="submit" class="btn btn-success" style="float:right;">Submit</button>
                         </div>
                 </form>

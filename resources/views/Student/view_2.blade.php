@@ -21,7 +21,7 @@
                         </div>
                     @endif
 
-                    <form action="/read_2" method="POST">
+                    <form action="/view_2/{{$student_data->id}}" method="GET">
                         @csrf
                         <div class="card-body">
                         <div>
@@ -96,10 +96,10 @@
                             </div>
                         </div>
                         <div class="card-footer cfooter">
-                                <a href="/add_student_1" class="btn btn-secondary">Back</a>
-                                <button type="submit" class="btn btn-success" style="float:right;">Submit</button>
+                                <a href="/view/{{$student_data->id}}" class="btn btn-secondary">Back</a>
                         </div>
                 </form>
+                
             </div>
         </div>
 </div>

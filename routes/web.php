@@ -63,5 +63,5 @@ Route::get('/update_student_2/{id}',[EducBackgroundController::class, 'view_stud
 Route::post('/edit_student_2/{id}',[EducBackgroundController::class, 'update']);
 
 Route::get('/view/{id}',[StudentController::class, 'read_1']);
-Route::get('/view_2/{id}',[StudentController::class, 'read_2']);
+Route::get('/view_2/{id}',[EducBackgroundController::class, 'read_2']);
 
