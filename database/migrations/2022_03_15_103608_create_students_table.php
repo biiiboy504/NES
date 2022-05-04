@@ -23,12 +23,12 @@ class CreateStudentsTable extends Migration
             $table->string('contact_num');
             $table->string('landline')->nullable();
             $table->string('civil_status')->nullable();
-            $table->string('gender');
+            $table->string('gender')->nullable();
             $table->string('height')->nullable();
             $table->string('weight')->nullable();
             $table->string('citizenship')->nullable();
             $table->string('birth_place')->nullable();
-            $table->string('birth_date'); 
+            $table->string('birth_date')->nullable();
             $table->string('age');
             $table->string('batch_num');
             $table->timestamps();

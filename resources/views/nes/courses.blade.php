@@ -4,19 +4,19 @@
 <div class="main-content-inner">
 
     <div class="col-12 mt-5">
-        <div class="card text-white mb-3" style="background-color:#8A2BE2;">
-            <!-- Card Header -->
-            <div class="card-header">
-                <div class="float-left mt-2">
-                    <h3>Course List</h3>
-                </div>
-                <div class="float-right">
-                    <a href="/courses/create" style="font-weight:700; color:#8A2BE2;" class="btn btn-light">Add
-                        Course</a>
-                </div>
-            </div>
+        <div class="card">
             <!-- Card Body -->
-            <div class="card-body bg-white" style="color:#8A2BE2;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="float-left">
+                            <h4 class="header-title">Course List</h4>    
+                        </div>
+                        <div class="float-right mb-3">
+                            <a href="/add_student_1" class="btn text-light" type="button" style="background-color: #FF66CC;">Add Course</a>
+                        </div>
+                    </div>
+                </div>
                 <table id="dataTable3" class="table table-bordered table-hover text-center">
                     <thead>
                         <tr>
@@ -38,8 +38,10 @@
                                     <form action="/courses/{{$course->id}}" method="POST">
                                         @csrf
                                         @method('DELETE')
+                                        <div class="btn-group" role="group">
                                         <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
                                         <a href="/courses/{{$course->id}}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> </a>
+                                        </div>
                                     </form>
                                 </div>
                             </td>
