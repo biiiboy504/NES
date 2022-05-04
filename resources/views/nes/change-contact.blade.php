@@ -1,17 +1,19 @@
+@extends('nes.layout.navbar')
+
 @section('content')
 <div class="main-content-inner">
 <!-- tab start -->
     <div class="col-lg-12 mt-5">
         <div class="card">
             <div class="card-body">
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <!-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><i class="ti-info"></i> Contact</a>
                     </li>                
-                </ul>
-                <div class="tab-content" id="pills-tabContent">
+                </ul> -->
+                <div class>
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                        <h5 class="mt-4">{{ __('Change Contact') }}</h5>
+                        <h5 class="mt-2">{{ __('Change Contact') }}</h5>
                         <div class="row justify-content-center mt-4">
                             <div class="col-md-8">
                                 <form action="{{ route('update-contact') }}" method="POST">
