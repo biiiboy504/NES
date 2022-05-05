@@ -20,7 +20,7 @@ use App\Http\Controllers\EducBackgroundController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('nes.login');
 });
 
 //User Authentication
