@@ -32,7 +32,7 @@ Route::get('/logout',[MainController::class,'logout'])->name('nes.logout');
 Route::get('/passwordsettings', [MainController::class, 'changePassword'])->name('change-password');
 Route::get('/contactsettings', [MainController::class, 'changeContact'])->name('change-contact');
 Route::post('/change-password', [MainController::class, 'updatePassword'])->name('update-password');
-Route::post('/change-contact', [MainController::class, 'updateContact'])->name('update-contact');
+Route::post('/change-contact', [MainController::class, 'updateContacts'])->name('update-contact');
 
 //Links
 
