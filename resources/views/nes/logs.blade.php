@@ -34,3 +34,18 @@
     </div>
 </div>
 @endsection()
+
+@section('scripts')
+<script>
+    $(function () {
+        $("#dataTable1").DataTable({
+            "responsive": true, 
+            "lengthChange": false, 
+            "autoWidth": false,
+            
+            "buttons": ["csv", "pdf", "print", "colvis"],
+            "bDestroy": true
+        }).buttons().container().appendTo('#dataTable1_wrapper .col-md-6:eq(0)');        
+    });
+</script>
+@endsection()
