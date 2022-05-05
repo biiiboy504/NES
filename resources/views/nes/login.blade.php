@@ -39,7 +39,7 @@
             <div class="login-box ptb--50">
                 <form action="{{ route('nes.check')}}" method="post">
                     @csrf
-                    <div class="login-form-head">
+                    <div class="login-form-head" style="background:#66ff99">
                         <h4>Sign In</h4>
                     </div>
                     @if(Session::get('fail'))
@@ -47,17 +47,17 @@
                             {{Session::get('fail')}}
                         </div>
                     @endif
-                    <div class="login-form-body">
+                    <div class="login-form-body" >
                         <div class="form-gp">
                             <label for="username">Username</label>
                             <input type="text" id="username" name="username">
-                            <i class="ti-user"></i>
+                            <i class="ti-user" style="color: #66ff99"></i>
                             <div class="text-danger">@error('username') {{ $message}} @enderror</div>
                         </div>
                         <div class="form-gp">
                             <label for="exampleInputPassword1">Password</label>
                             <input type="password" id="exampleInputPassword1" name="password">
-                            <i class="ti-lock"></i>
+                            <i class="ti-lock" style="color: #66ff99"></i>
                             <div class="text-danger">@error('password') {{ $message}} @enderror</div>
                         </div>
                         <div class="row mb-4 rmber-area">
@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                             <div class="col-6 text-right">
-                                <a href="#">Forgot Password?</a>
+                                <a href="#" style="color:#FF66CC">Forgot Password?</a>
                             </div>
                         </div>
                         <div class="submit-btn-area">
@@ -76,7 +76,7 @@
                             
                         </div>
                         <div class="form-footer text-center mt-5">
-                            <p class="text-muted">Don't have an account? <a href="{{ route('nes.register')}}">Sign up</a></p>
+                            <p  class="text-muted">Don't have an account? <a href="{{ route('nes.register')}}" style="color:#FF66CC">Sign up</a></p>
                         </div>
                     </div>
                 </form>

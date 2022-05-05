@@ -45,8 +45,16 @@ class MainController extends Controller
             ->where('gender','=','female')
             ->get()->count();
 
+            $courses = DB::table('courses')
+            ->select('courses.*')
+            ->get();
+
+            $courseCount = count($courses);
+
+
+
             $data = ['LoggedUserInfo'=>Admin::where('id','=',session('LoggedUser'))->first()];
-            return view('nes.dashboard',compact('students','data', 'studentCount','maleCount','femaleCount','courses'));
+            return view('nes.dashboard',compact('students','data', 'studentCount','maleCount','femaleCount','courses','data','courseCount'));
         }
     }
 
@@ -132,6 +140,34 @@ class MainController extends Controller
             session()->pull('loggedUser');
             return redirect('/login');
         }
+    }
+
+    function changePassword()
+    {
+        return view('nes.change-password');
+    }
+
+    public function updatePassword(Request $request)
+    {
+        # Validation
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed',
+        ]);
+
+
+        #Match The Old Password
+        if(!Hash::check($request->old_password, auth()->user()->password)){
+            return back()->with("error", "Old Password Doesn't match!");
+        }
+
+
+        #Update the new Password
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+
+        return back()->with("status", "Password changed successfully!");
     }
     
 }

@@ -21,84 +21,14 @@
                         <div class="seo-fact sbg2">
                             <div class="p-4 d-flex justify-content-between align-items-center">
                                 <div class="seofct-icon"><i class="ti-book"></i> Courses</div>
-                                <h2>3,984</h2>
+                                <h2>{{$courseCount}}</h2>
                             </div>
                             <canvas id="seolinechart2" height="50"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 mt-5">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="header-title">Students Table</h4>
-                            <div class="data-tables datatable-primary table-responsive">
-                                <table id="dataTable" class="text-center">
-                                    <thead class="text-capitalize">
-                                        <tr>
-                                        <th>Id</th>
-                                        <th>Student</th>
-                                        <th>Course</th>
-                                        <th>Date Added</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($students as $student)
-                                        <tr>
-                                            <td>{{$student->id}}</td>
-                                            <td>{{$student->first_name}} {{$student->last_name}}</td>
-                                            <td>{{$student->course}}</td>                                    
-                                            <td>{{$student->created_at}}</td>
-                                            <td>
-                                                <div class="btn-group" role="group">
-                                                <a href="#" class="btn btn-info">Update</a>
-                                                <a href="#" class="btn btn-danger">Delete</a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 mt-5">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="header-title">Courses Table</h4>
-                            <div class="data-tables datatable-primary table-responsive">
-                                <table id="dataTable2" class="text-center">
-                                    <thead class="bg-success text-capitalize">
-                                        <tr>
-                                            <th>Course</th>
-                                            <th>Date added</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($courses as $course)
-                                        <tr>
-                                            <td>{{$course->course_name}}</td>
-                                            <td>{{$course->created_at}}</td>
-                                            <td>
-                                                <div class="btn-group" role="group">
-                                                <a href="#" class="btn btn-info">Update</a>
-                                                <a href="#" class="btn btn-danger">Delete</a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
+            
         </div>
         <div class="col-lg-4">
             <div class="card mt-5">
@@ -146,5 +76,22 @@
             }
         });
     }
+    $(function () {
+        $("#dataTable1").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["colvis"],
+            "bDestroy": true
+        }).buttons().container().appendTo('#dataTable1_wrapper .col-md-6:eq(0)');
+
+        $("#dataTable2").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["colvis"],
+            "ordering": true,
+            "info": false,
+            "paging": true,
+            "bDestroy": true
+        }).buttons().container().appendTo('#dataTable2_wrapper .col-md-6:eq(0)');
+        
+    });
 </script>
 @endsection()
