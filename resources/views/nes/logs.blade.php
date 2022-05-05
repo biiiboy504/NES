@@ -2,33 +2,34 @@
 
 @section('content')
 <div class="main-content-inner">
-    <div class="col-lg-10 mx-auto mt-5">
-        <div class="card text-white mb-3" style="background-color:#8A2BE2;">
-            <!-- Card Header -->
-            <div class="card-header">
-                <div class="text-center">
-                    <h3>User Activity</h3>
-                </div>
-            </div>
-            <!-- Card Body -->
-            <div class="card-body bg-white" style="color:#8A2BE2;">
-                <div class="table-responsive">
-                <table id="dataTable" class="table table-bordered table-hover table-striped">
+    <div class="row">
+        <!-- data table start -->
+        <div class="col-12 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="float-left">
+                                <h4 class="header-title">Activity Log</h4>    
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <table id="dataTable1" class="table table-bordered table-hover text-center">
+                        <thead class="bg-light text-capitalize">
                             <tr>
-                                <th>ID</th>
+                                <th>Id</th>
+                                <th>Name</th>
                                 <th>Event</th>
-                                <th>Old values</th>
-                                <th>New values</th>
-                                <th>URL</th>
                                 <th>IP Address</th>
-                                <th>Created at</th>
-                                <th>Updated at</th>
+                                <th>Date</th>
+                                <th>Time</th>
                             </tr>
-                    </table>  
+                        </thead>
+                    </table>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
