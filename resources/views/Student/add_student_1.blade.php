@@ -100,7 +100,7 @@
                                 </div>  
                             </div>
                         </div>
-                        <div class="card-footer cfooter">
+                        <div class="card-footer">
                                 <a href="/studentlist" class="btn btn-secondary">Back</a>
                                 <button type="submit" class="btn btn-success" style="float:right;">Next</button>
                         </div>

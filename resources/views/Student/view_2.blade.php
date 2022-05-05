@@ -95,7 +95,7 @@
                                 </div>  
                             </div>
                         </div>
-                        <div class="card-footer cfooter">
+                        <div class="card-footer">
                                 <a href="/view/{{$student_data->id}}" class="btn btn-secondary">Back</a>
                         </div>
                 </form>

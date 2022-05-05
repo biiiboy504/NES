@@ -103,7 +103,7 @@
                                 </div>  
                             </div>
                         </div>
-                        <div class="card-footer cfooter">
+                        <div class="card-footer">
                                 <a href="/studentlist" class="btn btn-secondary">Back</a>
                                 <a href="/view_2/{{$student_data->id}}" class="btn btn-success" style="float:right;">Next</a>
                         </div>

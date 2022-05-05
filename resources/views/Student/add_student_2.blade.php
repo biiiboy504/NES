@@ -95,8 +95,9 @@
                                 </div>  
                             </div>
                         </div>
-                        <div class="card-footer cfooter">
-                                <a href="/add_student_1" class="btn btn-secondary">Back</a>
+                        <div class="card-footer">
+                                <button class="btn btn-secondary" onclick="goBack()">Back</button>
+                                <!-- <a href="{{ url()->previous() }}" class="btn btn-secondary">Back</a> -->
                                 <button type="submit" class="btn btn-success" style="float:right;">Submit</button>
                         </div>
                 </form>
