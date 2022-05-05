@@ -167,29 +167,27 @@ class MainController extends Controller
         
         public function updateContacts(Request $request)
         {
-        # Validation
-            // $request->validate([
-            //     'new_contact' => 'required|confirmed',
-            //     // 'new_email' => 'required|confirmed',
-            // ]); 
 
             $admin = Admin::find(session('loggedUser'));
 
-            if($admin->contact = $request->new_contact){
-                $admin->save();
-                return back()->with("status","Contact successfully change!");
-            }
-            else {
-                return back()->with("status","Contacts doesn't change");
+            $admin->contact = $request->new_contact;
+            $admin->email = $request->new_email;
+
+            $save = $admin->save();
+
+            if($save){
+                return back()->with('status','Contact successfully change!');
+    
+            }else{
+                return back()->with('status','Contacts dont change');
             }
 
-            // if($request->old_contact = $admin->contact){
-            //     return back()->with("error", "Old contact Doesn't match!");
+            // if($admin->contact = $request->new_contact){
+            //     $admin->save();
+            //     return back()->with("status","Contact successfully change!");
             // }
             // else {
-            //     $admin->contact = $request->new_contact;
-            //     $admin->save();
-            //     return back()->with("status", "Contacts change successfully!");
+            //     return back()->with("status","Contacts doesn't change");
             // }
         }
     
