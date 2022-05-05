@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="float-left">
-                                <h4 class="header-title">Activity Log</h4>    
+                                <h4 class="header-title">Activity Logs</h4>    
                             </div>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
                     <table id="dataTable1" class="table table-bordered table-hover text-center">
                         <thead class="bg-light text-capitalize">
                             <tr>
-                                <th>Id</th>
+                                <th>ID</th>
                                 <th>Name</th>
                                 <th>Event</th>
                                 <th>IP Address</th>
