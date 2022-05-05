@@ -176,10 +176,10 @@ class MainController extends Controller
             $save = $admin->save();
 
             if($save){
-                return back()->with('status','Contact successfully change!');
+                return back()->with('status',"Contacts updated successfully!");
     
             }else{
-                return back()->with('status','Contacts dont change');
+                return back()->with('error',"Unsuccessful update");
             }
 
             // if($admin->contact = $request->new_contact){
