@@ -54,7 +54,7 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="/dashboard"><img src="{{ asset('assets/images/logo/nolitc.png')}}" height="100" alt=""></a>
+                    <a href="/dashboard"><img src="https://res.cloudinary.com/dm7xbiqid/image/upload/v1651808439/nes_logo/nolitc_fmkzmu.png" height="100" alt=""></a>
                 </div>
             </div>
             <div class="main-menu">

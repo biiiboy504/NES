@@ -22,6 +22,11 @@
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css')}}">
     <!-- modernizr css -->
     <script src="{{ asset('assets/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <style>
+        .submit-btn-area button:hover{
+            background: #66ff99;
+        }
+    </style>
 </head>
 
 <body>
@@ -39,8 +44,9 @@
             <div class="login-box ptb--50">
                 <form action="{{ route('nes.check')}}" method="post">
                     @csrf
-                    <div class="login-form-head" style="background:#66ff99">
-                        <h4>Sign In</h4>
+                    <div class="login-form-head" style="background:#66ff99;">
+             
+                        <h4>Sign In</h4>  
                     </div>
                     @if(Session::get('fail'))
                         <div class="alert alert-danger" role="alert">
