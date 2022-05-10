@@ -10,10 +10,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="float-left">
-                            <h4 class="header-title">Course List</h4>    
+                            <h4 class="header-title">Course List</h4>
                         </div>
                         <div class="float-right mb-3">
-                            <a href="/add_student_1" class="btn text-light" type="button" style="background-color: #FF66CC;">Add Course</a>
+                            <a href="/courses/create" class="btn text-light" type="button"
+                                style="background-color: #FF66CC;">Add Course</a>
                         </div>
                     </div>
                 </div>
@@ -34,13 +35,14 @@
                             <td>{{$course->description}}</td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="...">
-                                    
+
                                     <form action="/courses/{{$course->id}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <div class="btn-group" role="group">
-                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
-                                        <a href="/courses/{{$course->id}}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> </a>
+                                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                                            <a href="/courses/{{$course->id}}" class="btn btn-info btn-xs"><i
+                                                    class="fa fa-pencil"></i> </a>
                                         </div>
                                     </form>
                                 </div>
@@ -59,14 +61,14 @@
 
 @section('scripts')
 <script>
-    $(function () {
-        $("#dataTable3").DataTable({
-            "responsive": true, 
-            "lengthChange": false, 
-            "autoWidth": false,
-            "buttons": ["csv", "pdf", "print", "colvis"],
-            "bDestroy": true
-        }).buttons().container().appendTo('#dataTable3_wrapper .col-md-6:eq(0)');        
-    });
+$(function() {
+    $("#dataTable3").DataTable({
+        "responsive": true,
+        "lengthChange": false,
+        "autoWidth": false,
+        "buttons": ["csv", "pdf", "print", "colvis"],
+        "bDestroy": true
+    }).buttons().container().appendTo('#dataTable3_wrapper .col-md-6:eq(0)');
+});
 </script>
 @endsection()
