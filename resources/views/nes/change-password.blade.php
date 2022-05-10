@@ -6,7 +6,7 @@
     <div class="col-lg-12 mt-5">
         <div class="card">
             <div class="card-body">
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <!-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><i class="ti-info"></i> Contact</a>
                     </li>
@@ -14,8 +14,8 @@
                         <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="ti-lock"></i> Password</a>
                     </li>
                     
-                </ul>
-                <div class="tab-content" id="pills-tabContent">
+                </ul> -->
+                <!-- <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                         <h5 class="mt-4">{{ __('Change Contact') }}</h5>
                         <div class="row justify-content-center mt-4">
@@ -35,7 +35,7 @@
                                         <div class="mb-3">
                                             <label for="newContactInput" class="form-label">New Contact No.</label>
                                             <input name="new_contact" type="contact" class="form-control @error('new_contact') is-invalid @enderror" id="newContactInput"placeholder="Contact No.">
-                                        @error('new_password') 
+                                        @error('new_contact') 
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                         </div>
@@ -46,24 +46,14 @@
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                         </div>
-
-                                    <!-- <div class="mb-3">
-                                        <label for="confirmNewPasswordInput" class="form-label">Confirm New Password</label>
-                                        <input name="new_password_confirmation" type="password" class="form-control" id="confirmNewPasswordInput"
-                                            placeholder="Confirm New Password">
-                                    </div> -->
-
-                                
-
-                                
                                     <button class="btn btn-success">Submit</button>
                                     
                                 </form>
                             </div>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        <h5 class="mt-4">{{ __('Change Password') }}</h5>
+                    </div> -->
+                    <div>
+                        <h5 class="mt-2">{{ __('Change Password') }}</h5>
 
                         <div class="row justify-content-center mt-4">
                             <div class="col-md-8">
@@ -99,9 +89,6 @@
                                         <input name="new_password_confirmation" type="password" class="form-control" id="confirmNewPasswordInput"
                                             placeholder="Confirm New Password">
                                     </div>
-
-                                
-
                                 
                                     <button class="btn btn-success">Submit</button>
                                     

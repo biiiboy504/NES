@@ -5,7 +5,7 @@
         <div class="row mt-5 mb-5">
             <div class="col-lg mx-auto">
                 <div class="card">
-                    <div class="card-header" style="background-color: #8A2BE2;">
+                    <div class="card-header" style="background-color: #2B2B68;">
                         <h4 class="text-light">Educational Background</h4>
                     </div>
 
@@ -95,8 +95,9 @@
                                 </div>  
                             </div>
                         </div>
-                        <div class="card-footer cfooter">
-                                <a href="/add_student_1" class="btn btn-secondary">Back</a>
+                        <div class="card-footer">
+                                <button class="btn btn-secondary" onclick="goBack()">Back</button>
+                                <!-- <a href="{{ url()->previous() }}" class="btn btn-secondary">Back</a> -->
                                 <button type="submit" class="btn btn-success" style="float:right;">Submit</button>
                         </div>
                 </form>

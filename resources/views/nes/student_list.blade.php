@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     
-                    
+                     
                     <table id="dataTable1" class="table table-bordered table-hover text-center">
                         <thead class="bg-light text-capitalize">
                             <tr>
