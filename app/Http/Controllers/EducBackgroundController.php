@@ -132,4 +132,14 @@ class EducBackgroundController extends Controller
         return view('Student.update_student_2', compact('student_data'));
     }
 
+    public function read_2($id)
+    {
+        $student_data = Student::find($id);
+
+        $student_data = DB::table('educ_backgrounds')
+        ->where('students_id','=',$student_data->id)
+        ->select('*')
+        ->first();
+        return view('Student.view_2', compact('student_data'));
+    }
 }

@@ -36,6 +36,11 @@
     
     <!-- modernizr css -->
     <script src="{{ asset('assets/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <script>
+    function goBack() {
+        window.history.back();
+    }
+    </script>
    
 </head>
 
