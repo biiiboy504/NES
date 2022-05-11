@@ -36,11 +36,14 @@
     
     <!-- modernizr css -->
     <script src="{{ asset('assets/js/vendor/modernizr-2.8.3.min.js')}}"></script>
-    <script>
-    function goBack() {
-        window.history.back();
-    }
-    </script>
+
+    <!-- Multi-step form -->
+    <link rel="stylesheet" href="{{ asset('assets/css/msfStyle.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><link rel="stylesheet" href="./style.css">
+
+  
+
+
    
 </head>
 
@@ -542,6 +545,15 @@
     <!-- others plugins -->
     <script src="{{ asset('assets/js/plugins.js')}}"></script>
     <script src="{{ asset('assets/js/scripts.js')}}"></script>
+
+    <!-- Multi-step form -->
+    <script src="{{ asset('assets/js/msfScript.js')}}"></script>
+
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+    <script src='https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js'></script><script  src="./script.js"></script>
+
+
     @yield('scripts')
 
     

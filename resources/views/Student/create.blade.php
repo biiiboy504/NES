@@ -2,7 +2,6 @@
 
 @section('content')
 
-    <!-- Modal -info -->
 <div class="container">
 <div id="modal-3" class="modal" data-modal-effect="slide-top">
   <div class="modal-content">
@@ -16,23 +15,34 @@
 
 <form class="steps" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="">
   <ul id="progressbar">
-    <li class="active">Personal Information</li>
-    <li>Family Background</li>
-    <li>Educational Background</li>
+    <li class="active">User Information</li>
+    <li>Aquisition</li>
+    <li>Cultivation</li>
     <li>Cultivation2</li>
     <li>Retention</li>
   </ul>
 
-
-
-  <!-- USER INFORMATION FIELD SET --> 
-  <fieldset>
-    <h2 class="fs-title">Personal Information</h2>
-    <h2 class="fs-subtitle"></h2>
+<fieldset>
+    <h2 class="fs-title">Basic Information</h2>
+    <h3 class="fs-subtitle">We just need some basic information to begin your scoring</h3>
     <!-- Begin What's Your First Name Field -->
+        <div class="hs_firstname field hs-form-field">
+        
+          <label for="firstname-99a6d115-5e68-4355-a7d0-529207feb0b3_2983">What's your First Name? *</label>
+
+          <input id="firstname-99a6d115-5e68-4355-a7d0-529207feb0b3_2983" name="firstname" required="required" type="text" value="" placeholder="" data-rule-required="true" data-msg-required="Please include your first name" >
+          <span class="error1" style="display: none;">
+              <i class="error-log fa fa-exclamation-triangle"></i>
+          </span>
+        </div>
+    <!-- End What's Your First Name Field -->
+<div class="main-content-inner">
         <div class="row mt-5 mb-5">
             <div class="col-lg mx-auto">
                 <div class="card">
+                    <div class="card-header text-dark py-3" style="background-color: #66ff99; text-weight: 700;">
+                        <h4>Personal Information</h4>
+                    </div>
                     <form action="/create_student" method="POST">
                         @csrf
                         <div class="card-body">
@@ -121,55 +131,14 @@
                                 </div>  
                             </div>
                         </div>
+                        <div class="card-footer" style="background-color: #66ff99;" >
+                                <a href="/studentlist" class="btn btn-secondary">Back</a>
+                                <button type="submit" class="btn" style="float:right; background-color: #FF66CC;">Next</button>
+                        </div>
                 </form>
             </div>
-          <span class="error1" style="display: none;">
-              <i class="error-log fa fa-exclamation-triangle"></i>
-          </span>
-    <!-- End What's Your First Name Field -->
+        </div>
+</div>
 
-    <!-- End Total Number of Constituents in Your Database Field -->
-    <input type="button" data-page="1" name="next" class="next action-button" value="Next" />
-  </fieldset>
-
-
-
-  <!-- ACQUISITION FIELD SET -->  
-  <fieldset>
-    
-        <!-- End Calc of Total Number of Donors Fields -->
-    <input type="button" data-page="2" name="previous" class="previous action-button" value="Previous" />
-    <input type="button" data-page="2" name="next" class="next action-button" value="Next" />
-  </fieldset>
-
-
-
-  <!-- Cultivation FIELD SET -->  
-  <fieldset>
-    
-        <!-- End Average Gift Size Perchent Change Field -->
-    <input type="button" data-page="3" name="previous" class="previous action-button" value="Previous" />
-    <input type="button" data-page="3" name="next" class="next action-button" value="Next" />
-  </fieldset>
-
-
-
-  <!-- Cultivation2 FIELD SET --> 
-  <fieldset>
-    
-    <input type="button" data-page="4" name="previous" class="previous action-button" value="Previous" />
-    <input type="button" data-page="4" name="next" class="next action-button" value="Next" />
-
-  </fieldset>
-
-
-
-  <!-- RETENTION FIELD SET -->  
-  <fieldset>
-    
-    <input type="button" data-page="5" name="previous" class="previous action-button" value="Previous" />
-    <input id="submit" class="hs-button primary large action-button next" type="submit" value="Submit">
-
-</fieldset>
 
 @endsection()
