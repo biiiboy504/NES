@@ -55,7 +55,7 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                <img src="{{URL::to('assets/images/logo/nolitc.jpg')}}" alt="homepage" class="light-logo"width="100%">
+                <img src="{{URL::to('assets/images/logo/nolitc.png')}}" alt="homepage" class="light-logo"width="50%">
                     <a href="index.html"><h1 style="color:white;"></h1></a>
                 </div>
             </div>

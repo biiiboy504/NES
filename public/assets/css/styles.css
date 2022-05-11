@@ -110,7 +110,7 @@
     height: 100vh;
     width: 280px;
     overflow: hidden;
-    background: #66ff99;
+    background: #fff;
     box-shadow: 2px 0 32px rgba(245, 240, 240, 0.05);
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -140,8 +140,8 @@
 
 .sidebar-header {
     padding: 19px 32px 20px;
-    background: #66ff99;
-    border-bottom: 1px solid #66ff99;
+    background: #f5f8f6;
+    border-bottom: 1px solid #f5f8f6;
 }
 .sidebar-menu .logo{
     text-align: center;
@@ -157,7 +157,7 @@
 .metismenu li a {
     position: relative;
     display: block;
-    color: #053819;
+    color: #0a0a0a;
     font-size: 18px;
     text-transform: capitalize;
     padding: 15px 15px;
@@ -166,7 +166,7 @@
 }
 
 .metismenu li a i {
-    color: #053819;
+    color: #0a0a0a;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
@@ -208,7 +208,7 @@
 
 .metismenu >li:hover>a,
 .metismenu >li.active>a {
-    color: #fff;
+    color: rgb(17, 16, 16);
     background: #66ff99;
 }
 
@@ -260,7 +260,7 @@
 
 .mainheader-area {
     background: #fff;
-    border-bottom: 1px solid #f3f8fb;
+    border-bottom: 1px solid #f3fbf5;
     padding-left: 15px;
     position: relative;
     z-index: 99;
@@ -687,7 +687,7 @@ ul.breadcrumbs {
     display: block;
     font-size: 14px;
     font-weight: 400;
-    color: #7801ff;
+    color: #66ff99;
     letter-spacing: 0;
     margin-right: 16px;
     position: relative;
@@ -717,8 +717,8 @@ ul.breadcrumbs {
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    background: -webkit-linear-gradient(left, #09aa47 0%, #099c42 100%);
-    background: linear-gradient(to right, #09aa47 0%, #099c42 100%);
+    background: -webkit-linear-gradient(left, #66ff99 0%, #10bd52 100%);
+    background: linear-gradient(to right, #66ff99 0%, #10bd52 100%);
     padding: 17px 38px;
     position: relative;
 }
