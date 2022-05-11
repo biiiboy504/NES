@@ -30,8 +30,8 @@
     <h2 class="fs-title">Personal Information</h2>
     <h2 class="fs-subtitle"></h2>
     <!-- Begin What's Your First Name Field -->
-        <div class="row mt-5 mb-5">
-            <div class="col-lg mx-auto">
+        <div class="row">
+            <div class="col-lg">
                 <div class="card">
                     <form action="/create_student" method="POST">
                         @csrf
@@ -131,7 +131,7 @@
     <!-- End Total Number of Constituents in Your Database Field -->
     <input type="button" data-page="1" name="next" class="next action-button" value="Next" />
   </fieldset>
-
+    
 
 
   <!-- ACQUISITION FIELD SET -->  

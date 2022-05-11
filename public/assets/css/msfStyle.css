@@ -17,7 +17,6 @@ body {
   width: 100%;
   margin: 50px auto;
   position: relative;
-  
 }
 
 .steps fieldset {
@@ -26,13 +25,11 @@ body {
   border-radius: 3px;
   box-shadow: 0 17px 41px -21px rgb(0, 0, 0);
   padding: 20px 30px;
-  border-top: 10px solid #7B1FA2;
-  box-sizing: border-box;
-  width: 100%;
+  border-top: 9px solid #7B1FA2;
+  width: 80%;
   margin: 0 10%;
   
-  /*stacking fieldsets above each other*/ 
-  position: absolute;
+  /*stacking fieldsets above each other*/
 }
 /*Hide all except first fieldset*/
 .steps fieldset:not(:first-of-type) {
@@ -66,7 +63,7 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 14px;
-  font-wieght: 400;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transition: all 0.3s linear 0s;
@@ -163,6 +160,7 @@ body {
 .steps .explanation{
 display: block;
   clear: both;
+  width: 540px;
   background: #f2f2f2;
   position: relative;
   margin-left: -30px;
