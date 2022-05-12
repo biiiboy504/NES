@@ -11,13 +11,12 @@ body {
 #msform {
 	width: 100%;
 	margin: 50px auto;
-	
 	position: relative;
   
 }
 #msform fieldset {
 	background: white;
-	border-top: #66ff99 12px solid;
+	border-top: #66ff99 20px solid;
 	border-radius: 10px;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 	padding: 20px 30px;
@@ -47,22 +46,99 @@ body {
 #msform input:focus, #msform textarea:focus {
 	box-shadow: 0 0 0 1px #ff66cc;
 }
+#msform input:hover, #msform select:hover{
+	box-shadow: 0 0 0 1px #66ff99;
+}
+
+#msform select:focus {
+	box-shadow: 0 0 0 1px #ff66cc;
+}
 /*buttons*/
 #msform .action-button {
 	width: 100px;
-	background: #27AE60;
+	background: #ff66cc;
 	font-weight: bold;
-	color: white;
+	color: black;
 	border: 0 none;
-	border-radius: 1px;
+	border-radius: 4px;
 	cursor: pointer;
 	padding: 10px 5px;
 	margin: 10px 5px;
   
 }
 #msform .action-button:hover, #msform .action-button:focus {
-	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #ff66cc;
+  color: white;
 }
+
+/* checkbox */
+ul.ks-cboxtags {
+    list-style: none;
+    padding: 20px;
+}
+ul.ks-cboxtags li{
+  display: inline;
+}
+ul.ks-cboxtags li label{
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid rgba(139, 139, 139, .3);
+    color: #adadad;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li label {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+ul.ks-cboxtags li label::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "FontAwesome";
+    font-weight: 900;
+    font-size: 12px;
+    padding: 2px 6px 2px 2px;
+    content: "\f067";
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
+    content: "\f00c";
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+    border: 2px solid #1bdbf8;
+    background-color: #12bbd4;
+    color: #fff;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+  display: absolute;
+}
+ul.ks-cboxtags li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+ul.ks-cboxtags li input[type="checkbox"]:focus + label {
+  border: 2px solid #e9a1ff;
+}
+
 /*headings*/
 .fs-title {
   text-align: center;
