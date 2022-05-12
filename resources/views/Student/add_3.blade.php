@@ -66,7 +66,7 @@
                                         <label for="">Height (in):</label>
                                         <input type="text" name="height" class="form-control mb-3" placeholder="Height . . .">
                                     </div>
-                                    <div class="col-3">
+                                      <div class="col-3">
                                         <label for="">Weight (kg):</label>
                                         <input type="text" name="weight" class="form-control mb-3" placeholder="Weight . . .">
                                     </div>
