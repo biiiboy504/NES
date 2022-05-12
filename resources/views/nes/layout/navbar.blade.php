@@ -62,7 +62,7 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="/dashboard"><img src="{{ asset('assets/images/logo/nolitc.png')}}" height="100" alt=""></a>
+                    <a href="/dashboard"><img src="https://res.cloudinary.com/dm7xbiqid/image/upload/v1651808439/nes_logo/nolitc_fmkzmu.png" height="100" alt=""></a>
                 </div>
             </div>
             <div class="main-menu">
@@ -280,7 +280,8 @@
                             <h4 class="page-title pull-left">{{ Request::is('userlist') ? 'User List':''}}</h4>
                             <h4 class="page-title pull-left">{{ Request::is('logs') ? 'Logs':''}}</h4>
                             <h4 class="page-title pull-left">{{ Request::is('studentlist') ? 'Student List':''}}</h4>
-                            <h4 class="page-title pull-left">{{ Request::is('settings') ? 'Settings':''}}</h4>
+                            <h4 class="page-title pull-left">{{ Request::is('passwordsettings') ? 'Password Settings':''}}</h4>
+                            <h4 class="page-title pull-left">{{ Request::is('contactsettings') ? 'Contact Settings':''}}</h4>
         
                         </div>
                     </div>
@@ -290,7 +291,8 @@
                             <h4 class="user-name dropdown-toggle" data-toggle="dropdown">{{ session('name')}} <i class="fa fa-angle-down"></i></h4>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Message</a>
-                                <a class="dropdown-item" href="{{ route ('change-password')}}">Settings</a>
+                                <a class="dropdown-item" href="{{ route ('change-password')}}">Password Settings</a>
+                                <a class="dropdown-item" href="{{ route ('change-contact')}}">Contact Settings</a>
                                 <a class="dropdown-item" href="{{ route('nes.logout')}}">Log Out</a>
                             </div>
                         </div>
