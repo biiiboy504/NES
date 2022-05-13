@@ -5,8 +5,8 @@
         <div class="row mt-5 mb-5">
             <div class="col-lg mx-auto">
                 <div class="card">
-                    <div class="card-header" style="background-color: #2B2B68;">
-                        <h4 class="text-light">Educational Background</h4>
+                    <div class="card-header" style="background-color: white;">
+                        <h4>Educational Background</h4>
                     </div>
 
                     @if(Session::get('success'))
@@ -95,7 +95,7 @@
                                 </div>  
                             </div>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer" style="background-color: white;">
                                 <button class="btn btn-secondary" onclick="goBack()">Back</button>
                                 <!-- <a href="{{ url()->previous() }}" class="btn btn-secondary">Back</a> -->
                                 <button type="submit" class="btn btn-success" style="float:right;">Submit</button>
