@@ -5,7 +5,7 @@
         <div class="row mt-5 mb-5">
             <div class="col-lg mx-auto">
                 <div class="card">
-                    <div class="card-header text-dark py-3" style="background-color: #66ff99; text-weight: 700;">
+                    <div class="card-header text-dark py-3" style="background-color: white;">
                         <h4>Personal Information</h4>
                     </div>
 
@@ -100,9 +100,10 @@
                                 </div>  
                             </div>
                         </div>
-                        <div class="card-footer" style="background-color: #66ff99;" >
+                        <div class="card-footer" style="background-color: white;" >
                                 <a href="/studentlist" class="btn btn-secondary">Back</a>
-                                <button type="submit" class="btn" style="float:right; background-color: #FF66CC;">Next</button>
+                                <button type="submit" class="btn btn-success" style="float:right;">Next</button>
+                                
                         </div>
                 </form>
             </div>
