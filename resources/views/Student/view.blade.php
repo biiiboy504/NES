@@ -5,8 +5,8 @@
         <div class="row mt-5 mb-5">
             <div class="col-lg mx-auto">
                 <div class="card">
-                    <div class="card-header" style="background-color: #8A2BE2;">
-                        <h4 class="text-light">View Student Personal Information</h4>
+                    <div class="card-header" style="background-color: white;">
+                        <h4>View Student Personal Information</h4>
                     </div>
 
                     @if(Session::get('success'))
@@ -21,7 +21,7 @@
                         </div>
                     @endif
 
-                    <form action="/read_1" method="POST">
+                    <form action="/view/{{$student_data->id}}" method="GET">
                         @csrf
                         <div class="card-body">
                         <div>
@@ -103,9 +103,9 @@
                                 </div>  
                             </div>
                         </div>
-                        <div class="card-footer cfooter">
+                        <div class="card-footer" style="background-color: white;">
                                 <a href="/studentlist" class="btn btn-secondary">Back</a>
-                                <button type="submit" class="btn btn-success" style="float:right;">Next</button>
+                                <a href="/view_2/{{$student_data->id}}" class="btn btn-success" style="float:right;">Next</a>
                         </div>
                 </form>
             </div>

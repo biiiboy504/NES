@@ -5,8 +5,8 @@
         <div class="row mt-5 mb-5">
             <div class="col-lg mx-auto">
                 <div class="card">
-                    <div class="card-header" style="background-color: #8A2BE2;">
-                        <h4 class="text-light">Update Student Personal Information</h4>
+                    <div class="card-header" style="background-color: #ffffff;">
+                        <h4>Update Student Personal Information</h4>
                     </div>
 
                     @if(Session::get('success'))
@@ -103,7 +103,7 @@
                                 </div>  
                             </div>
                         </div>
-                        <div class="card-footer cfooter">
+                        <div class="card-footer" style="background-color: #ffffff;">
                                 <a href="/studentlist" class="btn btn-secondary">Back</a>
                                 <button type="submit" class="btn btn-success" style="float:right;">Next</button>
                         </div>

@@ -154,11 +154,4 @@ class StudentController extends Controller
 
         return view('Student.view', compact('student_data'));
     }
-
-    public function read_2($id)
-    {
-        $student_data = Student::find($id);
-
-        return view('Student.view_2', compact('student_data'));
-    }
 }
