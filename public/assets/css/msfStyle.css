@@ -10,6 +10,7 @@ body {
 /*form styles*/
 #msform {
 	width: 100%;
+	min-height: 1050px;
 	margin: 50px auto;
 	position: relative;
   
