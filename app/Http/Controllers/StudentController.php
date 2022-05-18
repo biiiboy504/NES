@@ -165,7 +165,7 @@ class StudentController extends Controller
 
         $hobbies = "";
         foreach($request->hobbies as $key ){
-            $hobbies .= $key .", ";
+            $hobbies .= $key.", ";
 
         }
         $hobby = new StudentHobbies;
@@ -174,15 +174,17 @@ class StudentController extends Controller
         $hobby->save();
 
         $health = "";
-        foreach($request->health as $key){
-            $health .= $key.", ";
-        }
+        if($request->filled('health')){ 
+            foreach($request->health as $key){
+                $health .= $key .", ";
+            }
+
         $complication = new StudentHealthComplication;
         $complication->handicap = rtrim($health, ", ");
         $complication->accidents_or_sickness = $request->other_complications;
         $complication->students_id = $studentId;
         $complication->save();
-
+        }
 
         foreach($request->position as $key => $value){
             $position = $request->position[$key];
@@ -208,24 +210,25 @@ class StudentController extends Controller
         
 
         $careerChoice = "";
-        foreach($request->choice as $key){
-            $careerChoice .= $key .", ";
-        }
-        
-        $future = new FuturePlans;
-        $future->course_choice = rtrim($careerChoice, ", ");
-        $future->interested_occupations = $request->f_interest;
+        if($request->filled('careerChoice')){ 
+            foreach($request->choice as $key){
+                $careerChoice .= $key .", ";
+            }
+            
+            $future = new FuturePlans;
+            $future->course_choice = rtrim($careerChoice, ", ");
+            $future->interested_occupations = $request->f_interest;
 
-        if($request->filled('f_offense')){
-            $future->crime = "Yes";
-            $future->offense = $request->f_offense;
-        }
-        else{
-            $future->crime = "No";
-        }
+            if($request->filled('f_offense')){
+                $future->crime = "Yes";
+                $future->offense = $request->f_offense;
+            }
+            else{
+                $future->crime = "No";
+            }
         $future->students_id = $studentId;
         $future->save();
-
+        }
 
         return Redirect('studentlist')->with('flash_message', 'Student Successfully Added!');
     }
