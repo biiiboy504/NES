@@ -44,9 +44,12 @@
             <div class="login-box ptb--50">
                 <form action="{{ route('nes.check')}}" method="post">
                     @csrf
-                    <div class="login-form-head" style="background:#66ff99;">
-             
-                        <h4>Sign In</h4>  
+                    <div class="login-form-head ptb-1" style="background:#66ff99;">
+                        <div class="row justify-content-center">
+                            <img src="https://res.cloudinary.com/dm7xbiqid/image/upload/v1651808439/nes_logo/nolitc_fmkzmu.png" width="50" alt="">
+                            <h4 class="align-self-center">Sign In</h4> 
+                        </div>
+                        
                     </div>
                     @if(Session::get('fail'))
                         <div class="alert alert-danger" role="alert">
