@@ -15,6 +15,10 @@ class CreateStudentHealthComplicationsTable extends Migration
     {
         Schema::create('student_health_complications', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('students_id');
+            $table->foreign('students_id')->references('id')->on('students')->onDelete('cascade');
+            $table->string('handicap')->nullable();
+            $table->string('accidents_or_sickness')->nullable();
             $table->timestamps();
         });
     }

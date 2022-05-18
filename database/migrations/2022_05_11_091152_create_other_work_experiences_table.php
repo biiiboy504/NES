@@ -15,6 +15,9 @@ class CreateOtherWorkExperiencesTable extends Migration
     {
         Schema::create('other_work_experiences', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('students_id');
+            $table->foreign('students_id')->references('id')->on('students')->onDelete('cascade');
+            $table->string('other_work_experience')->nullable();
             $table->timestamps();
         });
     }

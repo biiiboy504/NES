@@ -15,6 +15,9 @@ class CreateStudentHobbiesTable extends Migration
     {
         Schema::create('student_hobbies', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('students_id');
+            $table->foreign('students_id')->references('id')->on('students')->onDelete('cascade');
+            $table->string('hobbies')->nullable();
             $table->timestamps();
         });
     }

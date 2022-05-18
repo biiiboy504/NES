@@ -5,8 +5,8 @@
         <div class="row mt-5 mb-5">
             <div class="col-lg mx-auto">
                 <div class="card">
-                    <div class="card-header" style="background-color: #2B2B68;">
-                        <h4 class="text-light">Update Student Personal Information</h4>
+                    <div class="card-header" style="background-color: #ffffff;">
+                        <h4>Update Student Personal Information</h4>
                     </div>
 
                     @if(Session::get('success'))
@@ -19,7 +19,7 @@
                         <div class="alert alert-danger" role="alert">
                             {{Session::get('fail')}}
                         </div>
-                    @endif
+                    @endif 
 
                     <form action="/edit_student/{{$student_data->id}}" method="POST">
                         @csrf
@@ -103,7 +103,7 @@
                                 </div>  
                             </div>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer" style="background-color: #ffffff;">
                                 <a href="/studentlist" class="btn btn-secondary">Back</a>
                                 <button type="submit" class="btn btn-success" style="float:right;">Next</button>
                         </div>

@@ -15,6 +15,12 @@ class CreateFuturePlansTable extends Migration
     {
         Schema::create('future_plans', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('students_id');
+            $table->foreign('students_id')->references('id')->on('students')->onDelete('cascade');
+            $table->string('course_choice')->nullable();
+            $table->string('interested_occupations')->nullable();
+            $table->string('crime')->nullable();
+            $table->string('offense')->nullable();
             $table->timestamps();
         });
     }

@@ -15,6 +15,11 @@ class CreateCommunityOrganizationsTable extends Migration
     {
         Schema::create('community_organizations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('students_id');
+            $table->foreign('students_id')->references('id')->on('students')->onDelete('cascade');
+            $table->string('organization_name')->nullable();
+            $table->string('possition_held')->nullable();
+            $table->date('date')->nullable();
             $table->timestamps();
         });
     }
