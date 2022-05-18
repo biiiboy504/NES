@@ -5,19 +5,20 @@
 <!-- multistep form -->
 <form id="msform">
   <!-- progressbar -->
+  <div>
   <ul id="progressbar">
-    <li class="active">Personal Information</li>
-    <li>Family Background</li>
-    <li>In case of Emergency</li>
-    <li>Educational Background</li>
-    <li>Activities</li>
-    <li>Hobbies</li>
-    <li>Health Condition</li>
-    <li>Work Experiences</li>
-    <li>Future Plans</li>
-    <li>Review</li>
+    <li class="active"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
   </ul>
-
+</div>
   <!------------------------ START of Personal Information --------------------->
 
   <fieldset>
@@ -122,72 +123,58 @@
         <div class="row pt-2 px-4 mb-2">
             <div class="col-4">
                 <label for=""><b>Father's Name:</b></label>
-                    <div class="alert-danger pl-2">{{ $errors->first('first_name') }}</div>
                     <input type="text" name="f_name" class="form-control mb-4" placeholder="Father's Name . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Occupation:</b></label>
-                        <div class="alert-danger pl-2">{{ $errors->first('middle_name') }}</div>
                         <input type="text" name="f_occupation" class="form-control mb-4" placeholder="Father's Occupation . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Ave. Monthly Income:</b></label>
-                        <div class="alert-danger pl-2">{{ $errors->first('last_name') }}</div>
                         <input type="text" name="f_income" class="form-control mb-4" placeholder="Father's Monthly Income . . .">
                     </div>
                     <div class="col-4">
                     <label for=""><b>Mother's Name:</b></label>
-                    <div class="alert-danger pl-2">{{ $errors->first('first_name') }}</div>
                     <input type="text" name="m_name" class="form-control mb-4" placeholder="Mother's Name . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Occupation:</b></label>
-                        <div class="alert-danger pl-2">{{ $errors->first('middle_name') }}</div>
                         <input type="text" name="m_occupation" class="form-control mb-4" placeholder="Mother's Occupation . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Ave. Monthly Income:</b></label>
-                        <div class="alert-danger pl-2">{{ $errors->first('last_name') }}</div>
                         <input type="text" name="m_income" class="form-control mb-4" placeholder="Mother's Monthly Income . . .">
                     </div>
                     <div class="col-4">
                     <label for=""><b>Guardian's Name:</b></label>
-                    <div class="alert-danger pl-2">{{ $errors->first('first_name') }}</div>
                     <input type="text" name="g_name" class="form-control mb-4" placeholder="Guardian's Name . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Occupation:</b></label>
-                        <div class="alert-danger pl-2">{{ $errors->first('middle_name') }}</div>
                         <input type="text" name="g_occupation" class="form-control mb-4" placeholder="Guardian's Occupation . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Ave. Monthly Income:</b></label>
-                        <div class="alert-danger pl-2">{{ $errors->first('last_name') }}</div>
                         <input type="text" name="g_income" class="form-control mb-4" placeholder="Guardian's Monthly Income . . .">
                     </div>
                     <div class="col-4">
                     <label for=""><b>Spouse Name:</b></label>
-                    <div class="alert-danger pl-2">{{ $errors->first('first_name') }}</div>
                     <input type="text" name="s_name" class="form-control mb-4" placeholder="Spouse Name. . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Occupation:</b></label>
-                        <div class="alert-danger pl-2">{{ $errors->first('middle_name') }}</div>
                         <input type="text" name="s_occupation" class="form-control mb-4" placeholder="Spouse Occupation . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Ave. Monthly Income:</b></label>
-                        <div class="alert-danger pl-2">{{ $errors->first('last_name') }}</div>
                         <input type="text" name="s_income" class="form-control mb-4" placeholder="Spouse Monthly Income . . .">
                     </div>
                     <div class="col-12">
                         <label for=""><b>Address of Parents/Guardian/Spouse:</b></label>
-                        <div class="alert-danger pl-2">{{ $errors->first('address') }}</div>
                         <input type="text" name="f_address" class="form-control mb-4" placeholder="Complete Address . . .">
                     </div>
                     <div class="col-6">
                         <label for=""><b>Contact Number (Mobile)</b></label>
-                        <div class="alert-danger pl-2">{{ $errors->first('contact_num') }}</div>
                         <input type="text" name="f_contact" class="form-control mb-4" placeholder="Mobile Number . . .">
                     </div>
                     <div class="col-6">
@@ -215,22 +202,18 @@
         <div class="row">
         <div class="col-12">
                 <label for="" style="font-size: 16px;" class="content-cent"><b>IN CASE OF EMERGENCY, PLEASE CONTACT:</b></label>
-                <div class="alert-danger pl-2">{{ $errors->first('address') }}</div>
                 <input type="text" name="e_name" class="form-control mb-4" placeholder="Name. . .">
             </div>
             <div class="col-6">
                 <label for=""><b>Address:</b></label>
-                <div class="alert-danger pl-2">{{ $errors->first('address') }}</div>
                 <input type="text" name="e_address" class="form-control mb-4" placeholder="Address. . .">
             </div>
             <div class="col-6">
                 <label for=""><b>Contact No.:</b></label>
-                <div class="alert-danger pl-2">{{ $errors->first('address') }}</div>
                 <input type="text" name="e_contact" class="form-control mb-4" placeholder="Contact Number . . .">
             </div>
             <div class="col-12">
                 <label for=""><b>Email Address:</b></label>
-                <div class="alert-danger pl-2">{{ $errors->first('address') }}</div>
                 <input type="email" name="e_email" class="form-control mb-4" placeholder="Email Address. . .">
             </div>
         </div>
@@ -446,7 +429,6 @@
                     </ul>
                         <div class="col-12 mt-3">
                             <label for=""><b>Others (Please Specify):</b></label>
-                            <div class="alert-danger pl-2">{{ $errors->first('address') }}</div>
                             <input type="text" name="o_hobbies" class="form-control mb-4" placeholder="Other Hobbies . . .">
                         </div>
                 </div>
@@ -483,7 +465,6 @@
             </div>
             <div class="col-12 mt-3">
                 <label for=""><b>Do you have any serious accident or sickness?:</b></label>
-                <div class="alert-danger pl-2">{{ $errors->first('address') }}</div>
                 <input type="text" name="o_sickness" class="form-control mb-4" placeholder="">
             </div>
         </div>
@@ -579,7 +560,6 @@
                 </div>
                 <div class="col-12 mt-3">
                             <label for=""><b>Others WORK EXPERIENCE:</b></label>
-                            <div class="alert-danger pl-2">{{ $errors->first('address') }}</div>
                             <input type="text" name="o_work" class="form-control mb-4" placeholder="Other Work Experience . . .">
                         </div>
             </div>
@@ -614,8 +594,8 @@
             <div class="col-12 mt-3">
                 <label for=""><b>Have you ever been convicted of any crime or violation of any law, degree, ordinance or regulations by any court or tribunal?:</b></label>
                 <ul class="ks-cboxtags">
-                        <li><input type="checkbox" id="f_checkboxFour" value="My Own"><label for="f_checkboxFour">YES </label></li>
-                        <li><input type="checkbox" id="f_checkboxFive" value="My Parents"><label for="f_checkboxFive">NO</label></li>
+                        <li><input type="checkbox" id="f_checkboxFour" value="Yes"><label for="f_checkboxFour">YES </label></li>
+                        <li><input type="checkbox" id="f_checkboxFive" value="No"><label for="f_checkboxFive">NO</label></li>
                 </ul>
             </div>
             <div class="col-12 mt-3">
