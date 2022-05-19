@@ -56,16 +56,16 @@
                         <label for="">Civil Status:</label>
                         <select class="form-control form-control-lg mb-3" value="{{$data->civil_status}}" name="civil_status">
                         <option value="">---Select Civil Status---</option>
-                        <option {{$student_data->civil_status == 'Married' ? 'selected': ' '}}>Married</option>
-                        <option {{$student_data->civil_status == 'Single' ? 'selected': ' '}}>Single</option>
+                        <option {{$data->civil_status == 'Married' ? 'selected': ' '}}>Married</option>
+                        <option {{$data->civil_status == 'Single' ? 'selected': ' '}}>Single</option>
                         </select>
                     </div>
                     <div class="col-3">
                         <label for=""><b>Gender:</b></label>
                         <select class="form-control form-control-lg mb-4" value="{{$data->gender}}" name="gender">
                         <option value="">-Select Gender-</option>
-                        <option {{$student_data->gender == 'Male' ? 'selected': ' '}}>Male</option>
-                        <option {{$student_data->gender == 'Female' ? 'selected': ' '}}>Female</option>
+                        <option {{$data->gender == 'Male' ? 'selected': ' '}}>Male</option>
+                        <option {{$data->gender == 'Female' ? 'selected': ' '}}>Female</option>
                         </select>  
                     </div>
                     <div class="col-3">
@@ -192,19 +192,19 @@
         <div class="row">
         <div class="col-12">
                 <label for="" style="font-size: 16px;" class="content-cent"><b>IN CASE OF EMERGENCY, PLEASE CONTACT:</b></label>
-                <input type="text" name="emergency_name" value="{{$data->e_name}}" class="form-control mb-4" placeholder="Name. . .">
+                <input type="text" name="emergency_name" value="" class="form-control mb-4" placeholder="Name. . .">
             </div>
             <div class="col-6">
                 <label for=""><b>Address:</b></label>
-                <input type="text" name="emergency_address" value="{{$data->e_address}}" class="form-control mb-4" placeholder="Address. . .">
+                <input type="text" name="emergency_address" value="" class="form-control mb-4" placeholder="Address. . .">
             </div>
             <div class="col-6">
                 <label for=""><b>Contact No.:</b></label>
-                <input type="text" name="emergency_contact" value="{{$data->e_contact}}" class="form-control mb-4" placeholder="Contact Number . . .">
+                <input type="text" name="emergency_contact" value="" class="form-control mb-4" placeholder="Contact Number . . .">
             </div>
             <div class="col-12">
                 <label for=""><b>Email Address:</b></label>
-                <input type="email" name="emergency_email" value="{{$data->e_email}}" class="form-control mb-4" placeholder="Email Address. . .">
+                <input type="email" name="emergency_email" value="" class="form-control mb-4" placeholder="Email Address. . .">
             </div>
         </div>
         <input style="float:right;" type="button" name="next" class="next action-button" value="Next"/>
@@ -327,10 +327,10 @@
                     <input type="text" class="form-control" id="inputName5"  name="nameOfOrganization[]" >
                 </td>
                 <td>
-                    <input type="text" class="form-control" id="inputName5" value= "{{ $data->positionHeld }}" name="positionHeld[]">
+                    <input type="text" class="form-control" id="inputName5" value= "" name="positionHeld[]">
                 </td>
                 <td>
-                    <input type="date" class="form-control" id="inputName5" value= "{{ $data->activityDate }}" name="activityDate[]">
+                    <input type="date" class="form-control" id="inputName5" value= "" name="activityDate[]">
                 </td>
                 </tr>
             </tbody>

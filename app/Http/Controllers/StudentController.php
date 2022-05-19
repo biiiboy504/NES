@@ -306,10 +306,11 @@ class StudentController extends Controller
         ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')
         ->join('community_organizations', 'students.id', '=', 'community_organizations.students_id')
         ->join('student_hobbies', 'students.id', '=', 'student_hobbies.students_id')
-        ->select('students  .*', 'family_backgrounds.*', 'educ_backgrounds.*', 'community_organizations.*', 'student_hobbies.*')
-        ->get();
+        ->select('students.*', 'family_backgrounds.*', 'educ_backgrounds.*', 'community_organizations.*', 'student_hobbies.*')
+        ->where('students.id','=',$id)->first();
+        // ->get();
 
-        $data = Student::find($id);
+        // $data = Student::find($id);
 
         return view('Student.update_student', compact('data'));
     }
