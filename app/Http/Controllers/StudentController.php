@@ -301,9 +301,17 @@ class StudentController extends Controller
 
     public function view_student($id)
     {
-        $student_data = Student::find($id);
+        $data = DB::table('students')
+        ->join('family_backgrounds', 'students.id', '=', 'family_backgrounds.students_id')
+        ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')
+        ->join('community_organizations', 'students.id', '=', 'community_organizations.students_id')
+        ->join('student_hobbies', 'students.id', '=', 'student_hobbies.students_id')
+        ->select('students  .*', 'family_backgrounds.*', 'educ_backgrounds.*', 'community_organizations.*', 'student_hobbies.*')
+        ->get();
 
-        return view('Student.update_student', compact('student_data'));
+        $data = Student::find($id);
+
+        return view('Student.update_student', compact('data'));
     }
 
     public function read_1($id)
