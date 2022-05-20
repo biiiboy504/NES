@@ -46,21 +46,21 @@ body {
 	font-size: 13px;
 }
 #msform input:focus, #msform textarea:focus {
-	box-shadow: 0 0 0 1px #ff66cc;
+	box-shadow: 0 0 0 1px #66ff99;
 }
 #msform input:hover, #msform select:hover, #msform checkbox:hover{
 	box-shadow: 0 0 0 1px #66ff99;
 }
 
 #msform select:focus {
-	box-shadow: 0 0 0 1px #ff66cc;
+	box-shadow: 0 0 0 1px #66ff99;
 }
 /*buttons*/
 #msform .action-button {
 	width: 100px;
-	background: #ff66cc;
+	background: #097a3c ;
 	font-weight: bold;
-	color: black;
+	color: #ffff;
 	border: 0 none;
 	border-radius: 4px;
 	cursor: pointer;
@@ -69,7 +69,7 @@ body {
   
 }
 #msform .action-button:hover, #msform .action-button:focus {
-	box-shadow: 0 0 0 2px white, 0 0 0 3px #ff66cc;
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #097a3c ;
   	color: white;
 }
 
