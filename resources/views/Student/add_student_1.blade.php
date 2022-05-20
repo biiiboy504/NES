@@ -8,7 +8,7 @@
   <!-- progressbar -->
   <div>
   <ul id="progressbar">
-    <li></li>
+    <li class="active"></li>
     <li></li>
     <li></li>
     <li></li>
@@ -125,76 +125,76 @@
             <div class="col-4">
                 <label for=""><b>Father's Name:</b></label>
                     <div class="alert-danger pl-2"></div>
-                    <input type="text" name="father_name" class="form-control mb-4" placeholder="Father's Name . . .">
+                    <input type="text" name="f_name" class="form-control mb-4" placeholder="Father's Name . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Occupation:</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <input type="text" name="father_occupation" class="form-control mb-4" placeholder="Father's Occupation . . .">
+                        <input type="text" name="f_occupation" class="form-control mb-4" placeholder="Father's Occupation . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Ave. Monthly Income:</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <input type="text" name="father_income" class="form-control mb-4" placeholder="Father's Monthly Income . . .">
+                        <input type="text" name="f_income" class="form-control mb-4" placeholder="Father's Monthly Income . . .">
                     </div>
                     <div class="col-4">
                     <label for=""><b>Mother's Name:</b></label>
                     <div class="alert-danger pl-2"></div>
-                    <input type="text" name="mother_name" class="form-control mb-4" placeholder="Mother's Name . . .">
+                    <input type="text" name="m_name" class="form-control mb-4" placeholder="Mother's Name . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Occupation:</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <input type="text" name="mother_occupation" class="form-control mb-4" placeholder="Mother's Occupation . . .">
+                        <input type="text" name="m_occupation" class="form-control mb-4" placeholder="Mother's Occupation . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Ave. Monthly Income:</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <input type="text" name="mother_income" class="form-control mb-4" placeholder="Mother's Monthly Income . . .">
+                        <input type="text" name="m_income" class="form-control mb-4" placeholder="Mother's Monthly Income . . .">
                     </div>
                     <div class="col-4">
                     <label for=""><b>Guardian's Name:</b></label>
                     <div class="alert-danger pl-2"></div>
-                    <input type="text" name="guardian_name" class="form-control mb-4" placeholder="Guardian's Name . . .">
+                    <input type="text" name="g_name" class="form-control mb-4" placeholder="Guardian's Name . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Occupation:</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <input type="text" name="guardian_occupation" class="form-control mb-4" placeholder="Guardian's Occupation . . .">
+                        <input type="text" name="g_occupation" class="form-control mb-4" placeholder="Guardian's Occupation . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Ave. Monthly Income:</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <input type="text" name="guardian_income" class="form-control mb-4" placeholder="Guardian's Monthly Income . . .">
+                        <input type="text" name="g_income" class="form-control mb-4" placeholder="Guardian's Monthly Income . . .">
                     </div>
                     <div class="col-4">
                     <label for=""><b>Spouse Name:</b></label>
                     <div class="alert-danger pl-2"></div>
-                    <input type="text" name="spouse_name" class="form-control mb-4" placeholder="Spouse Name. . .">
+                    <input type="text" name="s_name" class="form-control mb-4" placeholder="Spouse Name. . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Occupation:</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <input type="text" name="spouse_occupation" class="form-control mb-4" placeholder="Spouse Occupation . . .">
+                        <input type="text" name="s_occupation" class="form-control mb-4" placeholder="Spouse Occupation . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Ave. Monthly Income:</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <input type="text" name="spouse_income" class="form-control mb-4" placeholder="Spouse Monthly Income . . .">
+                        <input type="text" name="s_income" class="form-control mb-4" placeholder="Spouse Monthly Income . . .">
                     </div>
                     <div class="col-12">
                         <label for=""><b>Address of Parents/Guardian/Spouse:</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <input type="text" name="guardian_address" class="form-control mb-4" placeholder="Complete Address . . .">
+                        <input type="text" name="f_address" class="form-control mb-4" placeholder="Complete Address . . .">
                     </div>
                     <div class="col-6">
                         <label for=""><b>Contact Number (Mobile)</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <input type="text" name="contact_no" class="form-control mb-4" placeholder="Mobile Number . . .">
+                        <input type="text" name="f_contact" class="form-control mb-4" placeholder="Mobile Number . . .">
                     </div>
                     <div class="col-6">
                         <label for=""><b>Landline:</b></label>
-                        <input type="text" name="landline" class="form-control mb-4" placeholder="Landline Number . . .">
+                        <input type="text" name="f_landline" class="form-control mb-4" placeholder="Landline Number . . .">
                     </div>
                 </div>
                 <input style="float:right;" type="button" name="next" class="next action-button" value="Next"/>

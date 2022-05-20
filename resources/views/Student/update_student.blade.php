@@ -113,63 +113,63 @@
         <div class="row pt-2 px-4 mb-2">
             <div class="col-4">
                 <label for=""><b>Father's Name:</b></label>
-                    <input type="text" name="father_name" value="{{$data->father_name}}" class="form-control mb-4" placeholder="Father's Name . . .">
+                    <input type="text" name="f_name" value="{{$data->father_name}}" class="form-control mb-4" placeholder="Father's Name . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Occupation:</b></label>
-                        <input type="text" name="father_occupation" value="{{$data->father_occupation}}" class="form-control mb-4" placeholder="Father's Occupation . . .">
+                        <input type="text" name="f_occupation" value="{{$data->father_occupation}}" class="form-control mb-4" placeholder="Father's Occupation . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Ave. Monthly Income:</b></label>
-                        <input type="text" name="father_income" value="{{$data->father_income}}" class="form-control mb-4" placeholder="Father's Monthly Income . . .">
+                        <input type="text" name="f_income" value="{{$data->father_income}}" class="form-control mb-4" placeholder="Father's Monthly Income . . .">
                     </div>
                     <div class="col-4">
                     <label for=""><b>Mother's Name:</b></label>
-                    <input type="text" name="mother_name" value="{{$data->mother_name}}" class="form-control mb-4" placeholder="Mother's Name . . .">
+                    <input type="text" name="m_name" value="{{$data->mother_name}}" class="form-control mb-4" placeholder="Mother's Name . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Occupation:</b></label>
-                        <input type="text" name="mother_occupation" value="{{$data->mother_occupation}}" class="form-control mb-4" placeholder="Mother's Occupation . . .">
+                        <input type="text" name="m_occupation" value="{{$data->mother_occupation}}" class="form-control mb-4" placeholder="Mother's Occupation . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Ave. Monthly Income:</b></label>
-                        <input type="text" name="mother_income" value="{{$data->mother_income}}" class="form-control mb-4" placeholder="Mother's Monthly Income . . .">
+                        <input type="text" name="m_income" value="{{$data->mother_income}}" class="form-control mb-4" placeholder="Mother's Monthly Income . . .">
                     </div>
                     <div class="col-4">
                     <label for=""><b>Guardian's Name:</b></label>
-                    <input type="text" name="guardian_name" value="{{$data->guardian_name}}" class="form-control mb-4" placeholder="Guardian's Name . . .">
+                    <input type="text" name="g_name" value="{{$data->guardian_name}}" class="form-control mb-4" placeholder="Guardian's Name . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Occupation:</b></label>
-                        <input type="text" name="guardian_occupation" value="{{$data->guardian_occupation}}" class="form-control mb-4" placeholder="Guardian's Occupation . . .">
+                        <input type="text" name="g_occupation" value="{{$data->guardian_occupation}}" class="form-control mb-4" placeholder="Guardian's Occupation . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Ave. Monthly Income:</b></label>
-                        <input type="text" name="guardian_income" value="{{$data->guardian_income}}" class="form-control mb-4" placeholder="Guardian's Monthly Income . . .">
+                        <input type="text" name="g_income" value="{{$data->guardian_income}}" class="form-control mb-4" placeholder="Guardian's Monthly Income . . .">
                     </div>
                     <div class="col-4">
                     <label for=""><b>Spouse Name:</b></label>
-                    <input type="text" name="spouse_name" value="{{$data->spouse_name}}" class="form-control mb-4" placeholder="Spouse Name. . .">
+                    <input type="text" name="s_name" value="{{$data->spouse_name}}" class="form-control mb-4" placeholder="Spouse Name. . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Occupation:</b></label>
-                        <input type="text" name="spouse_occupation" value="{{$data->spouse_occupation}}" class="form-control mb-4" placeholder="Spouse Occupation . . .">
+                        <input type="text" name="s_occupation" value="{{$data->spouse_occupation}}" class="form-control mb-4" placeholder="Spouse Occupation . . .">
                     </div>
                     <div class="col-4">
                         <label for=""><b>Ave. Monthly Income:</b></label>
-                        <input type="text" name="spouse_income" value="{{$data->spouse_income}}" class="form-control mb-4" placeholder="Spouse Monthly Income . . .">
+                        <input type="text" name="s_income" value="{{$data->spouse_income}}" class="form-control mb-4" placeholder="Spouse Monthly Income . . .">
                     </div>
                     <div class="col-12">
                         <label for=""><b>Address of Parents/Guardian/Spouse:</b></label>
-                        <input type="text" name="guardian_address" value="{{$data->guardian_address}}" class="form-control mb-4" placeholder="Complete Address . . .">
+                        <input type="text" name="f_address" value="{{$data->guardian_address}}" class="form-control mb-4" placeholder="Complete Address . . .">
                     </div>
                     <div class="col-6">
                         <label for=""><b>Contact Number (Mobile)</b></label>
-                        <input type="text" name="mobile_no" value="{{$data->mobile_no}}" class="form-control mb-4" placeholder="Mobile Number . . .">
+                        <input type="text" name="f_contact" value="{{$data->mobile_no}}" class="form-control mb-4" placeholder="Mobile Number . . .">
                     </div>
                     <div class="col-6">
                         <label for=""><b>Landline:</b></label>
-                        <input type="text" name="landline" value="{{$data->landline}}" class="form-control mb-4" placeholder="Landline Number . . .">
+                        <input type="text" name="f_landline" value="{{$data->landline}}" class="form-control mb-4" placeholder="Landline Number . . .">
                     </div>
                 </div>
                 <input style="float:right;" type="button" name="next" class="next action-button" value="Next"/>
@@ -192,19 +192,19 @@
         <div class="row">
         <div class="col-12">
                 <label for="" style="font-size: 16px;" class="content-cent"><b>IN CASE OF EMERGENCY, PLEASE CONTACT:</b></label>
-                <input type="text" name="emergency_name" value="" class="form-control mb-4" placeholder="Name. . .">
+                <input type="text" name="e_name" value="{{$data->emergency_name}}" class="form-control mb-4" placeholder="Name. . .">
             </div>
             <div class="col-6">
                 <label for=""><b>Address:</b></label>
-                <input type="text" name="emergency_address" value="" class="form-control mb-4" placeholder="Address. . .">
+                <input type="text" name="e_address" value="{{$data->emergency_address}}" class="form-control mb-4" placeholder="Address. . .">
             </div>
             <div class="col-6">
                 <label for=""><b>Contact No.:</b></label>
-                <input type="text" name="emergency_contact" value="" class="form-control mb-4" placeholder="Contact Number . . .">
+                <input type="text" name="e_contact" value="{{$data->emergency_contact}}" class="form-control mb-4" placeholder="Contact Number . . .">
             </div>
             <div class="col-12">
                 <label for=""><b>Email Address:</b></label>
-                <input type="email" name="emergency_email" value="" class="form-control mb-4" placeholder="Email Address. . .">
+                <input type="email" name="e_email" value="{{$data->emergency_email}}" class="form-control mb-4" placeholder="Email Address. . .">
             </div>
         </div>
         <input style="float:right;" type="button" name="next" class="next action-button" value="Next"/>
@@ -324,13 +324,13 @@
             <tbody id ="organizationTable">
                 <tr>
                 <td>
-                    <input type="text" class="form-control" id="inputName5"  name="nameOfOrganization[]" >
+                    <input type="text" class="form-control" id="inputName5" value= "{{$data->organization_name}}" name="nameOfOrganization[]" >
                 </td>
                 <td>
-                    <input type="text" class="form-control" id="inputName5" value= "" name="positionHeld[]">
+                    <input type="text" class="form-control" id="inputName5" value= "{{$data->possition_held}}" name="positionHeld[]">
                 </td>
                 <td>
-                    <input type="date" class="form-control" id="inputName5" value= "" name="activityDate[]">
+                    <input type="date" class="form-control" id="inputName5" value= "{{$data->date}}" name="activityDate[]">
                 </td>
                 </tr>
             </tbody>
@@ -421,7 +421,7 @@
                 <label class= "mt-4 ml-2 mr-5" style="font-size: 16px;"><b>HEALTH CONDITION: Do you have a handicap / difficulty in:</b></label>
                 <div class="ml-5">
                 <ul class="ks-cboxtags">
-                    <li><input type="checkbox" name="health[]"id="h_checkboxOne" value="Physical handicap "><label for="h_checkboxOne">Physical handicap </label></li>
+                    <li><input type="checkbox" name="health[]"id="h_checkboxOne" value="Physical handicap"><label for="h_checkboxOne">Physical handicap </label></li>
                     <li><input type="checkbox" name="health[]"id="h_checkboxTwo" value="Hearing"><label for="h_checkboxTwo">Hearing</label></li>
                     <li><input type="checkbox" name="health[]"id="h_checkboxThree" value="Eyesight "><label for="h_checkboxThree">Eyesight </label></li>
                     <li><input type="checkbox" name="health[]"id="h_checkboxFour" value="Speaking"><label for="h_checkboxFour">Speaking</label></li>
