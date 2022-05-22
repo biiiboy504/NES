@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>NES - 
+    <title>NES -
         {{ Request::is('dashboard') ? 'Dashboard':''}}
         {{ Request::is('session') ? 'Session':''}}
         {{ Request::is('courses') ? 'Courses':''}}
@@ -21,11 +21,13 @@
     <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/slicknav.min.css')}}">
     <!-- amchart css -->
-    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-    
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css"
+        media="all" />
+
     <!-- Start datatable css -->
     <link rel="stylesheet" href="{{ asset('datatable-plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('datatable-plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+    <link rel="stylesheet"
+        href="{{ asset('datatable-plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{ asset('datatable-plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 
     <!-- others css -->
@@ -33,7 +35,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/default-css.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css')}}">
-    
+
     <!-- modernizr css -->
     <script src="{{ asset('assets/js/vendor/modernizr-2.8.3.min.js')}}"></script>
     <script>
@@ -41,7 +43,7 @@
         window.history.back();
     }
     </script>
-   
+
 </head>
 
 <body>
@@ -59,7 +61,9 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="/dashboard"><img src="https://res.cloudinary.com/dm7xbiqid/image/upload/v1651808439/nes_logo/nolitc_fmkzmu.png" height="100" alt=""></a>
+                    <a href="/dashboard"><img
+                            src="https://res.cloudinary.com/dm7xbiqid/image/upload/v1651808439/nes_logo/nolitc_fmkzmu.png"
+                            height="100" alt=""></a>
                 </div>
             </div>
             <div class="main-menu">
@@ -79,18 +83,22 @@
                                 <a href="/courses"><i class="ti-book"></i><span>Courses</span></a>
                             </li>
 
-                            <li  class="{{ Request::is('session') ? 'active':''}}">
+                            <li class="{{ Request::is('session') ? 'active':''}}">
                                 <a href="/session"><i class="ti-calendar"></i><span>Session</span></a>
                             </li>
 
-                            <li  class="{{ Request::is('userlist') ? 'active':''}}">
-                                <a href="/userlist"><i class="fa fa-users"></i><span>User List</span></a>  
+                            <li class="{{ Request::is('userlist') ? 'active':''}}">
+                                <a href="/userlist"><i class="fa fa-users"></i><span>User List</span></a>
                             </li>
-                            
-                            <li  class="{{ Request::is('logs') ? 'active':''}}">
+
+                            <li class="{{ Request::is('logs') ? 'active':''}}">
                                 <a href="/logs"><i class="fa fa-file-text-o"></i> <span>Logs</span></a>
                             </li>
-                            
+
+                            <li class="{{ Request::is('reports') ? 'active':''}}">
+                                <a href="/reports"><i class="fa fa-file-excel-o"></i> <span>Reports</span></a>
+                            </li>
+
                         </ul>
                     </nav>
                 </div>
@@ -126,7 +134,8 @@
                                     <span>2</span>
                                 </i>
                                 <div class="dropdown-menu bell-notify-box notify-box">
-                                    <span class="notify-title">You have 3 new notifications <a href="#">view all</a></span>
+                                    <span class="notify-title">You have 3 new notifications <a href="#">view
+                                            all</a></span>
                                     <div class="nofity-list">
                                         <a href="#" class="notify-item">
                                             <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
@@ -183,7 +192,8 @@
                             <li class="dropdown">
                                 <i class="fa fa-envelope-o dropdown-toggle" data-toggle="dropdown"><span>3</span></i>
                                 <div class="dropdown-menu notify-box nt-enveloper-box">
-                                    <span class="notify-title">You have 3 new notifications <a href="#">view all</a></span>
+                                    <span class="notify-title">You have 3 new notifications <a href="#">view
+                                            all</a></span>
                                     <div class="nofity-list">
                                         <a href="#" class="notify-item">
                                             <div class="notify-thumb">
@@ -276,16 +286,21 @@
                             <h4 class="page-title pull-left">{{ Request::is('courses') ? 'Courses':''}}</h4>
                             <h4 class="page-title pull-left">{{ Request::is('userlist') ? 'User List':''}}</h4>
                             <h4 class="page-title pull-left">{{ Request::is('logs') ? 'Logs':''}}</h4>
+                            <h4 class="page-title pull-left">{{ Request::is('reports') ? 'Reports':''}}</h4>
                             <h4 class="page-title pull-left">{{ Request::is('studentlist') ? 'Student List':''}}</h4>
-                            <h4 class="page-title pull-left">{{ Request::is('passwordsettings') ? 'Password Settings':''}}</h4>
-                            <h4 class="page-title pull-left">{{ Request::is('contactsettings') ? 'Contact Settings':''}}</h4>
-        
+                            <h4 class="page-title pull-left">
+                                {{ Request::is('passwordsettings') ? 'Password Settings':''}}</h4>
+                            <h4 class="page-title pull-left">{{ Request::is('contactsettings') ? 'Contact Settings':''}}
+                            </h4>
+
                         </div>
                     </div>
                     <div class="col-sm-6 clearfix">
                         <div class="user-profile pull-right">
-                            <img class="avatar user-thumb" src="{{ asset('assets/images/author/avatar.png')}}" alt="avatar">
-                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">{{ session('name')}} <i class="fa fa-angle-down"></i></h4>
+                            <img class="avatar user-thumb" src="{{ asset('assets/images/author/avatar.png')}}"
+                                alt="avatar">
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">{{ session('name')}} <i
+                                    class="fa fa-angle-down"></i></h4>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Message</a>
                                 <a class="dropdown-item" href="{{ route ('change-password')}}">Password Settings</a>
@@ -298,13 +313,13 @@
             </div>
             <!-- page title area end -->
             @yield('content')
-        
 
-            
-            
+
+
+
         </div>
-        
-       
+
+
         <!-- footer area start-->
         <footer>
             <div class="footer-area">
@@ -492,8 +507,8 @@
         </div>
     </div>
     <!-- offset area end -->
-    
-    
+
+
 
     <!-- start chart js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
@@ -505,9 +520,9 @@
     zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
     ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
     </script>
-    
-   
-    
+
+
+
     <!-- jquery latest version -->
     <script src="{{ asset('assets/js/vendor/jquery-2.2.4.min.js')}}"></script>
     <!-- bootstrap 4 js -->
@@ -546,7 +561,7 @@
     <script src="{{ asset('assets/js/scripts.js')}}"></script>
     @yield('scripts')
 
-    
+
 </body>
 
 </html>

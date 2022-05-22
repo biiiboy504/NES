@@ -29,6 +29,7 @@ Route::get('/register',[MainController::class,'register'])->name('nes.register')
 Route::post('/save',[MainController::class,'save'])->name('nes.save');
 Route::post('/check',[MainController::class,'check'])->name('nes.check');
 Route::get('/logout',[MainController::class,'logout'])->name('nes.logout');
+Route::get('/reports',[MainController::class,'reports'])->name('nes.reports');
 Route::get('/passwordsettings', [MainController::class, 'changePassword'])->name('change-password');
 Route::get('/contactsettings', [MainController::class, 'changeContact'])->name('change-contact');
 Route::post('/change-password', [MainController::class, 'updatePassword'])->name('update-password');

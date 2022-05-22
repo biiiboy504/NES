@@ -198,5 +198,9 @@ class MainController extends Controller
             //     return back()->with("status","Contacts doesn't change");
             // }
         }
-    
+
+        function reports()
+        {
+            return view('nes.reports');
+        }
 }
