@@ -19,7 +19,7 @@
                         <div class="alert alert-danger" role="alert">
                             {{Session::get('fail')}}
                         </div>
-                    @endif
+                    @endif 
 
                     <form action="/edit_student/{{$student_data->id}}" method="POST">
                         @csrf
