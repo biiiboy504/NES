@@ -23,10 +23,9 @@
                         <thead class="bg-light text-capitalize">
                             <tr>
                                 <th>Id</th>
-                                <th>First Name</th>
-                                <th>Middle Name</th>
-                                <th>Last Name</th>
-                                <th>Course</th>
+                                <th>Name</th>
+                                <th>Home Address</th>
+                                <th>Contact</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -34,11 +33,9 @@
                             @foreach ($data as $student)
                             <tr>
                                 <td>{{$student->id}}</td>
-                                <td>{{$student->first_name}}</td>
-                                <td>{{$student->middle_name}}</td>
-                                <td>{{$student->last_name}}</td>
-                                <td>{{$student->course}}</td>                                    
-                                
+                                <td>{{$student->first_name}} {{$student->middle_name}} {{$student->last_name}}</td>
+                                <td>{{$student->address}}</td>
+                                <td>{{$student->contact_num}}</td>                                 
                                 <td>
                                     <form action="/studentlist/{{$student->id}}" method="POST">
                                         @csrf
@@ -72,7 +69,6 @@
             "responsive": true, 
             "lengthChange": false, 
             "autoWidth": false,
-            
             "buttons": ["csv", "pdf", "print", "colvis"],
             "bDestroy": true
         }).buttons().container().appendTo('#dataTable1_wrapper .col-md-6:eq(0)');        
