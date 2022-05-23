@@ -322,17 +322,19 @@
                 </tr>
             </thead>
             <tbody id ="organizationTable">
+                @foreach($organizations as $org)
                 <tr>
-                <td>
-                    <input type="text" class="form-control" id="inputName5" value= "{{$data->organization_name}}" name="nameOfOrganization[]" >
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="inputName5" value= "{{$data->possition_held}}" name="positionHeld[]">
-                </td>
-                <td>
-                    <input type="date" class="form-control" id="inputName5" value= "{{$data->date}}" name="activityDate[]">
-                </td>
+                    <td>
+                        <input type="text" class="form-control" id="inputName5" value= "{{$org->organization_name}}" name="nameOfOrganization[]" >
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="inputName5" value= "{{$org->possition_held}}" name="positionHeld[]">
+                    </td>
+                    <td>
+                        <input type="date" class="form-control" id="inputName5" value= "{{$org->date}}" name="activityDate[]">
+                    </td>
                 </tr>
+                @endforeach
             </tbody>
                 
         </table>
@@ -367,11 +369,13 @@
     <h2 class="fs-title">Update Hobbies</h2>
     <h3 class="fs-subtitle">Step 6</h3>
         <div class="row">
+
                     <div>
                         <label class= "mt-4 ml-2" style="font-size: 16px;"><b>HOBBIES AND LEISURE TIME ACTIVITIES: Do you enjoy/engage in:</b></label>
                     </div>
+                    
                     <ul class="ks-cboxtags">
-                        <li><input type="checkbox" id="checkboxOne" value="Movies" name="hobbies[]"><label for="checkboxOne">Movies</label></li>
+                        <li><input type="checkbox" id="checkboxOne" value="Movies" name="hobbies[]"><label for="checkboxOne" >Movies</label></li>
                         <li><input type="checkbox" id="checkboxTwo" value="Computer Games" name="hobbies[]"><label for="checkboxTwo">Computer Games</label></li>
                         <li><input type="checkbox" id="checkboxThree" value="Singing" name="hobbies[]"><label for="checkboxThree">Singing</label></li>
                         <li><input type="checkbox" id="checkboxFour" value="Dancing" name="hobbies[]"><label for="checkboxFour">Dancing</label></li>

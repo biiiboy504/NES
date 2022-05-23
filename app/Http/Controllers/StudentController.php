@@ -304,15 +304,30 @@ class StudentController extends Controller
         $data = DB::table('students')
         ->join('family_backgrounds', 'students.id', '=', 'family_backgrounds.students_id')
         ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')
-        ->join('community_organizations', 'students.id', '=', 'community_organizations.students_id')
-        ->join('student_hobbies', 'students.id', '=', 'student_hobbies.students_id')
-        ->select('students.*', 'family_backgrounds.*', 'educ_backgrounds.*', 'community_organizations.*', 'student_hobbies.*')
+        ->select('students.*', 'family_backgrounds.*', 'educ_backgrounds.*')
         ->where('students.id','=',$id)->first();
-        // ->get();
+        
 
-        // $data = Student::find($id);
+        $organizations = DB::table('community_organizations')
+        ->select('community_organizations.*')
+        ->where('students_id', '=', $id)
+        ->get();
 
-        return view('Student.update_student', compact('data'));
+        $hobbies = DB::table('student_hobbies')
+        ->select('student_hobbies.*')
+        ->where('students_id', '=', $id)
+        ->first();
+        $text = $hobbies->hobbies;
+        $hobbiesArr = explode(',', $text);
+
+        $work_experience = DB::table('work_experiences')
+        ->select('work_experiences.*')
+        ->where('students_id', '=', $id)
+        ->get();
+
+        return view('Student.update_student', compact('data','organizations','hobbiesArr','work_experience'));
+        
+        
     }
 
     public function read_1($id)
