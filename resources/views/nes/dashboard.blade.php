@@ -113,12 +113,12 @@
         @foreach ($courses as $course)
         <div class="col-md-4 mt-5 mb-3">
             <div class="card">
-                <div class="seo-fact sbg1">
+                <div class="seo-fact sbg2">
                     <div class="p-4 d-flex justify-content-between align-items-center">
-                        <div class="seofct-icon"><i class="ti-user"></i>{{$course->course_name}}</div>
+                        <div class="seofct-icon"><i class="ti-book"></i>{{$course->course_name}}</div>
                         <h2>{{$studentCount}}</h2>
                     </div>
-                    <canvas id="seolinechart1" height="50"></canvas>
+                    <canvas id="seoline" height="50"></canvas>
                 </div>
             </div>
         </div>
