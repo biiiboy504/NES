@@ -6,7 +6,7 @@
 
 body {
 	font-family: montserrat, arial, verdana;
-	background-color: #0D0D39;
+	background-color: #fff;
 }
 /*form styles*/
 #msform {
@@ -234,7 +234,7 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 	content: '';
 	width: 80%;
 	height: 4px;
-	background: #2b2b68;
+	background: #fff;
 	position: absolute;
 	left: -40%;
 	top: 9px;
