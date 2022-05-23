@@ -13,12 +13,8 @@
                             <h4 class="header-title">Course List</h4>
                         </div>
                         <div class="float-right mb-3">
-<<<<<<< HEAD
-                            <a href="/courses/create" class="action-button" type="button">Add Course</a>
-=======
                             <a href="/courses/create" class="btn text-light" type="button"
                                 style="background-color: #097a3c;">Add Course</a>
->>>>>>> dev-baldisimo
                         </div>
                     </div>
                 </div>
