@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
+use App\Models\StudentHealthComplication;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class LogsController extends Controller
+class StudentHealthComplicationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,21 +14,7 @@ class LogsController extends Controller
      */
     public function index()
     {
-        if(!session('loggedUser')){
-            return redirect('/login');
-        }else{
-            // select query here
-            $audits = DB::table('audits')
-            ->select('audits.*')
-            ->get();
-
-            return view('nes.logs', compact('audits'));
-        }
-        // if(!session('loggedUser')){
-        //     return redirect('/login');
-        // }else{
-        //     return view('nes.logs');
-        // }
+        //
     }
 
     /**
@@ -56,10 +41,10 @@ class LogsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Logs  $logs
+     * @param  \App\Models\StudentHealthComplication  $studentHealthComplication
      * @return \Illuminate\Http\Response
      */
-    public function show(Logs $logs)
+    public function show(StudentHealthComplication $studentHealthComplication)
     {
         //
     }
@@ -67,10 +52,10 @@ class LogsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Logs  $logs
+     * @param  \App\Models\StudentHealthComplication  $studentHealthComplication
      * @return \Illuminate\Http\Response
      */
-    public function edit(Logs $logs)
+    public function edit(StudentHealthComplication $studentHealthComplication)
     {
         //
     }
@@ -79,10 +64,10 @@ class LogsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Logs  $logs
+     * @param  \App\Models\StudentHealthComplication  $studentHealthComplication
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Logs $logs)
+    public function update(Request $request, StudentHealthComplication $studentHealthComplication)
     {
         //
     }
@@ -90,10 +75,10 @@ class LogsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Logs  $logs
+     * @param  \App\Models\StudentHealthComplication  $studentHealthComplication
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Logs $logs)
+    public function destroy(StudentHealthComplication $studentHealthComplication)
     {
         //
     }

@@ -45,10 +45,6 @@ class MainController extends Controller
             ->where('gender','=','female')
             ->get()->count();
 
-            $courses = DB::table('courses')
-            ->select('courses.*')
-            ->get();
-
             $courseCount = count($courses);
 
 
@@ -143,31 +139,60 @@ class MainController extends Controller
     }
 
     function changePassword()
-    {
-        return view('nes.change-password');
-    }
-
-    public function updatePassword(Request $request)
-    {
-        # Validation
-        $request->validate([
-            'old_password' => 'required',
-            'new_password' => 'required|confirmed',
-        ]);
-
-
-        #Match The Old Password
-        if(!Hash::check($request->old_password, auth()->user()->password)){
-            return back()->with("error", "Old Password Doesn't match!");
+        {
+            return view('nes.change-password');
         }
 
+    public function updatePassword(Request $request)
+        {
+        # Validation
+            $request->validate([
+                'old_password' => 'required',
+                'new_password' => 'required|confirmed',
+            ]); 
 
-        #Update the new Password
-        User::whereId(auth()->user()->id)->update([
-            'password' => Hash::make($request->new_password)
-        ]);
+            $admin = Admin::find(session('loggedUser'));
 
-        return back()->with("status", "Password changed successfully!");
-    }
+        #match the old pass
+            if(!Hash::check($request->old_password, $admin->password)){
+                return back()->with("error", "Old Password Doesn't match!");
+            }
+            else {
+                $admin->password = Hash::make($request->new_password);
+                $admin->save();
+                return back()->with("status", "Password change successfully!");
+            }
+        }
+
+        function changeContact()
+        {
+            return view('nes.change-contact');
+        }
+        
+        public function updateContacts(Request $request)
+        {
+
+            $admin = Admin::find(session('loggedUser'));
+
+            $admin->contact = $request->new_contact;
+            $admin->email = $request->new_email;
+
+            $save = $admin->save();
+
+            if($save){
+                return back()->with('status',"Contacts updated successfully!");
+    
+            }else{
+                return back()->with('error',"Unsuccessful update");
+            }
+
+            // if($admin->contact = $request->new_contact){
+            //     $admin->save();
+            //     return back()->with("status","Contact successfully change!");
+            // }
+            // else {
+            //     return back()->with("status","Contacts doesn't change");
+            // }
+        }
     
 }

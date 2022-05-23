@@ -29,8 +29,10 @@ Route::get('/register',[MainController::class,'register'])->name('nes.register')
 Route::post('/save',[MainController::class,'save'])->name('nes.save');
 Route::post('/check',[MainController::class,'check'])->name('nes.check');
 Route::get('/logout',[MainController::class,'logout'])->name('nes.logout');
-Route::get('/settings', [MainController::class, 'changePassword'])->name('change-password');
+Route::get('/passwordsettings', [MainController::class, 'changePassword'])->name('change-password');
+Route::get('/contactsettings', [MainController::class, 'changeContact'])->name('change-contact');
 Route::post('/change-password', [MainController::class, 'updatePassword'])->name('update-password');
+Route::post('/change-contact', [MainController::class, 'updateContacts'])->name('update-contact');
 
 //Links
 
@@ -53,15 +55,16 @@ Route::resource('educ_background', EducBackgroundController::class);
 Route::get('/add_student_1',[StudentController::class, 'create']);
 Route::post('/create_student',[StudentController::class, 'store']);
 
-Route::get('/add_student_2',[EducBackgroundController::class, 'create']);
-Route::post('/create_student_2',[EducBackgroundController::class, 'store']);
+// Route::get('/add_student_2',[EducBackgroundController::class, 'create']);
+// Route::post('/create_student_2',[EducBackgroundController::class, 'store']);
 
 Route::get('/update_student/{id}',[StudentController::class, 'view_student']);
 Route::post('/edit_student/{id}',[StudentController::class, 'update']);
 
-Route::get('/update_student_2/{id}',[EducBackgroundController::class, 'view_student_2']);
-Route::post('/edit_student_2/{id}',[EducBackgroundController::class, 'update']);
+// Route::get('/update_student_2/{id}',[EducBackgroundController::class, 'view_student_2']);
+// Route::post('/edit_student_2/{id}',[EducBackgroundController::class, 'update']);
 
 Route::get('/view/{id}',[StudentController::class, 'read_1']);
-Route::get('/view_2/{id}',[StudentController::class, 'read_2']);
+// Route::get('/view_2/{id}',[EducBackgroundController::class, 'read_2']);
 
+Route::resource('/logs','App\Http\Controllers\LogsController');

@@ -55,6 +55,7 @@
 /*------------------------- 1. Core Css -------------------*/
 
 .page-container {
+    background-color: #ffffff;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -158,7 +159,7 @@
 .metismenu li a {
     position: relative;
     display: block;
-    color: #404240;
+    color: #000;
     font-size: 15px;
     text-transform: capitalize;
     padding: 15px 15px;
@@ -167,7 +168,7 @@
 }
 
 .metismenu li a i {
-    color: #404240;
+    color: #000;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
@@ -178,7 +179,7 @@
     font-family: fontawesome;
     right: 15px;
     top: 12px;
-    color: #404240;
+    color: #fff;
     font-size: 20px;
 }
 
@@ -233,7 +234,7 @@
 /*-------------------- 2.1.1 Horizontal Menu -------------------*/
 
 .body-bg {
-    background: #F3F8FB;
+    background: #fff;
 }
 
 .horizontal-main-wrapper {
@@ -398,8 +399,8 @@
 
 .header-area {
     padding: 15px 30px;
-    background: #fff;
-    border-bottom: 1px solid #d8e3e7;
+    background: #ffff;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .nav-btn {
@@ -670,7 +671,7 @@
 .page-title {
     font-size: 24px;
     font-weight: 300;
-    color: #313b3d;
+    color: #404204;
     letter-spacing: 0;
     margin-right: 30px;
 }
@@ -734,7 +735,7 @@ ul.breadcrumbs {
 .user-name {
     font-size: 17px;
     font-weight: 500;
-    color: #fff;
+    color: #404240;
     letter-spacing: 0;
     cursor: pointer;
     -webkit-user-select: none;
@@ -1189,7 +1190,7 @@ table.dbkit-table tr td {
 }
 
 .footer-area p {
-    color: #676666;
+    color: black;
     margin-bottom: 0;
 }
 
@@ -1859,6 +1860,23 @@ p.card-text {
     font-size: 14px;
 }
 
+.action-button {
+	width: 120px;
+	background: #097a3c ;
+    text-align: center;
+	color: #ffff;
+	border: 0 none;
+	border-radius: 4px;
+	cursor: pointer;
+	padding: 11px 5px;
+	margin: 10px 5px;
+  
+}
+.action-button:hover, .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #097a3c ;
+  	color: white;
+}
+
 /*-------------------- END Dropdown Button ------------------- */
 
 
@@ -2320,7 +2338,7 @@ table.dataTable thead td {
 .login-form-head {
     text-align: center;
     background: #8655FC;
-    padding: 50px;
+    padding: 10px;
 }
 
 .login-form-head h4 {
@@ -2357,7 +2375,7 @@ table.dataTable thead td {
 
 .form-gp.focused label {
     top: -15px;
-    color: #7e74ff;
+    color: #66ff99;
 }
 
 .form-gp input {
@@ -2836,3 +2854,109 @@ table.dataTable thead td {
 }
 
 /*-------------------- END Offset Sidebar ------------------- */
+
+/* ------------------- START DATA SHEET -------------------- */
+
+.dataSheet {
+    background-color: #fff;
+    margin: 30px;
+    padding: 35px ;
+    font-family: montserrat, arial, verdana;
+    -webkit-box-shadow: 5px 5px 10px -4px #000000; 
+    box-shadow: 5px 5px 10px -4px #000000;
+
+
+}
+.view-body{
+    border-top: solid 1px #e0e0e0;
+}
+.card-body{
+    margin: 15px;
+}
+
+.view-title {
+    font-size: 20px;
+    color: #666;
+}
+.view-subtitle {
+    font-size: 14px;
+    color: #000;
+    font: bold;
+}
+.view-label {
+    font-size: 12px;
+    color: #333;
+    margin-top: 20px;
+    font: bold;
+}
+.view-label2 {
+    font-size: 12px;
+    color: #333;
+    margin-top: 20px;
+    font: bold;
+    margin-right: 5px;
+}
+.bottom-label{
+    text-align: center;
+    color: #333;
+    font-size: 12px;
+}
+
+.view-textbox {
+    width: 100%;
+    background: transparent;
+    border: transparent;
+    font-size: 12px;
+    color: black;
+    font-weight: 900;
+    font: bold;
+    border-bottom: solid 1px #999;
+    margin-top: 0;
+    text-align: center;
+}
+.view-textbox2 {
+    width: 100%;
+    background: transparent;
+    border: transparent;
+    font-size: 12px;
+    color:black;
+    font-weight: 900;
+    font: bold;
+    border-bottom: solid 1px #999;
+    margin-top: 0;
+    padding-left: 5px;
+}
+.view-textbox3 {
+    background: transparent;
+    border: transparent;
+    font-size: 12px;
+    color:black;
+    font-weight: 900;
+    font: bold;
+    border-bottom: solid 1px #999;
+    margin-top: 20px;
+    padding-left: 5px;
+}
+
+.view-button{
+    width: 80px;
+    background: #097a3c ;
+    text-align: center;
+    color: #ffff;
+    border: 0 none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 6px 2px;
+    margin: 2px;
+    float: right;
+}
+.view-button:hover, .view-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #097a3c ;
+    color: white;
+}
+    
+
+
+
+
+/* ------------------- END DATA SHEET -------------------- */
