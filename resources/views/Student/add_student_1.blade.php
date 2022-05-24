@@ -14,19 +14,20 @@
 <form id="msform" action="/create_student" method="POST">
     @csrf
   <!-- progressbar -->
+  <div>
   <ul id="progressbar">
-    <li class="active">Personal Information</li>
-    <li>Family Background</li>
-    <li>In case of Emergency</li>
-    <li>Educational Background</li>
-    <li>Activities</li>
-    <li>Hobbies</li>
-    <li>Health Condition</li>
-    <li>Work Experiences</li>
-    <li>Future Plans</li>
-    <li>Review</li>
+    <li class="active"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
   </ul>
-
+</div>
   <!------------------------ START of Personal Information --------------------->
 
   <fieldset>
@@ -632,6 +633,8 @@
 <!---------------------------------------END of Work Experiences and Future Plans --------------------------------------->
 
 
+
+
 <!--------------------------------------- START of Future Plans --------------------------------------->
 
   <fieldset>
@@ -668,6 +671,7 @@
   </fieldset>
 
 <!---------------------------------------END of Future Plans   --------------------------------------->
+
 
 
 
