@@ -201,6 +201,14 @@ class MainController extends Controller
 
         function reports()
         {
-            return view('nes.reports');
+            // return view('nes.reports');  
+
+            $data = DB::table('students')
+            // ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')
+            ->select('students.*')
+            ->get();
+
+            return view('nes.reports',compact('data'));
+
         }
 }
