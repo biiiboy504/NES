@@ -6,10 +6,6 @@
             <div class="col-10">
                 <h1 class="view-title">PERSONAL DATA SHEET</h1>
             </div>
-            <div class="col-2">
-                <button class="view-button fa fa-pencil">  Edit</button>
-                <button class="view-button fa fa-print">    Print</button>
-            </div>
             <form>
                 <div class="card-body view-body">
                     <div class="row">
@@ -85,7 +81,7 @@
                             <label class="view-label2">Citezenship:</label>
                             <input type="text" name="citizenship" class="view-textbox3" style="width:74%;"  value="{{$student_data->citizenship}}" readonly>
                         </div>
-                        <div class="col-12 mt-5">
+                        <div class="col-12 mt-4">
                             <h1 class="view-subtitle">FAMILY BACKGROUND</h1>
                         </div>
                         <div class="col-sm-4">
@@ -162,13 +158,229 @@
                         </div>
                         <div class="col-sm-12">
                             <label class="view-label2">Email Address:</label>
-                            <input type="text" name="e_email" class="view-textbox3" style="width:92.5%;" value="{{$student_data->emergency_email}}" readonly>
+                            <input type="text" name="e_email" class="view-textbox3" style="width: 92.7%;" value="{{$student_data->emergency_email}}" readonly>
+                        </div>
+                        <div class="col-12 mt-4 mb-2">
+                            <h1 class="view-subtitle">EDUCATIONAL BACKGROUND</h1>
+                        </div>
+                        <div class="col-sm-12">
+                            <table class="table-bordered" id="view-table">
+                                <thead>
+                                <tr>
+                                    <th class="col-sm-2">Level</th>
+                                    <th class="col-sm-8">Name of School</th>
+                                    <th class="col-sm-2">Date Graduated</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Elementary</td>
+                                    <td><input type="text" name="elem_name" class="view-textbox4"  value="{{$student_data->elem_name}}" readonly></td>
+                                    <td><input type="text" name="elem_date" class="view-textbox4"  value="{{$student_data->elem_date}}" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>High School</td>
+                                    <td><input type="text" name="hs_name" class="view-textbox4"  value="{{$student_data->hs_name}}" readonly></td>
+                                    <td><input type="text" name="hs_date" class="view-textbox4"  value="{{$student_data->hs_date}}" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>Vocation</td>
+                                    <td><input type="text" name="voc_name" class="view-textbox4" value="{{$student_data->voc_name}}" readonly></td>
+                                    <td><input type="text" name="voc_date" class="view-textbox4"  value="{{$student_data->voc_date}}" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>College</td>
+                                    <td><input type="text" name="college_name" class="view-textbox4"  value="{{$student_data->college_name}}" readonly></td>
+                                    <td><input type="text" name="college_date" class="view-textbox4"  value="{{$student_data->college_date}}" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                    <label>Course/Degree: </label>
+                                    <input type="text" name="course" class="view-textbox4"  value="{{$student_data->course}}" readonly>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                    <label>No. of Units Completed(For Undergraduate): </label>
+                                    <input type="text" name="units" class="view-textbox4"  value="{{$student_data->units}}" readonly> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Post Graduate</td>
+                                    <td><input type="text" name="post_grad" class="view-textbox4"  value="{{$student_data->post_grad}}" readonly></td>
+                                    <td><input type="text" name="post_date" class="view-textbox4"  value="{{$student_data->post_date}}" readonly></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-12 mt-4 mb-2">
+                            <h1 class="view-subtitle">ACTIVITIES: School and Community Organizations</h1>
+                        </div>
+                        <div class="col-sm-12">
+                            <table class="table-bordered" id="view-table">
+                                <thead>
+                                <tr>
+                                    <th class="col-sm-6">Name of Organization</th>
+                                    <th class="col-sm-4">Position Held</th>
+                                    <th class="col-sm-2">Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><input type="text" name="elem_name" class="view-textbox4"  value="" readonly></td>
+                                    <td><input type="text" name="elem_name" class="view-textbox4"  value="" readonly></td>
+                                    <td><input type="text" name="elem_date" class="view-textbox4"  value="" readonly></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-12 mt-4 mb-2">
+                            <h1 class="view-subtitle">HOBBIES AND LEISURE TIME ACTIVITIES: Do you enjoy/engage in:</h1>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Movies</label><br>
+                        </div>   
+                        <div class="col-sm-2">
+                         <input  type="checkbox" name="hobbies[]" value=""><label class="view-label3">Computer Games</label><br>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Singing</label><br>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Dancing</label><br>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Parties</label><br>
+                        </div> 
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Alcoholic Drinks</label><br>
+                        </div> 
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Facebook/Internet</label><br>
+                        </div>   
+                        <div class="col-sm-2">
+                         <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Sports</label><br>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Traveling</label><br>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Reading</label><br>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Speaking</label><br>
+                        </div> 
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Cooking</label><br>
+                        </div> 
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Writing</label><br>
+                        </div> 
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Painting</label><br>
+                        </div> 
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Photography</label><br>
+                        </div> 
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Cycling</label><br>
+                        </div> 
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Hiking</label><br>
+                        </div> 
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Shopping</label><br>
+                        </div> 
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Video Editing</label><br>
+                        </div> 
+                        <div class="col-sm-2">
+                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Computer Programming</label><br>
+                        </div> 
+                        <div class="col-sm-12 mt-2">
+                            <label class="view-label3">Others (Please Specify):</label>
+                            <input type="text" name="hobbies[]" class="view-textbox2" value="" readonly> 
+                        </div>
+                        <div class="col-12 mt-4 mb-2">
+                            <h1 class="view-subtitle">HEALTH CONDITION: Do you have a handicap / difficulty in: </h1>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="checkbox" name="health[]" value=""><label class="view-label3">Physical handicap</label><br>
+                        </div> 
+                        <div class="col-sm-4">
+                            <input type="checkbox" name="health[]" value=""><label class="view-label3">Mental handicap</label><br>
+                        </div> 
+                        <div class="col-sm-4">
+                            <input type="checkbox" name="health[]" value=""><label class="view-label3">Hearing</label><br>
+                        </div> 
+                        <div class="col-sm-4">
+                            <input type="checkbox" name="health[]" value=""><label class="view-label3">Eyesight</label><br>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="checkbox" name="health[]" value=""><label class="view-label3">Speaking</label><br>
+                        </div>  
+                        <div class="col-sm-12 mt-2">
+                            <label class="view-label3">Do you have any serious accident or sickness?:</label>
+                            <input type="text" name="health[]" class="view-textbox2" value="" readonly>
+                        </div>
+                        <div class="col-12 mt-4 mb-2">
+                            <h1 class="view-subtitle">WORK EXPERIENCES</h1>
+                        </div>
+                        <div class="col-sm-12">
+                            <table class="table-bordered" id="view-table">
+                                <thead>
+                                <tr>
+                                    <th class="col-sm-3">Nature of Work/Position</th>
+                                    <th class="col-sm-3">Name of Company</th>
+                                    <th class="col-sm-3">Date Of Employment </th>
+                                    <th class="col-sm-3">Monthly Earnings</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><input type="text" name="position[]" class="view-textbox4"  value="" readonly></td>
+                                    <td><input type="text" name="nameofCompany[]" class="view-textbox4"  value="" readonly></td>
+                                    <td><input type="text" name="dateOfEmployment[]" class="view-textbox4"  value="" readonly></td>
+                                    <td><input type="text" name="monthlyEarning[]" class="view-textbox4"  value="" readonly></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-12 mt-4 mb-2">
+                            <h1 class="view-subtitle">FUTURE PLANS:</h1>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="view-label3">Course that I am taking in is the choice of: </label>
+                        </div>
+                        <div class="col-sm-7">
+                            <input type="checkbox" name="choice[]" value=""><label class="view-label3 mr-5">My Own</label>
+                            <input type="checkbox" name="choice[]" value=""><label class="view-label3 mr-5">My Parents</label>
+                            <input type="checkbox" name="choice[]" value=""><label class="view-label3 mr-5">My Peers</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="view-label3">Occupations interested to engage in:</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" name="f_interest" class="view-textbox2" value="" readonly>
+                        </div>
+                        <div class="col-sm-7">
+                            <label class="view-label3">Have you ever been convicted of any crime or violation of any law, degree, ordinance or regulations by any court or tribunal?:</label>
+                        </div>
+                        <div class="col-sm-3">
+                        <input type="checkbox" name="crime[]" value=""><label class="view-label3 mr-5">Yes</label>
+                            <input type="checkbox" name="crime[]" value=""><label class="view-label3 mr-5">No</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="view-label3">If your answer is <b>"YES"</b> give details of the offense:</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" name="f_interest" class="view-textbox2" value="" readonly>
                         </div>
                     </div>
                 </div>
             </form>
         </div> 
     </div>
-
+ 
 
 @endsection()

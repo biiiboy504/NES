@@ -1868,8 +1868,7 @@ p.card-text {
 	border: 0 none;
 	border-radius: 4px;
 	cursor: pointer;
-	padding: 11px 5px;
-	margin: 10px 5px;
+	padding: 9px 2px;
   
 }
 .action-button:hover, .action-button:focus {
@@ -2895,7 +2894,31 @@ table.dataTable thead td {
     margin-top: 20px;
     font: bold;
     margin-right: 5px;
+        
 }
+.view-label3 {
+    font-size: 12px;
+    color: #222;
+    padding: 0; 
+    padding-top: 4px;
+    padding-left: 4px;
+    text-align: center;
+}
+#view-table {
+    width: 100%;
+    font-size: 12px;
+
+}
+#view-table th {
+    text-align: center;
+    font-size: 13px;
+    padding-top: 5px;
+    color: #666;
+}
+#view-table td {
+    padding-left: 5px;
+}
+
 .bottom-label{
     text-align: center;
     color: #333;
@@ -2927,6 +2950,7 @@ table.dataTable thead td {
     padding-left: 5px;
 }
 .view-textbox3 {
+    width: 100%;
     background: transparent;
     border: none;
     font-size: 12px;
@@ -2934,8 +2958,19 @@ table.dataTable thead td {
     font-weight: 900;
     font: bold;
     border-bottom: solid 1px #999;
-    margin-top: 20px;
+    margin-top: 15px;
     padding-left: 5px;
+    display: inline;
+}
+.view-textbox4 {
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    color:black;
+    font-weight: 900;
+    font: bold;
+    padding-left: 5px;
+    padding-top: 4px;
 }
 
 .view-button{
@@ -2955,6 +2990,26 @@ table.dataTable thead td {
     color: white;
 }
     
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    border-bottom: solid 1px #000;
+}
+input[type="checkbox"]:checked {
+    appearance: checkbox;
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    background: #097a3c;
+    color: #000;
+  }
 
 
 
