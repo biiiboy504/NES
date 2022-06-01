@@ -91,7 +91,7 @@
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-file-text-o"></i><span>Logs</span></a>
                                 <ul class="collapse">
                                     <li><a href="/logs">Activity Logs</a></li>
-                                    <li><a href="#">Login/Logout</a></li>
+                                    <li><a href="/user_log">Login/Logout</a></li>
                                 </ul>
                             </li>
                             
