@@ -210,7 +210,7 @@ class StudentController extends Controller
         
 
         $careerChoice = "";
-        if($request->filled('careerChoice')){ 
+        if($request->filled('choice')){ 
             foreach($request->choice as $key){
                 $careerChoice .= $key .", ";
             }
@@ -226,8 +226,8 @@ class StudentController extends Controller
             else{
                 $future->crime = "No";
             }
-        $future->students_id = $studentId;
-        $future->save();
+            $future->students_id = $studentId;
+            $future->save();
         }
 
         return Redirect('studentlist')->with('flash_message', 'Student Successfully Added!');
@@ -283,7 +283,113 @@ class StudentController extends Controller
         $student->batch_num = $request->batch_num;
         $student->save();
 
-        return Redirect('/update_student_2/'.$id)->with('message', 'Successfully Updated!');
+        $studentsId = DB::table('family_backgrounds')
+        ->where('students_id','=',$id)->first();
+
+        $family = FamilyBackground::find($studentsId->id);
+        $family->father_name = $request->f_name;
+        $family->father_occupation = $request->f_occupation;
+        $family->father_income = $request->f_income;
+        $family->mother_name = $request->m_name;
+        $family->mother_occupation = $request->m_occupation;
+        $family->mother_income = $request->m_income;
+        $family->guardian_name = $request->g_name;
+        $family->guardian_occupation = $request->g_occupation;
+        $family->guardian_income = $request->g_income;
+        $family->spouse_name = $request->s_name;
+        $family->spouse_occupation = $request->s_occupation;
+        $family->spouse_income = $request->s_income;
+        $family->guardian_address = $request->f_address;
+        $family->mobile_no = $request->f_contact;
+        $family->landline = $request->f_landline;
+        $family->emergency_name = $request->e_name;
+        $family->emergency_contact = $request->e_contact;
+        $family->emergency_address = $request->e_address;
+        $family->emergency_email = $request->e_email;
+        $family->save();
+
+        $studentsId = DB::table('educ_backgrounds')
+        ->where('students_id','=',$id)->first();
+        $educ = educ_background::find($studentsId->id);
+        $educ->elem_name = $request->elem_name;
+        $educ->elem_date = $request->elem_date;
+        $educ->hs_name = $request->hs_name;
+        $educ->hs_date = $request->hs_date;
+        $educ->voc_name = $request->voc_name;
+        $educ->voc_date = $request->voc_date;
+        $educ->college_name = $request->college_name;
+        $educ->college_date = $request->college_date;
+        $educ->course = $request->course;
+        $educ->units = $request->units;
+        $educ->post_grad = $request->post_grad;
+        $educ->post_date = $request->post_date;
+        $educ->save();
+
+        $deleteOrgs = CommunityOrganization::where('students_id', '=', $id)->delete();
+
+        foreach($request->nameOfOrganization as $key => $value){
+            $nameOfOrganization = $request->nameOfOrganization[$key];
+            $positionHeld = $request->positionHeld[$key];
+            $activityDate = $request->activityDate[$key];
+
+            $org = new CommunityOrganization;
+            $org->organization_name = $nameOfOrganization;
+            $org->possition_held = $positionHeld;
+            $org->date = $activityDate;
+            $org->students_id = $id;
+            $org->save();
+        }
+
+        $hobbies = "";
+        foreach($request->hobbies as $key ){
+            $hobbies .= $key.", ";
+
+        }
+        $studentsId = DB::table('student_hobbies')
+        ->where('students_id','=',$id)->first();
+        $hobby = StudentHobbies::find($studentsId->id);
+        $hobby->hobbies = rtrim($hobbies,", ");
+        $hobby->students_id = $id;
+        $hobby->save();
+
+        $health = "";
+        if($request->filled('health')){ 
+            foreach($request->health as $key){
+                $health .= $key .", ";
+            }
+            $studentsId = DB::table('student_health_complications')
+            ->where('students_id','=',$id)->first();
+            $complication = StudentHealthComplication::find($studentsId->id);
+            $complication->handicap = rtrim($health, ", ");
+            $complication->accidents_or_sickness = $request->other_complications;
+            $complication->students_id = $studentId;
+            $complication->save();
+        }
+
+        $deleteWork = WorkExperience::where('students_id', '=', $id)->delete();
+
+        foreach($request->position as $key => $value){
+            $position = $request->position[$key];
+            $nameofCompany = $request->nameofCompany[$key];
+            $dateOfEmployment = $request->dateOfEmployment[$key];
+            $monthlyEarning = $request->monthlyEarning[$key];
+
+            $work = new WorkExperience;
+            $work->work_possition = $position;
+            $work->company_name = $nameofCompany;
+            $work->employment_date = $dateOfEmployment;
+            $work->monthly_earnings = $monthlyEarning;
+            $work->students_id = $id;
+            $work->save();
+        }
+
+        $studentsId = DB::table('other_work_experiences')
+        ->where('students_id','=',$id)->first();
+        $otherWork = OtherWorkExperience::find($studentsId->id);
+        $otherWork->other_work_experience = $request->otherWorkExperience;
+        $otherWork->save();
+
+        return Redirect('studentlist')->with('message', 'Successfully Updated!');
     }
 
     /**
@@ -301,10 +407,12 @@ class StudentController extends Controller
 
     public function view_student($id)
     {
+
+        $student_id = $id;
         $data = DB::table('students')
         ->join('family_backgrounds', 'students.id', '=', 'family_backgrounds.students_id')
         ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')
-        ->select('students.*', 'family_backgrounds.*', 'educ_backgrounds.*')
+        ->select('family_backgrounds.*', 'educ_backgrounds.*','students.*')
         ->where('students.id','=',$id)->first();
         
 
@@ -318,14 +426,69 @@ class StudentController extends Controller
         ->where('students_id', '=', $id)
         ->first();
         $text = $hobbies->hobbies;
-        $hobbiesArr = explode(',', $text);
+        $hobbiesArr = explode(', ', $text);
+        $hobbiesCheckbox = [
+            'Movies',
+            'Computer Games',
+            'Singing',
+            'Dancing',
+            'Parties',
+            'Alcoholic Drinks',
+            'Facebook/Internet',
+            'Sports',
+            'Traveling',
+            'Reading',
+            'Speaking',
+            'Cooking',
+            'Writing',
+            'Painting',
+            'Photography',
+            'Cycling',
+            'Hiking',
+            'Shopping',
+            'Video Editing',
+            'Computer Programming'
+        ];
+        $otherHobbies = array_diff( $hobbiesArr, $hobbiesCheckbox );
 
         $work_experience = DB::table('work_experiences')
         ->select('work_experiences.*')
         ->where('students_id', '=', $id)
         ->get();
 
-        return view('Student.update_student', compact('data','organizations','hobbiesArr','work_experience'));
+        $health = DB::table('student_health_complications')
+        ->select('student_health_complications.*')
+        ->where('students_id', '=', $id)
+        ->first();
+        $handicap = $health->handicap;
+        $healthArr = explode(', ', $handicap);
+
+        $futurePlan = DB::table('future_plans')
+        ->select('future_plans.*')
+        ->where('students_id', '=', $id)
+        ->first();
+        $courseChoice = "";
+        $careerChoiceArr = [];
+        if($futurePlan){
+            $courseChoice = $futurePlan->course_choice;
+            $careerChoiceArr = explode(', ', $courseChoice);
+        }
+        
+        
+
+
+        return view('Student.update_student', compact(
+            'data',
+            'organizations',
+            'hobbiesArr',
+            'work_experience',
+            'otherHobbies',
+            'healthArr',
+            'health',
+            'futurePlan',
+            'careerChoiceArr',
+            'student_id'
+        ));
         
         
     }
