@@ -362,7 +362,7 @@ class StudentController extends Controller
             $complication = StudentHealthComplication::find($studentsId->id);
             $complication->handicap = rtrim($health, ", ");
             $complication->accidents_or_sickness = $request->other_complications;
-            $complication->students_id = $studentId;
+            $complication->students_id = $id;
             $complication->save();
         }
 
@@ -388,6 +388,29 @@ class StudentController extends Controller
         $otherWork = OtherWorkExperience::find($studentsId->id);
         $otherWork->other_work_experience = $request->otherWorkExperience;
         $otherWork->save();
+
+
+        $careerChoice = "";
+        if($request->filled('choice')){ 
+            foreach($request->choice as $key){
+                $careerChoice .= $key .", ";
+            }
+            $studentsId = DB::table('other_work_experiences')
+            ->where('students_id','=',$id)->first();
+            $future = FuturePlans::find($studentsId->id);
+            $future->course_choice = rtrim($careerChoice, ", ");
+            $future->interested_occupations = $request->f_interest;
+
+            if($request->filled('f_offense')){
+                $future->crime = "Yes";
+                $future->offense = $request->f_offense;
+            }
+            else{
+                $future->crime = "No";
+            }
+            $future->students_id = $id;
+            $future->save();
+        }
 
         return Redirect('studentlist')->with('message', 'Successfully Updated!');
     }
