@@ -324,13 +324,13 @@
             <tbody id ="organizationTable">
                 <tr>
                 <td>
-                    <input type="text" class="form-control" id="inputName5" value= "{{$data->organization_name}}" name="nameOfOrganization[]" >
+                    <input type="text" class="form-control" id="inputName5" value= "" name="nameOfOrganization[]" >
                 </td>
                 <td>
-                    <input type="text" class="form-control" id="inputName5" value= "{{$data->possition_held}}" name="positionHeld[]">
+                    <input type="text" class="form-control" id="inputName5" value= "" name="positionHeld[]">
                 </td>
                 <td>
-                    <input type="date" class="form-control" id="inputName5" value= "{{$data->date}}" name="activityDate[]">
+                    <input type="date" class="form-control" id="inputName5" value= "" name="activityDate[]">
                 </td>
                 </tr>
             </tbody>
@@ -371,26 +371,26 @@
                         <label class= "mt-4 ml-2" style="font-size: 16px;"><b>HOBBIES AND LEISURE TIME ACTIVITIES: Do you enjoy/engage in:</b></label>
                     </div>
                     <ul class="ks-cboxtags">
-                        <li><input type="checkbox" id="checkboxOne" value="Movies" name="hobbies[]"><label for="checkboxOne">Movies</label></li>
-                        <li><input type="checkbox" id="checkboxTwo" value="Computer Games" name="hobbies[]"><label for="checkboxTwo">Computer Games</label></li>
-                        <li><input type="checkbox" id="checkboxThree" value="Singing" name="hobbies[]"><label for="checkboxThree">Singing</label></li>
-                        <li><input type="checkbox" id="checkboxFour" value="Dancing" name="hobbies[]"><label for="checkboxFour">Dancing</label></li>
-                        <li><input type="checkbox" id="checkboxFive" value="Parties" name="hobbies[]"><label for="checkboxFive">Parties</label></li>
-                        <li><input type="checkbox" id="checkboxSix" value="Alcoholic Drinks" name="hobbies[]"><label for="checkboxSix">Alcoholic Drinks</label></li>
-                        <li><input type="checkbox" id="checkboxSeven" value="facebook/Internet" name="hobbies[]"><label for="checkboxSeven">Facebook/Internet</label></li>
-                        <li><input type="checkbox" id="checkboxEight" value="Sports" name="hobbies[]"><label for="checkboxEight">Sports</label></li>
-                        <li><input type="checkbox" id="checkboxNine" value="Traveling" name="hobbies[]"><label for="checkboxNine">Traveling</label></li>
-                        <li><input type="checkbox" id="checkboxTen" value="Reading" name="hobbies[]"><label for="checkboxTen">Reading</label></li>
-                        <li><input type="checkbox" id="checkboxEleven" value="Speaking" name="hobbies[]"><label for="checkboxEleven">Speaking</label></li>
-                        <li><input type="checkbox" id="checkboxTwelve" value="Cooking" name="hobbies[]"><label for="checkboxTwelve">Cooking</label></li>
-                        <li><input type="checkbox" id="checkboxThirteen" value="Writing" name="hobbies[]"><label for="checkboxThirteen">Writing</label></li>
-                        <li><input type="checkbox" id="checkboxFourteen" value="Painting" name="hobbies[]"><label for="checkboxFourteen">Painting</label></li>
-                        <li><input type="checkbox" id="checkboxFifteen" value="Photography" name="hobbies[]"><label for="checkboxFifteen">Photography</label></li>
-                        <li><input type="checkbox" id="checkboxSixteen" value="Cycling" name="hobbies[]"><label for="checkboxSixteen">Cycling</label></li>
-                        <li><input type="checkbox" id="checkboxSeventeen" value="Hiking" name="hobbies[]"><label for="checkboxSeventeen">Hiking</label></li>
-                        <li><input type="checkbox" id="checkboxEighteen" value="Shopping" name="hobbies[]"><label for="checkboxEighteen">Shopping</label></li>
-                        <li><input type="checkbox" id="checkboxNineteen" value="Video Editing" name="hobbies[]"><label for="checkboxNineteen">Video Editing</label></li>
-                        <li><input type="checkbox" id="checkboxTwenty" value="Computer Programming" name="hobbies[]"><label for="checkboxTwenty">Computer Programming</label></li>
+                        <li><input type="checkbox" id="checkboxOne" value="" name="hobbies[]"><label for="checkboxOne">Movies</label></li>
+                        <li><input type="checkbox" id="checkboxTwo" value="" name="hobbies[]"><label for="checkboxTwo">Computer Games</label></li>
+                        <li><input type="checkbox" id="checkboxThree" value="" name="hobbies[]"><label for="checkboxThree">Singing</label></li>
+                        <li><input type="checkbox" id="checkboxFour" value="" name="hobbies[]"><label for="checkboxFour">Dancing</label></li>
+                        <li><input type="checkbox" id="checkboxFive" value="" name="hobbies[]"><label for="checkboxFive">Parties</label></li>
+                        <li><input type="checkbox" id="checkboxSix" value="" name="hobbies[]"><label for="checkboxSix">Alcoholic Drinks</label></li>
+                        <li><input type="checkbox" id="checkboxSeven" value="" name="hobbies[]"><label for="checkboxSeven">Facebook/Internet</label></li>
+                        <li><input type="checkbox" id="checkboxEight" value="" name="hobbies[]"><label for="checkboxEight">Sports</label></li>
+                        <li><input type="checkbox" id="checkboxNine" value="" name="hobbies[]"><label for="checkboxNine">Traveling</label></li>
+                        <li><input type="checkbox" id="checkboxTen" value="" name="hobbies[]"><label for="checkboxTen">Reading</label></li>
+                        <li><input type="checkbox" id="checkboxEleven" value="" name="hobbies[]"><label for="checkboxEleven">Speaking</label></li>
+                        <li><input type="checkbox" id="checkboxTwelve" value="" name="hobbies[]"><label for="checkboxTwelve">Cooking</label></li>
+                        <li><input type="checkbox" id="checkboxThirteen" value="" name="hobbies[]"><label for="checkboxThirteen">Writing</label></li>
+                        <li><input type="checkbox" id="checkboxFourteen" value="" name="hobbies[]"><label for="checkboxFourteen">Painting</label></li>
+                        <li><input type="checkbox" id="checkboxFifteen" value="" name="hobbies[]"><label for="checkboxFifteen">Photography</label></li>
+                        <li><input type="checkbox" id="checkboxSixteen" value="" name="hobbies[]"><label for="checkboxSixteen">Cycling</label></li>
+                        <li><input type="checkbox" id="checkboxSeventeen" value="" name="hobbies[]"><label for="checkboxSeventeen">Hiking</label></li>
+                        <li><input type="checkbox" id="checkboxEighteen" value="" name="hobbies[]"><label for="checkboxEighteen">Shopping</label></li>
+                        <li><input type="checkbox" id="checkboxNineteen" value="" name="hobbies[]"><label for="checkboxNineteen">Video Editing</label></li>
+                        <li><input type="checkbox" id="checkboxTwenty" value="" name="hobbies[]"><label for="checkboxTwenty">Computer Programming</label></li>
                     </ul>
                         <div class="col-12 mt-3">
                             <label for=""><b>Others (Please Specify):</b></label>
@@ -421,11 +421,11 @@
                 <label class= "mt-4 ml-2 mr-5" style="font-size: 16px;"><b>HEALTH CONDITION: Do you have a handicap / difficulty in:</b></label>
                 <div class="ml-5">
                 <ul class="ks-cboxtags">
-                    <li><input type="checkbox" name="health[]"id="h_checkboxOne" value="Physical handicap"><label for="h_checkboxOne">Physical handicap </label></li>
-                    <li><input type="checkbox" name="health[]"id="h_checkboxTwo" value="Hearing"><label for="h_checkboxTwo">Hearing</label></li>
-                    <li><input type="checkbox" name="health[]"id="h_checkboxThree" value="Eyesight "><label for="h_checkboxThree">Eyesight </label></li>
-                    <li><input type="checkbox" name="health[]"id="h_checkboxFour" value="Speaking"><label for="h_checkboxFour">Speaking</label></li>
-                    <li><input type="checkbox" name="health[]"id="h_checkboxFive" value="Mental handicap"><label for="h_checkboxFive">Mental handicap</label></li>
+                    <li><input type="checkbox" name="health[]"id="h_checkboxOne" value=""><label for="h_checkboxOne">Physical handicap </label></li>
+                    <li><input type="checkbox" name="health[]"id="h_checkboxTwo" value=""><label for="h_checkboxTwo">Hearing</label></li>
+                    <li><input type="checkbox" name="health[]"id="h_checkboxThree" value=" "><label for="h_checkboxThree">Eyesight </label></li>
+                    <li><input type="checkbox" name="health[]"id="h_checkboxFour" value=""><label for="h_checkboxFour">Speaking</label></li>
+                    <li><input type="checkbox" name="health[]"id="h_checkboxFive" value=""><label for="h_checkboxFive">Mental handicap</label></li>
                 </ul>
                 </div>
             </div>
@@ -514,9 +514,9 @@
             <div class="col-12 mt-3">
                 <label for=""><b>Course that I am taking in is the choice of:</b></label>
                 <ul class="ks-cboxtags">
-                        <li><input name="choice[]" type="checkbox" id="f_checkboxOne" value="My Own"><label for="f_checkboxOne">My Own </label></li>
-                        <li><input name="choice[]" type="checkbox" id="f_checkboxTwo" value="My Parents"><label for="f_checkboxTwo">My Parents</label></li>
-                        <li><input name="choice[]" type="checkbox" id="f_checkboxThree" value="My Peers"><label for="f_checkboxThree">My Peers </label></li>
+                        <li><input name="choice[]" type="checkbox" id="f_checkboxOne" value=""><label for="f_checkboxOne">My Own </label></li>
+                        <li><input name="choice[]" type="checkbox" id="f_checkboxTwo" value=""><label for="f_checkboxTwo">My Parents</label></li>
+                        <li><input name="choice[]" type="checkbox" id="f_checkboxThree" value=""><label for="f_checkboxThree">My Peers </label></li>
                 </ul>
             </div>
             <div class="col-12 mt-3">

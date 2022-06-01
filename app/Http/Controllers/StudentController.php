@@ -304,9 +304,7 @@ class StudentController extends Controller
         $data = DB::table('students')
         ->join('family_backgrounds', 'students.id', '=', 'family_backgrounds.students_id')
         ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')
-        ->join('community_organizations', 'students.id', '=', 'community_organizations.students_id')
-        ->join('student_hobbies', 'students.id', '=', 'student_hobbies.students_id')
-        ->select('students.*', 'family_backgrounds.*', 'educ_backgrounds.*', 'community_organizations.*', 'student_hobbies.*')
+        ->select('students.*', 'family_backgrounds.*', 'educ_backgrounds.*')
         ->where('students.id','=',$id)->first();
         // ->get();
 
@@ -317,8 +315,12 @@ class StudentController extends Controller
 
     public function read_1($id)
     {
-        $student_data = Student::find($id);
+        $data = DB::table('students')
+        ->join('family_backgrounds', 'students.id', '=', 'family_backgrounds.students_id')
+        ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')
+        ->select('students.*', 'family_backgrounds.*', 'educ_backgrounds.*')
+        ->where('students.id','=',$id)->first();
 
-        return view('Student.view', compact('student_data'));
+        return view('Student.view', compact('data'));
     }
 }
