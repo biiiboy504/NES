@@ -4,14 +4,14 @@
 <div class="main-content-inner">
 
     <div class="col-lg-10 mx-auto mt-5">
-        <div class="card text-white mb-3" style="background-color:#8A2BE2;">
+        <div class="card mb-3" style="background-color:#ffffff;">
             <!-- Card Header -->
-            <div class="card-header">
+            <div class="card-header" style="background-color:#ffffff;">
                 <div class="float-left mt-2">
                     <h3>Update Course</h3>
                 </div>
                 <div class="float-right">
-                    <a href="/courses" style="font-weight:700; color:#8A2BE2;" class="btn btn-light">Go to List</a>
+                    <a href="/courses" style="font-weight:700;" class="btn btn-secondary">Go to List</a>
                 </div>
             </div>
             <!-- Card Body -->

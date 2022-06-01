@@ -45,10 +45,6 @@ class MainController extends Controller
             ->where('gender','=','female')
             ->get()->count();
 
-            $courses = DB::table('courses')
-            ->select('courses.*')
-            ->get();
-
             $courseCount = count($courses);
 
 

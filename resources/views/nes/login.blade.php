@@ -44,12 +44,12 @@
             <div class="login-box ptb--50">
                 <form action="{{ route('nes.check')}}" method="post">
                     @csrf
-                    <div class="login-form-head ptb-1" style="background:#66ff99;">
+                    <div class="login-form-head" style="background:#66ff99;">
                         <div class="row justify-content-center">
-                            <img src="https://res.cloudinary.com/dm7xbiqid/image/upload/v1651808439/nes_logo/nolitc_fmkzmu.png" width="50" alt="">
-                            <h4 class="align-self-center">Sign In</h4> 
-                        </div>
-                        
+                            <img src="https://res.cloudinary.com/dm7xbiqid/image/upload/v1651808439/nes_logo/nolitc_fmkzmu.png" width="80" alt=""></a>                 
+                            <h4 class="align-self-center">ENROLLMENT SYSTEM</h4>
+                         </div>
+
                     </div>
                     @if(Session::get('fail'))
                         <div class="alert alert-danger" role="alert">
@@ -77,15 +77,14 @@
                                 </div>
                             </div>
                             <div class="col-6 text-right">
-                                <a href="#" style="color:#FF66CC">Forgot Password?</a>
+                                <a href="#" style="color:#f5b402">Forgot Password?</a>
                             </div>
                         </div>
-                        <div class="submit-btn-area">
+                        <div class="submit-btn-area"> 
                             <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
-                            
                         </div>
                         <div class="form-footer text-center mt-5">
-                            <p  class="text-muted">Don't have an account? <a href="{{ route('nes.register')}}" style="color:#FF66CC">Sign up</a></p>
+                            <p  class="text-muted">Don't have an account? <a href="{{ route('nes.register')}}" style="color:#f5b402">Sign up</a></p>
                         </div>
                     </div>
                 </form>

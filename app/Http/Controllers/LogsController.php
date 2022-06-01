@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Logs;
+use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LogsController extends Controller
 {
@@ -17,8 +18,18 @@ class LogsController extends Controller
         if(!session('loggedUser')){
             return redirect('/login');
         }else{
-            return view('nes.logs');
+            // select query here
+            $audits = DB::table('audits')
+            ->select('audits.*')
+            ->get();
+
+            return view('nes.logs', compact('audits'));
         }
+        // if(!session('loggedUser')){
+        //     return redirect('/login');
+        // }else{
+        //     return view('nes.logs');
+        // }
     }
 
     /**

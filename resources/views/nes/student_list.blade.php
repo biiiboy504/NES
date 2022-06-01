@@ -13,7 +13,7 @@
                                 <h4 class="header-title">Students List</h4>    
                             </div>
                             <div class="float-right mb-3">
-                                <a href="/add_student_1" class="action-button" type="button">Add Student</a>
+                                <a href="/add_student_1" class="btn text-light" type="button" style="background-color: #097a3c;">Add Student</a>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,9 @@
                                         @method('DELETE')
                                         <div class="btn-group" role="group">
                                         <a href="/view/{{$student->id}}" class="btn btn-secondary btn-xs" ><i class="fa fa-eye"></i> </a>
+                                        <!-- <a href="#" class="btn btn-secondary btn-xs" ><i class="fa fa-eye"></i> </a> -->
                                         <a href="/update_student/{{$student->id}}" class="btn btn-info btn-xs" ><i class="fa fa-pencil"></i> </a>
+                                        <!-- <a href="#" class="btn btn-info btn-xs" ><i class="fa fa-pencil"></i> </a> -->
                                         <button class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this Student?');"><i class="fa fa-trash"></i></button>
                                         <!-- <a href="/update_student/{{$student->id}}" class="btn btn-info">Update</a> -->
                                         

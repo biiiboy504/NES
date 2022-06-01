@@ -583,7 +583,7 @@
 
     <h2 class="fs-subtitle" style="font-size: 20px;">Click Previous to review encoded data.</h2>
     
-    <button style="float:right; color:#66ff99" class="btn text-light"  type="submit" >Submit</button>
+    <button style="float:right; color:#66ff99" class="action-button text-light"  type="submit" >Submit</button>
     <input style="float:right;"  type="button" name="previous" class="previous action-button" value="Previous" />
 
   </fieldset>
