@@ -225,12 +225,14 @@
                                     <th class="col-sm-2">Date</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <tr>
-                                    <td><input type="text" name="elem_name" class="view-textbox4"  value="" readonly></td>
-                                    <td><input type="text" name="elem_name" class="view-textbox4"  value="" readonly></td>
-                                    <td><input type="text" name="elem_date" class="view-textbox4"  value="" readonly></td>
-                                </tr>
+                                <tbody id="organizationTable">
+                                    @foreach($organizations as $org)
+                                    <tr>
+                                        <td><input type="text" name="nameOfOrganization[]" class="view-textbox4"  value="{{$org->organization_name}}" readonly></td>
+                                        <td><input type="text" name="positionHeld[]" class="view-textbox4"  value="{{$org->possition_held}}" readonly></td>
+                                        <td><input type="text" name="activityDate[]" class="view-textbox4"  value="{{$org->date}}" readonly></td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -238,64 +240,64 @@
                             <h1 class="view-subtitle">HOBBIES AND LEISURE TIME ACTIVITIES: Do you enjoy/engage in:</h1>
                         </div>
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Movies</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Movies"><label class="view-label3" @if(in_array('Movies' , $hobbiesArr)) checked @endif>Movies</label><br>
                         </div>   
                         <div class="col-sm-2">
-                         <input  type="checkbox" name="hobbies[]" value=""><label class="view-label3">Computer Games</label><br>
+                         <input  type="checkbox" name="hobbies[]" value="Computer Games" @if(in_array('Computer Games' , $hobbiesArr)) checked @endif><label class="view-label3">Computer Games</label><br>
                         </div>
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Singing</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Singing" @if(in_array('Singing' , $hobbiesArr)) checked @endif><label class="view-label3">Singing</label><br>
                         </div>
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Dancing</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Dancing" @if(in_array('Dancing' , $hobbiesArr)) checked @endif><label class="view-label3">Dancing</label><br>
                         </div>
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Parties</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Parties" @if(in_array('Parties' , $hobbiesArr)) checked @endif><label class="view-label3">Parties</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Alcoholic Drinks</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Alcoholic Drinks" @if(in_array('Alcoholic Drinks' , $hobbiesArr)) checked @endif><label class="view-label3">Alcoholic Drinks</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Facebook/Internet</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Facebook/Internet" @if(in_array('Facebook/Internet' , $hobbiesArr)) checked @endif><label class="view-label3">Facebook/Internet</label><br>
                         </div>   
                         <div class="col-sm-2">
-                         <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Sports</label><br>
+                         <input type="checkbox" name="hobbies[]" value="Sports" @if(in_array('Sports' , $hobbiesArr)) checked @endif><label class="view-label3">Sports</label><br>
                         </div>
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Traveling</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Traveling" @if(in_array('Traveling' , $hobbiesArr)) checked @endif><label class="view-label3">Traveling</label><br>
                         </div>
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Reading</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Reading" @if(in_array('Reading' , $hobbiesArr)) checked @endif><label class="view-label3">Reading</label><br>
                         </div>
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Speaking</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Speaking" @if(in_array('Speaking' , $hobbiesArr)) checked @endif><label class="view-label3">Speaking</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Cooking</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Cooking" @if(in_array('Cooking' , $hobbiesArr)) checked @endif><label class="view-label3">Cooking</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Writing</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Writing" @if(in_array('Writing' , $hobbiesArr)) checked @endif><label class="view-label3">Writing</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Painting</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Painting" @if(in_array('Painting' , $hobbiesArr)) checked @endif><label class="view-label3">Painting</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Photography</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Photography" @if(in_array('Photography' , $hobbiesArr)) checked @endif><label class="view-label3">Photography</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Cycling</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Cycling" @if(in_array('Cycling' , $hobbiesArr)) checked @endif><label class="view-label3">Cycling</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Hiking</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Hiking" @if(in_array('Hiking' , $hobbiesArr)) checked @endif><label class="view-label3">Hiking</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Shopping</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Shopping" @if(in_array('Shopping' , $hobbiesArr)) checked @endif><label class="view-label3">Shopping</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Video Editing</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Video Editing" @if(in_array('Video Editing' , $hobbiesArr)) checked @endif><label class="view-label3">Video Editing</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value=""><label class="view-label3">Computer Programming</label><br>
+                            <input type="checkbox" name="hobbies[]" value="Computer Programming" @if(in_array('Computer Programming' , $hobbiesArr)) checked @endif><label class="view-label3">Computer Programming</label><br>
                         </div> 
                         <div class="col-sm-12 mt-2">
                             <label class="view-label3">Others (Please Specify):</label>
@@ -305,19 +307,19 @@
                             <h1 class="view-subtitle">HEALTH CONDITION: Do you have a handicap / difficulty in: </h1>
                         </div>
                         <div class="col-sm-4">
-                            <input type="checkbox" name="health[]" value=""><label class="view-label3">Physical handicap</label><br>
+                            <input type="checkbox" name="health[]" value="Physical handicap" @if(in_array('Physical handicap' , $healthArr)) checked @endif><label class="view-label3">Physical handicap</label><br>
                         </div> 
                         <div class="col-sm-4">
-                            <input type="checkbox" name="health[]" value=""><label class="view-label3">Mental handicap</label><br>
+                            <input type="checkbox" name="health[]" value="Mental handicap" @if(in_array('Mental handicap' , $healthArr)) checked @endif><label class="view-label3">Mental handicap</label><br>
                         </div> 
                         <div class="col-sm-4">
-                            <input type="checkbox" name="health[]" value=""><label class="view-label3">Hearing</label><br>
+                            <input type="checkbox" name="health[]" value="Hearing" @if(in_array('Hearing' , $healthArr)) checked @endif><label class="view-label3">Hearing</label><br>
                         </div> 
                         <div class="col-sm-4">
-                            <input type="checkbox" name="health[]" value=""><label class="view-label3">Eyesight</label><br>
+                            <input type="checkbox" name="health[]" value="Eyesight" @if(in_array('Eyesight' , $healthArr)) checked @endif><label class="view-label3">Eyesight</label><br>
                         </div>
                         <div class="col-sm-4">
-                            <input type="checkbox" name="health[]" value=""><label class="view-label3">Speaking</label><br>
+                            <input type="checkbox" name="health[]" value="Speaking" @if(in_array('Speaking' , $healthArr)) checked @endif><label class="view-label3">Speaking</label><br>
                         </div>  
                         <div class="col-sm-12 mt-2">
                             <label class="view-label3">Do you have any serious accident or sickness?:</label>
@@ -337,12 +339,14 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($work_experience as $work)
                                 <tr>
-                                    <td><input type="text" name="position[]" class="view-textbox4"  value="" readonly></td>
-                                    <td><input type="text" name="nameofCompany[]" class="view-textbox4"  value="" readonly></td>
-                                    <td><input type="text" name="dateOfEmployment[]" class="view-textbox4"  value="" readonly></td>
-                                    <td><input type="text" name="monthlyEarning[]" class="view-textbox4"  value="" readonly></td>
+                                    <td><input type="text" name="position[]" class="view-textbox4"  value="{{$work->work_possition}}" readonly></td>
+                                    <td><input type="text" name="nameofCompany[]" class="view-textbox4"  value="{{$work->company_name}}" readonly></td>
+                                    <td><input type="text" name="dateOfEmployment[]" class="view-textbox4"  value="{{$work->employment_date}}" readonly></td>
+                                    <td><input type="text" name="monthlyEarning[]" class="view-textbox4"  value="{{$work->monthly_earnings}}" readonly></td>
                                 </tr>
+                                @endforeach()
                                 </tbody>
                             </table>
                         </div>
@@ -353,9 +357,9 @@
                             <label class="view-label3">Course that I am taking in is the choice of: </label>
                         </div>
                         <div class="col-sm-7">
-                            <input type="checkbox" name="choice[]" value=""><label class="view-label3 mr-5">My Own</label>
-                            <input type="checkbox" name="choice[]" value=""><label class="view-label3 mr-5">My Parents</label>
-                            <input type="checkbox" name="choice[]" value=""><label class="view-label3 mr-5">My Peers</label>
+                            <input type="checkbox" name="choice[]" value="My Own" @if(in_array('My Own' , $careerChoiceArr)) checked @endif><label class="view-label3 mr-5">My Own</label>
+                            <input type="checkbox" name="choice[]" value="My Parents" @if(in_array('My Parents' , $careerChoiceArr)) checked @endif><label class="view-label3 mr-5">My Parents</label>
+                            <input type="checkbox" name="choice[]" value="My Peers" @if(in_array('My Peers' , $careerChoiceArr)) checked @endif><label class="view-label3 mr-5">My Peers</label>
                         </div>
                         <div class="col-sm-3">
                             <label class="view-label3">Occupations interested to engage in:</label>
@@ -367,14 +371,14 @@
                             <label class="view-label3">Have you ever been convicted of any crime or violation of any law, degree, ordinance or regulations by any court or tribunal?:</label>
                         </div>
                         <div class="col-sm-3">
-                        <input type="checkbox" name="crime[]" value=""><label class="view-label3 mr-5">Yes</label>
-                            <input type="checkbox" name="crime[]" value=""><label class="view-label3 mr-5">No</label>
+                            <input type="checkbox" name="crime[]" value="Yes" @if(!empty($futurePlan->crime) && $futurePlan->crime == 'Yes') checked @endif><label class="view-label3 mr-5">Yes</label>
+                            <input type="checkbox" name="crime[]" value="No" @if(!empty($futurePlan->crime) && $futurePlan->crime == 'No')  checked @endif><label class="view-label3 mr-5">No</label>
                         </div>
                         <div class="col-sm-3">
                             <label class="view-label3">If your answer is <b>"YES"</b> give details of the offense:</label>
                         </div>
                         <div class="col-sm-8">
-                            <input type="text" name="f_interest" class="view-textbox2" value="" readonly>
+                            <input type="text" name="f_interest" class="view-textbox2" value="{{!empty($futurePlan->offense) ? $futurePlan->offense : ''}}" readonly>
                         </div>
                     </div>
                 </div>

@@ -524,6 +524,77 @@ class StudentController extends Controller
         ->select('students.*', 'family_backgrounds.*', 'educ_backgrounds.*')
         ->where('students.id','=',$id)->first();
 
-        return view('Student.view', compact('data'));
+
+        $organizations = DB::table('community_organizations')
+        ->select('community_organizations.*')
+        ->where('students_id', '=', $id)
+        ->get();
+
+        $hobbies = DB::table('student_hobbies')
+        ->select('student_hobbies.*')
+        ->where('students_id', '=', $id)
+        ->first();
+        $text = $hobbies->hobbies;
+        $hobbiesArr = explode(', ', $text);
+        $hobbiesCheckbox = [
+            'Movies',
+            'Computer Games',
+            'Singing',
+            'Dancing',
+            'Parties',
+            'Alcoholic Drinks',
+            'Facebook/Internet',
+            'Sports',
+            'Traveling',
+            'Reading',
+            'Speaking',
+            'Cooking',
+            'Writing',
+            'Painting',
+            'Photography',
+            'Cycling',
+            'Hiking',
+            'Shopping',
+            'Video Editing',
+            'Computer Programming'
+        ];
+        $otherHobbies = array_diff( $hobbiesArr, $hobbiesCheckbox );
+
+        $work_experience = DB::table('work_experiences')
+        ->select('work_experiences.*')
+        ->where('students_id', '=', $id)
+        ->get();
+
+        $health = DB::table('student_health_complications')
+        ->select('student_health_complications.*')
+        ->where('students_id', '=', $id)
+        ->first();
+        $handicap = $health->handicap;
+        $healthArr = explode(', ', $handicap);
+
+        $futurePlan = DB::table('future_plans')
+        ->select('future_plans.*')
+        ->where('students_id', '=', $id)
+        ->first();
+        $courseChoice = "";
+        $careerChoiceArr = [];
+        if($futurePlan){
+            $courseChoice = $futurePlan->course_choice;
+            $careerChoiceArr = explode(', ', $courseChoice);
+        }
+        
+
+        return view('Student.view', compact(
+            'data',
+            'organizations',
+            'hobbiesArr',
+            'work_experience',
+            'otherHobbies',
+            'healthArr',
+            'health',
+            'futurePlan',
+            'careerChoiceArr',
+            'student_id'
+        ));
     }
 }
