@@ -573,6 +573,7 @@ class StudentController extends Controller
 
     public function read_1($id)
     {
+        $student_id = $id;
         $data = DB::table('students')
         ->join('family_backgrounds', 'students.id', '=', 'family_backgrounds.students_id')
         ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')

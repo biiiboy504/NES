@@ -301,7 +301,7 @@
                         </div> 
                         <div class="col-sm-12 mt-2">
                             <label class="view-label3">Others (Please Specify):</label>
-                            <input type="text" name="hobbies[]" class="view-textbox2" value="" readonly> 
+                            <input type="text" name="hobbies[]" class="view-textbox2" value="{{implode(', ', $otherHobbies)}}" readonly> 
                         </div>
                         <div class="col-12 mt-4 mb-2">
                             <h1 class="view-subtitle">HEALTH CONDITION: Do you have a handicap / difficulty in: </h1>
@@ -323,7 +323,7 @@
                         </div>  
                         <div class="col-sm-12 mt-2">
                             <label class="view-label3">Do you have any serious accident or sickness?:</label>
-                            <input type="text" name="health[]" class="view-textbox2" value="" readonly>
+                            <input type="text" name="health[]" class="view-textbox2" value="{{!empty($health->accidents_or_sickness) ? $health->accidents_or_sickness : ''}}" readonly>
                         </div>
                         <div class="col-12 mt-4 mb-2">
                             <h1 class="view-subtitle">WORK EXPERIENCES</h1>
@@ -365,7 +365,7 @@
                             <label class="view-label3">Occupations interested to engage in:</label>
                         </div>
                         <div class="col-sm-8">
-                            <input type="text" name="f_interest" class="view-textbox2" value="" readonly>
+                            <input type="text" name="f_interest" class="view-textbox2" value="{{!empty($futurePlan->interested_occupations) ? $futurePlan->interested_occupations : ''}}" readonly>
                         </div>
                         <div class="col-sm-7">
                             <label class="view-label3">Have you ever been convicted of any crime or violation of any law, degree, ordinance or regulations by any court or tribunal?:</label>
