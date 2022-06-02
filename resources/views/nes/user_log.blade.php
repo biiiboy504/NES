@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="float-left">
-                                <h4 class="header-title">Activity Logs</h4>    
+                                <h4 class="header-title">Login/Logout</h4>    
                             </div>
                         </div>
                     </div>
@@ -25,17 +25,6 @@
                                 <th>Date Created</th>
                             </tr>
                         </thead>
-                        <tbody>
-                        @foreach ($audits as $audit)
-                        <tr>
-                            <td>{{$audit->id}}</td>
-                            <td>{{$audit->user_id}}</td>
-                            <td>{{$audit->event}}</td>
-                            <td>{{$audit->created_at}}</td>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
                     </table>
                 </div>
             </div>
