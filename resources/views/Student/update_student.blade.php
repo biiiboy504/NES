@@ -3,7 +3,8 @@
 @section('content')
 
 <!-- multistep form -->
-<form id="msform">
+<form id="msform" action="/edit_student/{{$student_id}}" method="POST">
+    @csrf
   <!-- progressbar -->
   <ul id="progressbar">
     <li class="active">Personal</li>
@@ -375,31 +376,51 @@
                     </div>
                     
                     <ul class="ks-cboxtags">
-                        <li><input type="checkbox" id="checkboxOne" value="Movies" name="hobbies[]"><label for="checkboxOne" >Movies</label></li>
-                        <li><input type="checkbox" id="checkboxTwo" value="Computer Games" name="hobbies[]"><label for="checkboxTwo">Computer Games</label></li>
-                        <li><input type="checkbox" id="checkboxThree" value="Singing" name="hobbies[]"><label for="checkboxThree">Singing</label></li>
-                        <li><input type="checkbox" id="checkboxFour" value="Dancing" name="hobbies[]"><label for="checkboxFour">Dancing</label></li>
-                        <li><input type="checkbox" id="checkboxFive" value="Parties" name="hobbies[]"><label for="checkboxFive">Parties</label></li>
-                        <li><input type="checkbox" id="checkboxSix" value="Alcoholic Drinks" name="hobbies[]"><label for="checkboxSix">Alcoholic Drinks</label></li>
-                        <li><input type="checkbox" id="checkboxSeven" value="facebook/Internet" name="hobbies[]"><label for="checkboxSeven">Facebook/Internet</label></li>
-                        <li><input type="checkbox" id="checkboxEight" value="Sports" name="hobbies[]"><label for="checkboxEight">Sports</label></li>
-                        <li><input type="checkbox" id="checkboxNine" value="Traveling" name="hobbies[]"><label for="checkboxNine">Traveling</label></li>
-                        <li><input type="checkbox" id="checkboxTen" value="Reading" name="hobbies[]"><label for="checkboxTen">Reading</label></li>
-                        <li><input type="checkbox" id="checkboxEleven" value="Speaking" name="hobbies[]"><label for="checkboxEleven">Speaking</label></li>
-                        <li><input type="checkbox" id="checkboxTwelve" value="Cooking" name="hobbies[]"><label for="checkboxTwelve">Cooking</label></li>
-                        <li><input type="checkbox" id="checkboxThirteen" value="Writing" name="hobbies[]"><label for="checkboxThirteen">Writing</label></li>
-                        <li><input type="checkbox" id="checkboxFourteen" value="Painting" name="hobbies[]"><label for="checkboxFourteen">Painting</label></li>
-                        <li><input type="checkbox" id="checkboxFifteen" value="Photography" name="hobbies[]"><label for="checkboxFifteen">Photography</label></li>
-                        <li><input type="checkbox" id="checkboxSixteen" value="Cycling" name="hobbies[]"><label for="checkboxSixteen">Cycling</label></li>
-                        <li><input type="checkbox" id="checkboxSeventeen" value="Hiking" name="hobbies[]"><label for="checkboxSeventeen">Hiking</label></li>
-                        <li><input type="checkbox" id="checkboxEighteen" value="Shopping" name="hobbies[]"><label for="checkboxEighteen">Shopping</label></li>
-                        <li><input type="checkbox" id="checkboxNineteen" value="Video Editing" name="hobbies[]"><label for="checkboxNineteen">Video Editing</label></li>
-                        <li><input type="checkbox" id="checkboxTwenty" value="Computer Programming" name="hobbies[]"><label for="checkboxTwenty">Computer Programming</label></li>
+                        <li><input type="checkbox" id="checkboxOne" value="Movies" name="hobbies[]" 
+                            @if(in_array('Movies' , $hobbiesArr)) checked @endif><label for="checkboxOne">Movies</label></li>
+                        <li><input type="checkbox" id="checkboxTwo" value="Computer Games" name="hobbies[]"
+                            @if(in_array('Computer Games' , $hobbiesArr)) checked @endif><label for="checkboxTwo">Computer Games</label></li>
+                        <li><input type="checkbox" id="checkboxThree" value="Singing" name="hobbies[]"
+                            @if(in_array('Singing' , $hobbiesArr)) checked @endif><label for="checkboxThree">Singing</label></li>
+                        <li><input type="checkbox" id="checkboxFour" value="Dancing" name="hobbies[]"
+                            @if(in_array('Dancing' , $hobbiesArr)) checked @endif><label for="checkboxFour">Dancing</label></li>
+                        <li><input type="checkbox" id="checkboxFive" value="Parties" name="hobbies[]"
+                            @if(in_array('Parties' , $hobbiesArr)) checked @endif><label for="checkboxFive">Parties</label></li>
+                        <li><input type="checkbox" id="checkboxSix" value="Alcoholic Drinks" name="hobbies[]"
+                            @if(in_array('Alcoholic Drinks' , $hobbiesArr)) checked @endif><label for="checkboxSix">Alcoholic Drinks</label></li>
+                        <li><input type="checkbox" id="checkboxSeven" value="facebook/Internet" name="hobbies[]"
+                            @if(in_array('Facebook/Internet' , $hobbiesArr)) checked @endif><label for="checkboxSeven">Facebook/Internet</label></li>
+                        <li><input type="checkbox" id="checkboxEight" value="Sports" name="hobbies[]"
+                            @if(in_array('Sports' , $hobbiesArr)) checked @endif><label for="checkboxEight">Sports</label></li>
+                        <li><input type="checkbox" id="checkboxNine" value="Traveling" name="hobbies[]"
+                            @if(in_array('Traveling' , $hobbiesArr)) checked @endif><label for="checkboxNine">Traveling</label></li>
+                        <li><input type="checkbox" id="checkboxTen" value="Reading" name="hobbies[]"
+                            @if(in_array('Reading' , $hobbiesArr)) checked @endif><label for="checkboxTen">Reading</label></li>
+                        <li><input type="checkbox" id="checkboxEleven" value="Speaking" name="hobbies[]"
+                            @if(in_array('Speaking' , $hobbiesArr)) checked @endif><label for="checkboxEleven">Speaking</label></li>
+                        <li><input type="checkbox" id="checkboxTwelve" value="Cooking" name="hobbies[]"
+                            @if(in_array('Cooking' , $hobbiesArr)) checked @endif><label for="checkboxTwelve">Cooking</label></li>
+                        <li><input type="checkbox" id="checkboxThirteen" value="Writing" name="hobbies[]"
+                            @if(in_array('Writing' , $hobbiesArr)) checked @endif><label for="checkboxThirteen">Writing</label></li>
+                        <li><input type="checkbox" id="checkboxFourteen" value="Painting" name="hobbies[]"
+                            @if(in_array('Painting' , $hobbiesArr)) checked @endif><label for="checkboxFourteen">Painting</label></li>
+                        <li><input type="checkbox" id="checkboxFifteen" value="Photography" name="hobbies[]"
+                            @if(in_array('Photography' , $hobbiesArr)) checked @endif><label for="checkboxFifteen">Photography</label></li>
+                        <li><input type="checkbox" id="checkboxSixteen" value="Cycling" name="hobbies[]"
+                            @if(in_array('Cycling' , $hobbiesArr)) checked @endif><label for="checkboxSixteen">Cycling</label></li>
+                        <li><input type="checkbox" id="checkboxSeventeen" value="Hiking" name="hobbies[]"
+                            @if(in_array('Hiking' , $hobbiesArr)) checked @endif><label for="checkboxSeventeen">Hiking</label></li>
+                        <li><input type="checkbox" id="checkboxEighteen" value="Shopping" name="hobbies[]"
+                            @if(in_array('Shopping' , $hobbiesArr)) checked @endif><label for="checkboxEighteen">Shopping</label></li>
+                        <li><input type="checkbox" id="checkboxNineteen" value="Video Editing" name="hobbies[]"
+                            @if(in_array('Video Editing' , $hobbiesArr)) checked @endif><label for="checkboxNineteen">Video Editing</label></li>
+                        <li><input type="checkbox" id="checkboxTwenty" value="Computer Programming" name="hobbies[]"
+                            @if(in_array('Computer Programming' , $hobbiesArr)) checked @endif><label for="checkboxTwenty">Computer Programming</label></li>
                     </ul>
                         <div class="col-12 mt-3">
                             <label for=""><b>Others (Please Specify):</b></label>
                             <div class="alert-danger pl-2"></div>
-                            <input type="text" name="hobbies[]" class="form-control mb-4" placeholder="Other Hobbies . . .">
+                            <input type="text" name="hobbies[]" value="{{implode(', ', $otherHobbies)}}" class="form-control mb-4" placeholder="Other Hobbies . . .">
                         </div>
                 </div>
                     <input style="float:right;" type="button" name="next" class="next action-button" value="Next"/>
@@ -425,18 +446,23 @@
                 <label class= "mt-4 ml-2 mr-5" style="font-size: 16px;"><b>HEALTH CONDITION: Do you have a handicap / difficulty in:</b></label>
                 <div class="ml-5">
                 <ul class="ks-cboxtags">
-                    <li><input type="checkbox" name="health[]"id="h_checkboxOne" value="Physical handicap"><label for="h_checkboxOne">Physical handicap </label></li>
-                    <li><input type="checkbox" name="health[]"id="h_checkboxTwo" value="Hearing"><label for="h_checkboxTwo">Hearing</label></li>
-                    <li><input type="checkbox" name="health[]"id="h_checkboxThree" value="Eyesight "><label for="h_checkboxThree">Eyesight </label></li>
-                    <li><input type="checkbox" name="health[]"id="h_checkboxFour" value="Speaking"><label for="h_checkboxFour">Speaking</label></li>
-                    <li><input type="checkbox" name="health[]"id="h_checkboxFive" value="Mental handicap"><label for="h_checkboxFive">Mental handicap</label></li>
+                    <li><input type="checkbox" name="health[]"id="h_checkboxOne" value="Physical handicap"
+                        @if(in_array('Physical handicap' , $healthArr)) checked @endif><label for="h_checkboxOne">Physical handicap </label></li>
+                    <li><input type="checkbox" name="health[]"id="h_checkboxTwo" value="Hearing"
+                        @if(in_array('Hearing' , $healthArr)) checked @endif><label for="h_checkboxTwo">Hearing</label></li>
+                    <li><input type="checkbox" name="health[]"id="h_checkboxThree" value="Eyesight"
+                        @if(in_array('Eyesight' , $healthArr)) checked @endif><label for="h_checkboxThree">Eyesight </label></li>
+                    <li><input type="checkbox" name="health[]"id="h_checkboxFour" value="Speaking"
+                        @if(in_array('Speaking' , $healthArr)) checked @endif><label for="h_checkboxFour">Speaking</label></li>
+                    <li><input type="checkbox" name="health[]"id="h_checkboxFive" value="Mental handicap"
+                        @if(in_array('Mental handicap' , $healthArr)) checked @endif><label for="h_checkboxFive">Mental handicap</label></li>
                 </ul>
                 </div>
             </div>
             <div class="col-12 mt-3">
                 <label for=""><b>Do you have any serious accident or sickness?:</b></label>
                 <div class="alert-danger pl-2"></div>
-                <input type="text" name="other_complications" class="form-control mb-4" placeholder="">
+                <input value="{{!empty($health->accidents_or_sickness) ? $health->accidents_or_sickness : ''}}" type="text" name="other_complications" class="form-control mb-4" placeholder="">
             </div>
         </div>
         <input style="float:right;" type="button" name="next" class="next action-button" value="Next"/>
@@ -467,20 +493,22 @@
                 </tr>
             </thead>
             <tbody id ="workExperienceTable">
+                @foreach($work_experience as $work)
                 <tr>
                     <td>
-                        <input type="text" class="form-control" id="inputName5" name="position[]">
+                        <input value="{{$work->work_possition}}" type="text" class="form-control" id="inputName5" name="position[]">
                     </td>
                     <td>
-                        <input type="text" class="form-control" id="inputName5" name="nameofCompany[]">
+                        <input value="{{$work->company_name}}" type="text" class="form-control" id="inputName5" name="nameofCompany[]">
                     </td>
                     <td>
-                        <input type="date" class="form-control" id="inputName5" name="dateOfEmployment[]">
+                        <input value="{{$work->employment_date}}" type="date" class="form-control" id="inputName5" name="dateOfEmployment[]">
                     </td>
                     <td>
-                        <input type="text" class="form-control" id="inputName5" name="monthlyEarning[]">
+                        <input value="{{$work->monthly_earnings}}" type="text" class="form-control" id="inputName5" name="monthlyEarning[]">
                     </td>
                 </tr>
+                @endforeach()
             </tbody>
                 
         </table>
@@ -492,7 +520,7 @@
         <br>
             <div class="col-md-12">
                 <label for="otherWorkExperience">Other Work Experience</label>
-                <input class="form-control" id="otherWorkExperience" name="otherWorkExperience" type="text">
+                <input value="{{$other_work_experience->other_work_experience}}" class="form-control" id="otherWorkExperience" name="otherWorkExperience" type="text">
             </div>
        
     </div>
@@ -518,25 +546,30 @@
             <div class="col-12 mt-3">
                 <label for=""><b>Course that I am taking in is the choice of:</b></label>
                 <ul class="ks-cboxtags">
-                        <li><input name="choice[]" type="checkbox" id="f_checkboxOne" value="My Own"><label for="f_checkboxOne">My Own </label></li>
-                        <li><input name="choice[]" type="checkbox" id="f_checkboxTwo" value="My Parents"><label for="f_checkboxTwo">My Parents</label></li>
-                        <li><input name="choice[]" type="checkbox" id="f_checkboxThree" value="My Peers"><label for="f_checkboxThree">My Peers </label></li>
+                        <li><input name="choice[]" type="checkbox" id="f_checkboxOne" value="My Own"
+                            @if(in_array('My Own' , $careerChoiceArr)) checked @endif><label for="f_checkboxOne">My Own </label></li>
+                        <li><input name="choice[]" type="checkbox" id="f_checkboxTwo" value="My Parents"
+                            @if(in_array('My Parents' , $careerChoiceArr)) checked @endif><label for="f_checkboxTwo">My Parents</label></li>
+                        <li><input name="choice[]" type="checkbox" id="f_checkboxThree" value="My Peers"
+                            @if(in_array('My Peers' , $careerChoiceArr)) checked @endif><label for="f_checkboxThree">My Peers </label></li>
                 </ul>
             </div>
             <div class="col-12 mt-3">
                 <label for=""><b>Occupations interested to engage in:</b></label>
-                <input type="text" name="f_interest" class="form-control mb-4" placeholder="">
+                <input value="{{!empty($futurePlan->interested_occupations) ? $futurePlan->interested_occupations : ''}}" type="text" name="f_interest" class="form-control mb-4" placeholder="">
             </div>
             <div class="col-12 mt-3">
                 <label for=""><b>Have you ever been convicted of any crime or violation of any law, degree, ordinance or regulations by any court or tribunal?:</b></label>
                 <ul class="ks-cboxtags">
-                        <li><input name="crime[]" type="checkbox" id="f_checkboxFour" value="Yes"><label for="f_checkboxFour">YES </label></li>
-                        <li><input name="crime[]" type="checkbox" id="f_checkboxFive" value="No"><label for="f_checkboxFive">NO</label></li>
+                        <li><input name="crime[]" type="checkbox" id="f_checkboxFour" value="Yes"
+                            @if(!empty($futurePlan->crime) && $futurePlan->crime == 'Yes') checked @endif><label for="f_checkboxFour">YES </label></li>
+                        <li><input name="crime[]" type="checkbox" id="f_checkboxFive" value="No"
+                            @if(!empty($futurePlan->crime) && $futurePlan->crime == 'No')  checked @endif><label for="f_checkboxFive">NO</label></li>
                 </ul>
             </div>
             <div class="col-12 mt-3">
                 <label for=""><b>If your answer is "YES" give details of the offense:</b></label>
-                <input type="text" name="f_offense" class="form-control mb-4" placeholder="">
+                <input value="{{!empty($futurePlan->offense) ? $futurePlan->offense : ''}}" type="text" name="f_offense" class="form-control mb-4" placeholder="">
             </div>
         </div>
     <input style="float:right;" type="button" name="next" class="next action-button" value="Next"/>
@@ -557,7 +590,7 @@
 
     <h2 class="fs-subtitle" style="font-size: 20px;">Click Previous to review encoded data.</h2>
 
-    <input style="float:right;"  type="submit" name="submit" class="submit action-button" value="Submit" />
+    <button style="float:right; color:#66ff99" class="action-button text-light"  type="submit" >Submit</button>
     <input style="float:right;"  type="button" name="previous" class="previous action-button" value="Previous" />
 
   </fieldset>
