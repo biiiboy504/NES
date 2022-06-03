@@ -462,7 +462,7 @@
             <div class="col-12 mt-3">
                 <label for=""><b>Do you have any serious accident or sickness?:</b></label>
                 <div class="alert-danger pl-2"></div>
-                <input value="{{$health->accidents_or_sickness}}" type="text" name="other_complications" class="form-control mb-4" placeholder="">
+                <input value="{{!empty($health->accidents_or_sickness) ? $health->accidents_or_sickness : ''}}" type="text" name="other_complications" class="form-control mb-4" placeholder="">
             </div>
         </div>
         <input style="float:right;" type="button" name="next" class="next action-button" value="Next"/>
@@ -520,7 +520,7 @@
         <br>
             <div class="col-md-12">
                 <label for="otherWorkExperience">Other Work Experience</label>
-                <input class="form-control" id="otherWorkExperience" name="otherWorkExperience" type="text">
+                <input value="{{$other_work_experience->other_work_experience}}" class="form-control" id="otherWorkExperience" name="otherWorkExperience" type="text">
             </div>
        
     </div>

@@ -59,7 +59,7 @@ class LogsController extends Controller
      * @param  \App\Models\Logs  $logs
      * @return \Illuminate\Http\Response
      */
-    public function show(Logs $logs)
+    public function show()
     {
         //
     }
@@ -70,7 +70,7 @@ class LogsController extends Controller
      * @param  \App\Models\Logs  $logs
      * @return \Illuminate\Http\Response
      */
-    public function edit(Logs $logs)
+    public function edit()
     {
         //
     }
@@ -82,7 +82,7 @@ class LogsController extends Controller
      * @param  \App\Models\Logs  $logs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Logs $logs)
+    public function update(Request $request)
     {
         //
     }
@@ -93,7 +93,7 @@ class LogsController extends Controller
      * @param  \App\Models\Logs  $logs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Logs $logs)
+    public function destroy()
     {
         //
     }

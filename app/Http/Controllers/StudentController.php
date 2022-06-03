@@ -149,19 +149,22 @@ class StudentController extends Controller
         $educ->post_date = $request->post_date;
         $educ->students_id = $studentId;
         $educ->save();
-
-        foreach($request->nameOfOrganization as $key => $value){
-            $nameOfOrganization = $request->nameOfOrganization[$key];
-            $positionHeld = $request->positionHeld[$key];
-            $activityDate = $request->activityDate[$key];
-
-            $org = new CommunityOrganization;
-            $org->organization_name = $nameOfOrganization;
-            $org->possition_held = $positionHeld;
-            $org->date = $activityDate;
-            $org->students_id = $studentId;
-            $org->save();
+        
+        if($request->filled('nameOfOrganization')){
+            foreach($request->nameOfOrganization as $key => $value){
+                $nameOfOrganization = $request->nameOfOrganization[$key];
+                $positionHeld = $request->positionHeld[$key];
+                $activityDate = $request->activityDate[$key];
+    
+                $org = new CommunityOrganization;
+                $org->organization_name = $nameOfOrganization;
+                $org->possition_held = $positionHeld;
+                $org->date = $activityDate;
+                $org->students_id = $studentId;
+                $org->save();
+            }
         }
+        
 
         $hobbies = "";
         foreach($request->hobbies as $key ){
@@ -179,28 +182,31 @@ class StudentController extends Controller
                 $health .= $key .", ";
             }
 
-        $complication = new StudentHealthComplication;
-        $complication->handicap = rtrim($health, ", ");
-        $complication->accidents_or_sickness = $request->other_complications;
-        $complication->students_id = $studentId;
-        $complication->save();
+            $complication = new StudentHealthComplication;
+            $complication->handicap = rtrim($health, ", ");
+            $complication->accidents_or_sickness = $request->other_complications;
+            $complication->students_id = $studentId;
+            $complication->save();
         }
 
-        foreach($request->position as $key => $value){
-            $position = $request->position[$key];
-            $nameofCompany = $request->nameofCompany[$key];
-            $dateOfEmployment = $request->dateOfEmployment[$key];
-            $monthlyEarning = $request->monthlyEarning[$key];
-
-            $work = new WorkExperience;
-            $work->work_possition = $position;
-            $work->company_name = $nameofCompany;
-            $work->employment_date = $dateOfEmployment;
-            $work->monthly_earnings = $monthlyEarning;
-            $work->students_id = $studentId;
-            $work->save();
+        if($request->filled('position')){
+            foreach($request->position as $key => $value){
+                $position = $request->position[$key];
+                $nameofCompany = $request->nameofCompany[$key];
+                $dateOfEmployment = $request->dateOfEmployment[$key];
+                $monthlyEarning = $request->monthlyEarning[$key];
+    
+                $work = new WorkExperience;
+                $work->work_possition = $position;
+                $work->company_name = $nameofCompany;
+                $work->employment_date = $dateOfEmployment;
+                $work->monthly_earnings = $monthlyEarning;
+                $work->students_id = $studentId;
+                $work->save();
+            }
+    
         }
-
+        
         if($request->filled('otherWorkExperience')){
             $otherWork = new OtherWorkExperience;
             $otherWork->other_work_experience = $request->otherWorkExperience;
@@ -359,11 +365,21 @@ class StudentController extends Controller
             }
             $studentsId = DB::table('student_health_complications')
             ->where('students_id','=',$id)->first();
-            $complication = StudentHealthComplication::find($studentsId->id);
-            $complication->handicap = rtrim($health, ", ");
-            $complication->accidents_or_sickness = $request->other_complications;
-            $complication->students_id = $id;
-            $complication->save();
+            if($studentsId){
+                $complication = StudentHealthComplication::find($studentsId->id);
+                $complication->handicap = rtrim($health, ", ");
+                $complication->accidents_or_sickness = $request->other_complications;
+                $complication->students_id = $id;
+                $complication->save();
+            }
+            else{
+                $complication = new StudentHealthComplication;
+                $complication->handicap = rtrim($health, ", ");
+                $complication->accidents_or_sickness = $request->other_complications;
+                $complication->students_id = $id;
+                $complication->save();
+            }
+            
         }
 
         $deleteWork = WorkExperience::where('students_id', '=', $id)->delete();
@@ -385,9 +401,20 @@ class StudentController extends Controller
 
         $studentsId = DB::table('other_work_experiences')
         ->where('students_id','=',$id)->first();
-        $otherWork = OtherWorkExperience::find($studentsId->id);
-        $otherWork->other_work_experience = $request->otherWorkExperience;
-        $otherWork->save();
+        if($studentsId){
+            $otherWork = OtherWorkExperience::find($studentsId->id);
+            $otherWork->other_work_experience = $request->otherWorkExperience;
+            $otherWork->save();
+        }
+        else{
+            if($request->filled('otherWorkExperience')){
+                $otherWork = new OtherWorkExperience;
+                $otherWork->other_work_experience = $request->otherWorkExperience;
+                $otherWork->students_id = $id;
+                $otherWork->save();
+            }
+        }
+        
 
 
         $careerChoice = "";
@@ -397,19 +424,37 @@ class StudentController extends Controller
             }
             $studentsId = DB::table('other_work_experiences')
             ->where('students_id','=',$id)->first();
-            $future = FuturePlans::find($studentsId->id);
-            $future->course_choice = rtrim($careerChoice, ", ");
-            $future->interested_occupations = $request->f_interest;
+            if($studentsId){
+                $future = FuturePlans::find($studentsId->id);
+                $future->course_choice = rtrim($careerChoice, ", ");
+                $future->interested_occupations = $request->f_interest;
 
-            if($request->filled('f_offense')){
-                $future->crime = "Yes";
-                $future->offense = $request->f_offense;
+                if($request->filled('f_offense')){
+                    $future->crime = "Yes";
+                    $future->offense = $request->f_offense;
+                }
+                else{
+                    $future->crime = "No";
+                }
+                $future->students_id = $id;
+                $future->save();
             }
             else{
-                $future->crime = "No";
+                $future = new FuturePlans;
+                $future->course_choice = rtrim($careerChoice, ", ");
+                $future->interested_occupations = $request->f_interest;
+
+                if($request->filled('f_offense')){
+                    $future->crime = "Yes";
+                    $future->offense = $request->f_offense;
+                }
+                else{
+                    $future->crime = "No";
+                }
+                $future->students_id = $id;
+                $future->save();
             }
-            $future->students_id = $id;
-            $future->save();
+            
         }
 
         return Redirect('studentlist')->with('message', 'Successfully Updated!');
@@ -479,13 +524,22 @@ class StudentController extends Controller
         ->where('students_id', '=', $id)
         ->get();
 
+        $other_work_experience = DB::table('other_work_experiences')
+        ->select('other_work_experiences.*')
+        ->where('students_id', '=', $id)
+        ->first();
+
         $health = DB::table('student_health_complications')
         ->select('student_health_complications.*')
         ->where('students_id', '=', $id)
         ->first();
-        $handicap = $health->handicap;
-        $healthArr = explode(', ', $handicap);
-
+        $handicap = "";
+        $healthArr = [];
+        if($health){
+            $handicap = $health->handicap;
+            $healthArr = explode(', ', $handicap);
+        }
+        
         $futurePlan = DB::table('future_plans')
         ->select('future_plans.*')
         ->where('students_id', '=', $id)
@@ -505,6 +559,7 @@ class StudentController extends Controller
             'organizations',
             'hobbiesArr',
             'work_experience',
+            'other_work_experience',
             'otherHobbies',
             'healthArr',
             'health',
@@ -518,6 +573,7 @@ class StudentController extends Controller
 
     public function read_1($id)
     {
+        $student_id = $id;
         $data = DB::table('students')
         ->join('family_backgrounds', 'students.id', '=', 'family_backgrounds.students_id')
         ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')
