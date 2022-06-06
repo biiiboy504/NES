@@ -11,6 +11,7 @@ use App\Models\StudentHobbies;
 use App\Models\WorkExperience;
 use App\Models\OtherWorkExperience;
 use App\Models\CommunityOrganization;
+use App\Models\Enrollees;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -46,7 +47,10 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('Student.add_student_1');
+        $courses = DB::table('courses')
+        ->select('courses.*')
+        ->get();
+        return view('Student.add_student_1',compact('courses'));
     }
 
     /**
@@ -207,12 +211,11 @@ class StudentController extends Controller
     
         }
         
-        if($request->filled('otherWorkExperience')){
-            $otherWork = new OtherWorkExperience;
-            $otherWork->other_work_experience = $request->otherWorkExperience;
-            $otherWork->students_id = $studentId;
-            $otherWork->save();
-        }
+        $otherWork = new OtherWorkExperience;
+        $otherWork->other_work_experience = $request->otherWorkExperience;
+        $otherWork->students_id = $studentId;
+        $otherWork->save();
+        
         
 
         $careerChoice = "";
@@ -235,6 +238,11 @@ class StudentController extends Controller
             $future->students_id = $studentId;
             $future->save();
         }
+
+        $enroll = new Enrollees;
+        $enroll->students_id = $studentId;
+        $enroll->course_id = $request->course_id;
+        $enroll->save();
 
         return Redirect('studentlist')->with('flash_message', 'Student Successfully Added!');
     }
@@ -625,8 +633,12 @@ class StudentController extends Controller
         ->select('student_health_complications.*')
         ->where('students_id', '=', $id)
         ->first();
-        $handicap = $health->handicap;
-        $healthArr = explode(', ', $handicap);
+        $handicap = "";
+        $healthArr = [];
+        if($health){
+            $handicap = $health->handicap;
+            $healthArr = explode(', ', $handicap);
+        }
 
         $futurePlan = DB::table('future_plans')
         ->select('future_plans.*')
