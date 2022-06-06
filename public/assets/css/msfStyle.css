@@ -219,10 +219,10 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   #progressbar li:before {
 	content: counter(step);
 	counter-increment: step;
-	width: 32px;
-	line-height: 32px;
+	width: 30px;
+	line-height: 30px;
 	display: block;
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: bolder;
 	color: #0D0D39;
 	background: white;
@@ -237,7 +237,7 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 	margin-top: 14px;
 	content: '';
 	width: 78%;
-	height: 4px;
+	height: 3px;
 	background:#eeee;
 	position: absolute;
 	left: -40%;
