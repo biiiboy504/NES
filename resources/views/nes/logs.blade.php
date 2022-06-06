@@ -20,19 +20,18 @@
                         <thead class="bg-light text-capitalize">
                             <tr>
                                 <th>Id</th>
-                                <th>User ID</th>
                                 <th>Event</th>
                                 <th>Date Created</th>
+                                <th>IP Address</th>
                             </tr>
                         </thead>
                         <tbody>
                         @foreach ($audits as $audit)
                         <tr>
                             <td>{{$audit->id}}</td>
-                            <td>{{$audit->user_id}}</td>
                             <td>{{$audit->event}}</td>
                             <td>{{$audit->created_at}}</td>
-                            </td>
+                            <td>{{$audit->ip_address}}</td>
                         </tr>
                         @endforeach
                     </tbody>

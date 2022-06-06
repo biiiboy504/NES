@@ -29,6 +29,7 @@ class LogSuccessfulLogin
     {
         $admin = $event->admin;
         $admin->last_login_at = date('Y-m-d H:i:s');
+        $admin->last_logout_at = date('Y-m-d H:i:s');
         $admin->save();
     }
 }

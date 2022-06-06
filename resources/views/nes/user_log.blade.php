@@ -30,6 +30,7 @@
                         <tr>
                             <td>{{$log->id}}</td>
                             <td>{{$log->username}}</td>
+                            <td>{{$log->last_login_at}}</td>
                             <td>{{$log->created_at}}</td>
                         </tr>
                         @endforeach
