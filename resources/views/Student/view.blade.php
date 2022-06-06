@@ -240,8 +240,7 @@
                             <h1 class="view-subtitle">HOBBIES AND LEISURE TIME ACTIVITIES: Do you enjoy/engage in:</h1>
                         </div>
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Movies" 
-                            @if(in_array('Movies' , $hobbiesArr)) checked @endif><label class="view-label3" >Movies</label><br>
+                            @if(in_array('Movies' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif<label class="view-label3" >Movies</label><br>
                         </div>   
                         <div class="col-sm-2">
                          <input  type="checkbox" name="hobbies[]" value="Computer Games" 

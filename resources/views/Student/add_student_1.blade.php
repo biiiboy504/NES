@@ -32,8 +32,12 @@
         <div class="row">
             <div class="col-12">
                 <label for="" style="font-size: 16px;" class="content-cent"><b>Select Course:</b></label>
-                <select id="" name="">
-                    <option value=""></option>
+                <select id="" class="form-control form-control-lg mb-4" name="course_id">
+                    <option value="1">Select Course for student</option>
+                    @foreach($courses as $course)
+                        <option value="{{$course->id}}">{{$course->course_name}}</option>
+
+                    @endforeach
                 </select>
             </div>
         </div>
