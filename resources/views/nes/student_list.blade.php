@@ -26,6 +26,7 @@
                                 <th>Name</th>
                                 <th>Home Address</th>
                                 <th>Contact</th>
+                                <th>Course</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -35,7 +36,8 @@
                                 <td>{{$student->id}}</td>
                                 <td>{{$student->first_name}} {{$student->middle_name}} {{$student->last_name}}</td>
                                 <td>{{$student->address}}</td>
-                                <td>{{$student->contact_num}}</td>                                 
+                                <td>{{$student->contact_num}}</td>
+                                <td></td>                                  
                                 <td>
                                     <form action="/studentlist/{{$student->id}}" method="POST">
                                         @csrf

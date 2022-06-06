@@ -17,13 +17,16 @@ body {
   
 }
 #msform fieldset {
-	background: #F2F2FA;
+	background: #fff;
 	border-top: #66ff99 20px solid;
 	border-radius: 10px;
 	padding: 20px 30px;
 	box-sizing: border-box;
 	width: 80%;
 	margin: 0 10%;
+	-webkit-box-shadow: 0px 0px 5px 1px rgba(46,74,117,0.4);
+	-moz-box-shadow: 0px 0px 5px 1px rgba(46,74,117,0.4);
+	box-shadow: 0px 0px 5px 1px rgba(46,74,117,0.4);
 	
 	
 	/*stacking fieldsets above each other*/
@@ -204,13 +207,14 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   }
   #progressbar li {
 	list-style-type: none;
-	  color: white; 
+	  color: black; 
 	text-transform: uppercase;
 	font-size: 9px;
-	width: 10%;
+	width: 9%;
 	float: left;
 	position: relative;
 	margin-bottom: 20px;
+
   }
   #progressbar li:before {
 	content: counter(step);
@@ -232,9 +236,9 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   #progressbar li:after {
 	margin-top: 14px;
 	content: '';
-	width: 80%;
+	width: 78%;
 	height: 4px;
-	background: #fff;
+	background:#eeee;
 	position: absolute;
 	left: -40%;
 	top: 9px;
@@ -250,7 +254,6 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   #progressbar li.active:before,  #progressbar li.active:after{
 	background: #66ff99;
 	color: black;
-	box-shadow: 0 0 0 2px white, 0 0 0 3px #66ff99;
   }
   
 
