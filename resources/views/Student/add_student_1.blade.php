@@ -8,23 +8,48 @@
   <!-- progressbar -->
   <div>
   <ul id="progressbar">
-    <li class="active"></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li class="active">Course</li>
+    <li>Personal</li>
+    <li>Family</li>
+    <li>Emergency</li>
+    <li>Education</li>
+    <li>Activities</li>
+    <li>Hobbies</li>
+    <li>Health</li>
+    <li>Experience</li>
+    <li>Future</li>
+    <li>Review</li>
   </ul>
 </div>
+
+
+<!-- ---------------------START Select Course ----------------------------- -->
+
+
+<fieldset>
+    <h1 class="fs-title">Course</h1>
+    <h3 class="fs-subtitle">Step 1</h3>
+        <div class="row">
+            <div class="col-12">
+                <label for="" style="font-size: 16px;" class="content-cent"><b>Select Course:</b></label>
+                <select id="" name="">
+                    <option value=""></option>
+                </select>
+            </div>
+        </div>
+        <input style="float:right;" type="button" name="next" class="next action-button" value="Next"/>
+
+</fieldset>
+
+<!---------------------------END Course --------------------------------------->
+
+
+
   <!------------------------ START of Personal Information --------------------->
 
   <fieldset>
     <h1 class="fs-title">Personal Information</h1>
-    <h3 class="fs-subtitle">Step 1</h3>
+    <h3 class="fs-subtitle">Step 2</h3>
         <div class="row">
             <div class="col-4">
                 <label for=""><b>Firstname:</b></label>
@@ -109,6 +134,7 @@
                     </div>
                 </div>  
     <input style="float:right;" type="button" name="next" class="next action-button" value="Next" />
+    <input style="float:right;"  type="button" name="previous" class="previous action-button" value="Previous" /> 
   </fieldset>
 
 <!------------------------------- END of Personal Information ---------------------------->
@@ -120,7 +146,7 @@
 <!------------------------------- START of Family Background ---------------------------->
 <fieldset>
   <h1 class="fs-title">Family Background</h1>
-    <h3 class="fs-subtitle">Step 2</h3>
+    <h3 class="fs-subtitle">Step 3</h3>
         <div class="row pt-2 px-4 mb-2">
             <div class="col-4">
                 <label for=""><b>Father's Name:</b></label>
@@ -213,7 +239,7 @@
 
 <fieldset>
     <h1 class="fs-title">EMERGENCY CONTACT</h1>
-    <h3 class="fs-subtitle">Step 3</h3>
+    <h3 class="fs-subtitle">Step 4</h3>
         <div class="row">
         <div class="col-12">
                 <label for="" style="font-size: 16px;" class="content-cent"><b>IN CASE OF EMERGENCY, PLEASE CONTACT:</b></label>
@@ -255,7 +281,7 @@
 
   <fieldset>
     <h2 class="fs-title">Educational Background</h2>
-    <h3 class="fs-subtitle">Step 4</h3>
+    <h3 class="fs-subtitle">Step 5</h3>
         <div class="row pt-2 px-4 mb-2">
             <div class="col-2" style="text-align: center; ">
                     <label for="" class="pl-4"><b>Level</b></label>
@@ -337,7 +363,7 @@
     <!-------------------------------------- START of Activities and Hobbies ---------------------------------->
   <fieldset>
     <h2 class="fs-title">Activities</h2>
-    <h3 class="fs-subtitle">Step 5</h3>
+    <h3 class="fs-subtitle">Step 6</h3>
     <div>
         <label for="" class="mt-4" style="font-size: 16px;"><b>ACTIVITIES: School and Community Organizations</b></label>
     </div>
@@ -395,7 +421,7 @@
 
     <fieldset>
     <h2 class="fs-title">Hobbies</h2>
-    <h3 class="fs-subtitle">Step 6</h3>
+    <h3 class="fs-subtitle">Step 7</h3>
         <div class="row">
                     <div>
                         <label class= "mt-4 ml-2" style="font-size: 16px;"><b>HOBBIES AND LEISURE TIME ACTIVITIES: Do you enjoy/engage in:</b></label>
@@ -445,7 +471,7 @@
 <!---------------------------------- START of Health Contdition -------------------------->
   <fieldset>
     <h2 class="fs-title">Health Condition</h2>
-    <h3 class="fs-subtitle">Step 7</h3>
+    <h3 class="fs-subtitle">Step 8</h3>
         <div class="row">
             <div>
                 <label class= "mt-4 ml-2 mr-5" style="font-size: 16px;"><b>HEALTH CONDITION: Do you have a handicap / difficulty in:</b></label>
@@ -481,7 +507,7 @@
 
   <fieldset>
     <h2 class="fs-title">Work Experiences</h2>
-    <h3 class="fs-subtitle">Step 8</h3>
+    <h3 class="fs-subtitle">Step 9</h3>
         <div class="row my-4">
         <table class="table table-bordered" id="workExperienceTable" >
             <thead>
@@ -538,7 +564,7 @@
 
   <fieldset>
     <h2 class="fs-title">Future plans</h2>
-    <h3 class="fs-subtitle">Step 9</h3>
+    <h3 class="fs-subtitle">Step 10</h3>
         <div class="row">
             <div class="col-12 mt-3">
                 <label for=""><b>Course that I am taking in is the choice of:</b></label>
@@ -578,7 +604,7 @@
 
   <fieldset>
     <h2 class="fs-title" style="font-size: 40px;">Review!</h2>
-    <h3 class="fs-subtitle">Step 10</h3>
+    <h3 class="fs-subtitle">Step 11</h3>
 
 
     <h2 class="fs-subtitle" style="font-size: 20px;">Click Previous to review encoded data.</h2>
