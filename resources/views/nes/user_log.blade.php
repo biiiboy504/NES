@@ -15,16 +15,25 @@
                         </div>
                     </div>
                     
-                    
+
                     <table id="dataTable1" class="table table-bordered table-hover text-center">
                         <thead class="bg-light text-capitalize">
                             <tr>
                                 <th>Id</th>
                                 <th>User ID</th>
-                                <th>Event</th>
+                                <th>Last Login</th>
                                 <th>Date Created</th>
                             </tr>
                         </thead>
+                        <tbody>
+                        @foreach ($logs as $log)
+                        <tr>
+                            <td>{{$log->id}}</td>
+                            <td>{{$log->username}}</td>
+                            <td>{{$log->created_at}}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
                     </table>
                 </div>
             </div>

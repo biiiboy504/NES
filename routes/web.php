@@ -68,4 +68,4 @@ Route::get('/view/{id}',[StudentController::class, 'read_1']);
 Route::get('/view_2/{id}',[EducBackgroundController::class, 'read_2']);
 
 Route::resource('/logs','App\Http\Controllers\LogsController');
-Route::get('/user_log',[MainController::class, 'userlog']);
+Route::resource('/user_log', 'App\Http\Controllers\UserLogController');
