@@ -45,10 +45,6 @@ class MainController extends Controller
             ->where('gender','=','female')
             ->get()->count();
 
-            $courses = DB::table('courses')
-            ->select('courses.*')
-            ->get();
-
             $courseCount = count($courses);
 
 
@@ -81,6 +77,15 @@ class MainController extends Controller
     function logs(){
        
     }
+
+    function userlog(){
+        if(!session('loggedUser')){
+            return redirect('/login');
+        }else{
+            return view('nes.user_log');
+        }
+    }
+
 
     function save(Request $request){
         //Validate requests

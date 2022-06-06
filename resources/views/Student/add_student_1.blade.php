@@ -2,6 +2,7 @@
 
 @section('content')
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div class="main-content-inner">
         <div class="row mt-5 mb-5">
             <div class="col-lg mx-auto">
@@ -9,6 +10,8 @@
                     <div class="card-header text-dark py-3" style="background-color: white;">
                         <h4>Personal Information</h4>
 =======
+=======
+>>>>>>> main
 
 <!-- multistep form -->
 <form id="msform" action="/create_student" method="POST">
@@ -114,7 +117,10 @@
                         <label for=""><b>Batch No.</b></label>
                         <div class="alert-danger pl-2"></div>
                         <input type="number" name="batch_num" class="form-control mb-4">
+<<<<<<< HEAD
 >>>>>>> dev-delRosario
+=======
+>>>>>>> main
                     </div>
                 </div>  
     <input style="float:right;" type="button" name="next" class="next action-button" value="Next" />
@@ -122,6 +128,7 @@
 
 <!------------------------------- END of Personal Information ---------------------------->
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                     @if(Session::get('fail'))
                         <div class="alert alert-danger" role="alert">
@@ -213,6 +220,8 @@
                                 <button type="submit" class="btn btn-success" style="float:right;">Next</button>
                                 
 =======
+=======
+>>>>>>> main
 
 
 
@@ -526,7 +535,10 @@
                             <label for=""><b>Others (Please Specify):</b></label>
                             <div class="alert-danger pl-2"></div>
                             <input type="text" name="hobbies[]" class="form-control mb-4" placeholder="Other Hobbies . . .">
+<<<<<<< HEAD
 >>>>>>> dev-delRosario
+=======
+>>>>>>> main
                         </div>
                 </div>
                     <input style="float:right;" type="button" name="next" class="next action-button" value="Next"/>
@@ -684,7 +696,7 @@
 
     <h2 class="fs-subtitle" style="font-size: 20px;">Click Previous to review encoded data.</h2>
     
-    <button style="float:right; color:#66ff99" class="btn text-light"  type="submit" >Submit</button>
+    <button style="float:right; color:#66ff99" class="action-button text-light"  type="submit" >Submit</button>
     <input style="float:right;"  type="button" name="previous" class="previous action-button" value="Previous" />
 
   </fieldset>
