@@ -31,12 +31,10 @@
     <h3 class="fs-subtitle">Step 1</h3>
         <div class="row">
             <div class="col-12">
-                <label for="" style="font-size: 16px;" class="content-cent"><b>Select Course:</b></label>
-                <select id="" class="form-control form-control-lg mb-4" name="course_id">
+                <select id="" class="form-control form-control-md mb-4" name="course_id">
                     <option value="1">Select Course for student</option>
                     @foreach($courses as $course)
                         <option value="{{$course->id}}">{{$course->course_name}}</option>
-
                     @endforeach
                 </select>
             </div>
@@ -90,7 +88,7 @@
                     </div>
                     <div class="col-4">
                         <label for=""><b>Civil Status:</b></label>
-                        <select class="form-control form-control-lg mb-4" name="civil_status">
+                        <select class="form-control form-control-md mb-4" name="civil_status">
                         <option value="">---Select Civil Status---</option>
                         <option value="Married">Married</option>
                         <option value="Single">Single</option>
@@ -99,7 +97,7 @@
                     <div class="col-3">
                         <label for=""><b>Gender:</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <select class="form-control form-control-lg mb-4" name="gender">
+                        <select class="form-control form-control-md mb-4" name="gender">
                         <option value="">-Select Gender-</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -369,7 +367,7 @@
     <h2 class="fs-title">Activities</h2>
     <h3 class="fs-subtitle">Step 6</h3>
     <div>
-        <label for="" class="mt-4" style="font-size: 16px;"><b>ACTIVITIES: School and Community Organizations</b></label>
+        <label for="" class="mt-4" style="font-size: 12px;"><b>ACTIVITIES: School and Community Organizations</b></label>
     </div>
     <div class="row my-4">
         <table class="table table-bordered" id="organizationTable" >
@@ -397,7 +395,7 @@
         </table>
         <div class="row">
             <div class="col-md-12">
-            <input class="btn btn-secondary text-light" type="button" value="Add a Row" onclick="addRowActivities()">
+            <input class="action-button" type="button" value="Add Row" onclick="addRowActivities()">
             </div>
         </div>
             
@@ -428,7 +426,7 @@
     <h3 class="fs-subtitle">Step 7</h3>
         <div class="row">
                     <div>
-                        <label class= "mt-4 ml-2" style="font-size: 16px;"><b>HOBBIES AND LEISURE TIME ACTIVITIES: Do you enjoy/engage in:</b></label>
+                        <label class= "mt-4 ml-2" style="font-size: 14px;"><b>HOBBIES AND LEISURE TIME ACTIVITIES: Do you enjoy/engage in:</b></label>
                     </div>
                     <ul class="ks-cboxtags">
                         <li><input type="checkbox" id="checkboxOne" value="Movies" name="hobbies[]"><label for="checkboxOne">Movies</label></li>
@@ -478,7 +476,7 @@
     <h3 class="fs-subtitle">Step 8</h3>
         <div class="row">
             <div>
-                <label class= "mt-4 ml-2 mr-5" style="font-size: 16px;"><b>HEALTH CONDITION: Do you have a handicap / difficulty in:</b></label>
+                <label class= "mt-4 ml-2 mr-5" style="font-size: 14px;"><b>HEALTH CONDITION: Do you have a handicap / difficulty in:</b></label>
                 <div class="ml-5">
                 <ul class="ks-cboxtags">
                     <li><input type="checkbox" name="health[]"id="h_checkboxOne" value="Physical handicap "><label for="h_checkboxOne">Physical handicap </label></li>
@@ -513,7 +511,7 @@
     <h2 class="fs-title">Work Experiences</h2>
     <h3 class="fs-subtitle">Step 9</h3>
         <div class="row my-4">
-        <table class="table table-bordered" id="workExperienceTable" >
+        <table class="table table-bordered" id="workExperienceTable" style="font-size: 12px">
             <thead>
                 <tr>
                     <th scope="col">Nature of Work/Position</th>
@@ -542,7 +540,7 @@
         </table>
         <div class="row">
             <div class="col-md-12">
-                <input class="btn btn-secondary btn-sm text-light" type="button" value="Add a Row" onclick="addRowExperience()">
+                <input class="action-button" type="button" value="Add Row" onclick="addRowExperience()">
             </div>
         </div>
         <br>

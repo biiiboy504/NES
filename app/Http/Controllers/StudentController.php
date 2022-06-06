@@ -29,9 +29,10 @@ class StudentController extends Controller
             return redirect('/login');
         }else{
             //select all students with foreign keys
-            $data = DB::table('students')
-            ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')
-            ->select('students.*', 'educ_backgrounds.course')
+            $data = DB::table('enrollees')
+            ->join('students', 'enrollees.students_id', '=', 'students.id')
+            ->join('courses', 'enrollees.course_id', '=', 'courses.id')
+            ->select('students.*', 'courses.course_name')
             ->get();
 
             // $data = Student::all();
@@ -40,7 +41,7 @@ class StudentController extends Controller
         }
     }
 
-    /**
+    /**course
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -464,6 +465,11 @@ class StudentController extends Controller
             }
             
         }
+        
+        $enroll = new Enrollees;
+        $enroll->students_id = $studentId;
+        $enroll->course_id = $request->course_id;
+        $enroll->save();
 
         return Redirect('studentlist')->with('message', 'Successfully Updated!');
     }

@@ -240,83 +240,104 @@
                             <h1 class="view-subtitle">HOBBIES AND LEISURE TIME ACTIVITIES: Do you enjoy/engage in:</h1>
                         </div>
                         <div class="col-sm-2">
-                            @if(in_array('Movies' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif<label class="view-label3" >Movies</label><br>
+                            @if(in_array('Movies' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                                @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3" >Movies</label><br>
                         </div>   
                         <div class="col-sm-2">
-                         <input  type="checkbox" name="hobbies[]" value="Computer Games" 
-                         @if(in_array('Computer Games' , $hobbiesArr)) checked @endif><label class="view-label3">Computer Games</label><br>
+                        @if(in_array('Computer Games' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                         <label class="view-label3">Computer Games</label><br>
                         </div>
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Singing" 
-                            @if(in_array('Singing' , $hobbiesArr)) checked @endif><label class="view-label3">Singing</label><br>
+                        @if(in_array('Singing' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Singing</label><br>
                         </div>
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Dancing" 
-                            @if(in_array('Dancing' , $hobbiesArr)) checked @endif><label class="view-label3">Dancing</label><br>
+                        @if(in_array('Dancing' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Dancing</label><br>
                         </div>
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Parties" 
-                            @if(in_array('Parties' , $hobbiesArr)) checked @endif><label class="view-label3">Parties</label><br>
+                        @if(in_array('Parties' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Parties</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Alcoholic Drinks" 
-                            @if(in_array('Alcoholic Drinks' , $hobbiesArr)) checked @endif><label class="view-label3">Alcoholic Drinks</label><br>
+                        @if(in_array('Alcoholic Drinks' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Alcoholic Drinks</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Facebook/Internet" 
-                            @if(in_array('Facebook/Internet' , $hobbiesArr)) checked @endif><label class="view-label3">Facebook/Internet</label><br>
+                        @if(in_array('Facebook/Internet' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Facebook/Internet</label><br>
                         </div>   
                         <div class="col-sm-2">
-                         <input type="checkbox" name="hobbies[]" value="Sports" 
-                         @if(in_array('Sports' , $hobbiesArr)) checked @endif><label class="view-label3">Sports</label><br>
+                        @if(in_array('Sports' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                         <label class="view-label3">Sports</label><br>
                         </div>
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Traveling" 
-                            @if(in_array('Traveling' , $hobbiesArr)) checked @endif><label class="view-label3">Traveling</label><br>
+                        @if(in_array('Traveling' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Traveling</label><br>
                         </div>
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Reading" 
-                            @if(in_array('Reading' , $hobbiesArr)) checked @endif><label class="view-label3">Reading</label><br>
+                        @if(in_array('Reading' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Reading</label><br>
                         </div>
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Speaking" 
-                            @if(in_array('Speaking' , $hobbiesArr)) checked @endif><label class="view-label3">Speaking</label><br>
+                        @if(in_array('Speaking' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Speaking</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Cooking" 
-                            @if(in_array('Cooking' , $hobbiesArr)) checked @endif><label class="view-label3">Cooking</label><br>
+                        @if(in_array('Cooking' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Cooking</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Writing" 
-                            @if(in_array('Writing' , $hobbiesArr)) checked @endif><label class="view-label3">Writing</label><br>
+                        @if(in_array('Writing' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Writing</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Painting" 
-                            @if(in_array('Painting' , $hobbiesArr)) checked @endif><label class="view-label3">Painting</label><br>
+                        @if(in_array('Painting' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Painting</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Photography" 
-                            @if(in_array('Photography' , $hobbiesArr)) checked @endif><label class="view-label3">Photography</label><br>
+                        @if(in_array('Photography' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Photography</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Cycling" 
-                            @if(in_array('Cycling' , $hobbiesArr)) checked @endif><label class="view-label3">Cycling</label><br>
+                        @if(in_array('Cycling' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Cycling</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Hiking" 
-                            @if(in_array('Hiking' , $hobbiesArr)) checked @endif><label class="view-label3">Hiking</label><br>
+                        @if(in_array('Hiking' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Hiking</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Shopping" 
-                            @if(in_array('Shopping' , $hobbiesArr)) checked @endif><label class="view-label3">Shopping</label><br>
+                        @if(in_array('Shopping' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Shopping</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Video Editing" 
-                            @if(in_array('Video Editing' , $hobbiesArr)) checked @endif><label class="view-label3">Video Editing</label><br>
+                        @if(in_array('Video Editing' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Video Editing</label><br>
                         </div> 
                         <div class="col-sm-2">
-                            <input type="checkbox" name="hobbies[]" value="Computer Programming" 
-                            @if(in_array('Computer Programming' , $hobbiesArr)) checked @endif><label class="view-label3">Computer Programming</label><br>
+                        @if(in_array('Computer Programming' , $hobbiesArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Computer Programming</label><br>
                         </div> 
                         <div class="col-sm-12 mt-2">
                             <label class="view-label3">Others (Please Specify):</label>
@@ -326,24 +347,29 @@
                             <h1 class="view-subtitle">HEALTH CONDITION: Do you have a handicap / difficulty in: </h1>
                         </div>
                         <div class="col-sm-4">
-                            <input type="checkbox" name="health[]" value="Physical handicap" 
-                            @if(in_array('Physical handicap' , $healthArr)) checked @endif><label class="view-label3">Physical handicap</label><br>
+                        @if(in_array('Physical handicap' , $healthArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Physical handicap</label><br>
                         </div> 
                         <div class="col-sm-4">
-                            <input type="checkbox" name="health[]" value="Mental handicap" 
-                            @if(in_array('Mental handicap' , $healthArr)) checked @endif><label class="view-label3">Mental handicap</label><br>
+                        @if(in_array('Mental handicap' , $healthArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Mental handicap</label><br>
                         </div> 
                         <div class="col-sm-4">
-                            <input type="checkbox" name="health[]" value="Hearing" 
-                            @if(in_array('Hearing' , $healthArr)) checked @endif><label class="view-label3">Hearing</label><br>
+                        @if(in_array('Hearing' , $healthArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Hearing</label><br>
                         </div> 
                         <div class="col-sm-4">
-                            <input type="checkbox" name="health[]" value="Eyesight" 
-                            @if(in_array('Eyesight' , $healthArr)) checked @endif><label class="view-label3">Eyesight</label><br>
+                        @if(in_array('Eyesight' , $healthArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Eyesight</label><br>
                         </div>
                         <div class="col-sm-4">
-                            <input type="checkbox" name="health[]" value="Speaking" 
-                            @if(in_array('Speaking' , $healthArr)) checked @endif><label class="view-label3">Speaking</label><br>
+                        @if(in_array('Speaking' , $healthArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3">Speaking</label><br>
                         </div>  
                         <div class="col-sm-12 mt-2">
                             <label class="view-label3">Do you have any serious accident or sickness?:</label>
@@ -381,9 +407,15 @@
                             <label class="view-label3">Course that I am taking in is the choice of: </label>
                         </div>
                         <div class="col-sm-7">
-                            <input type="checkbox" name="choice[]" value="My Own" @if(in_array('My Own' , $careerChoiceArr)) checked @endif><label class="view-label3 mr-5">My Own</label>
-                            <input type="checkbox" name="choice[]" value="My Parents" @if(in_array('My Parents' , $careerChoiceArr)) checked @endif><label class="view-label3 mr-5">My Parents</label>
-                            <input type="checkbox" name="choice[]" value="My Peers" @if(in_array('My Peers' , $careerChoiceArr)) checked @endif><label class="view-label3 mr-5">My Peers</label>
+                        @if(in_array('My Own' , $careerChoiceArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3 mr-5">My Own</label>
+                        @if(in_array('My Parents' , $careerChoiceArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3 mr-5">My Parents</label>
+                        @if(in_array('My Peers' , $careerChoiceArr)) <i class="fa fa-check" style="border-bottom:1px solid black;"></i>  
+                            @else <i class="fa fa-check" style="border-bottom:1px solid black; color:white"></i> @endif
+                            <label class="view-label3 mr-5">My Peers</label>
                         </div>
                         <div class="col-sm-3">
                             <label class="view-label3">Occupations interested to engage in:</label>
@@ -395,8 +427,10 @@
                             <label class="view-label3">Have you ever been convicted of any crime or violation of any law, degree, ordinance or regulations by any court or tribunal?:</label>
                         </div>
                         <div class="col-sm-3">
-                            <input type="checkbox" name="crime[]" value="Yes" @if(!empty($futurePlan->crime) && $futurePlan->crime == 'Yes') checked @endif><label class="view-label3 mr-5">Yes</label>
-                            <input type="checkbox" name="crime[]" value="No" @if(!empty($futurePlan->crime) && $futurePlan->crime == 'No')  checked @endif><label class="view-label3 mr-5">No</label>
+                            @if(!empty($futurePlan->crime) && $futurePlan->crime == 'Yes')<i class="fa fa-check" style="border-bottom:1px solid black;"></i> @endif
+                            <label class="view-label3 mr-5">Yes</label>
+                            @if(!empty($futurePlan->crime) && $futurePlan->crime == 'No')<i class="fa fa-check" style="border-bottom:1px solid black;"></i> @endif
+                            <label class="view-label3 mr-5">No</label>
                         </div>
                         <div class="col-sm-3">
                             <label class="view-label3">If your answer is <b>"YES"</b> give details of the offense:</label>

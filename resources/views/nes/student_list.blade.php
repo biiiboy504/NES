@@ -13,12 +13,10 @@
                                 <h4 class="header-title">Students List</h4>    
                             </div>
                             <div class="float-right mb-3">
-                                <a href="/add_student_1" class="btn text-light" type="button" style="background-color: #097a3c;">Add Student</a>
+                                <a href="/add_student_1" class="action-button" type="button">Add Student</a>
                             </div>
                         </div>
                     </div>
-                    
-                     
                     <table id="dataTable1" class="table table-bordered table-hover text-center">
                         <thead class="bg-light text-capitalize">
                             <tr>
@@ -37,17 +35,17 @@
                                 <td>{{$student->first_name}} {{$student->middle_name}} {{$student->last_name}}</td>
                                 <td>{{$student->address}}</td>
                                 <td>{{$student->contact_num}}</td>
-                                <td></td>                                  
+                                <td>{{$student->course_name}}</td>                                  
                                 <td>
                                     <form action="/studentlist/{{$student->id}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <div class="btn-group" role="group">
-                                        <a href="/view/{{$student->id}}" class="btn btn-secondary btn-xs" ><i class="fa fa-eye"></i> </a>
+                                        <a href="/view/{{$student->id}}" class="btn btn-secondary btn-xs"  data-toggle="tooltip" data-placement="top" title="VIEW"><i class="fa fa-eye"></i></a>
                                         <!-- <a href="#" class="btn btn-secondary btn-xs" ><i class="fa fa-eye"></i> </a> -->
-                                        <a href="/update_student/{{$student->id}}" class="btn btn-info btn-xs" ><i class="fa fa-pencil"></i> </a>
+                                        <a href="/update_student/{{$student->id}}" class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="UPDATE"><i class="fa fa-pencil"></i> </a>
                                         <!-- <a href="#" class="btn btn-info btn-xs" ><i class="fa fa-pencil"></i> </a> -->
-                                        <button class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this Student?');"><i class="fa fa-trash"></i></button>
+                                        <button class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this Student?');" data-toggle="tooltip" data-placement="top" title="DELETE"><i class="fa fa-trash"></i></button>
                                         <!-- <a href="/update_student/{{$student->id}}" class="btn btn-info">Update</a> -->
                                         
                                         </div>

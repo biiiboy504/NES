@@ -72,12 +72,18 @@
     border: none;
     border-radius: 4px;
     background-color: #fff;
+    -webkit-box-shadow: 1px 2px 5px 2px rgba(0,0,0,0.3);
+    -moz-box-shadow: 1px 2px 5px 2px rgba(0,0,0,0.3);
+    box-shadow: 1px 2px 5px 2px rgba(0,0,0,0.3);
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
+    
 }
 
 .card:hover {
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.02);
+    -webkit-box-shadow: 1px 2px 10px 3px rgba(0,0,0,0.3);
+    -moz-box-shadow: 1px 2px 10px 3px rgba(0,0,0,0.3);
+    box-shadow: 1px 2px 10px 3px rgba(0,0,0,0.3);
 }
 
 .card-body {
@@ -1861,19 +1867,22 @@ p.card-text {
 }
 
 .action-button {
-	width: 120px;
+	width: 110px;
+    height: 38px;
 	background: #097a3c ;
     text-align: center;
 	color: #ffff;
 	border: 0 none;
 	border-radius: 4px;
 	cursor: pointer;
-	padding: 9px 2px;
+	padding-top: 9px;
+    transition: transform .2s;
+    
   
 }
 .action-button:hover, .action-button:focus {
-	box-shadow: 0 0 0 2px white, 0 0 0 3px #097a3c ;
   	color: white;
+    transform: scale(1.1);
 }
 
 /*-------------------- END Dropdown Button ------------------- */
@@ -2861,8 +2870,9 @@ table.dataTable thead td {
     margin: 30px;
     padding: 35px ;
     font-family: montserrat, arial, verdana;
-    -webkit-box-shadow: 5px 5px 10px -4px #000000; 
-    box-shadow: 5px 5px 10px -4px #000000;
+    -webkit-box-shadow: 1px 2px 5px 2px rgba(0,0,0,0.3);
+    -moz-box-shadow: 1px 2px 5px 2px rgba(0,0,0,0.3);
+    box-shadow: 1px 2px 5px 2px rgba(0,0,0,0.3);
 
 
 }
