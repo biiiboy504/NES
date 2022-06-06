@@ -43,10 +43,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/msfStyle.css')}}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><link rel="stylesheet" href="./style.css">
 
-  
 
 
-   
+
+
 </head>
 
 <body>
@@ -98,8 +98,12 @@
                                 <a href="/logs"><i class="fa fa-file-text-o"></i> <span>Logs</span></a>
                             </li>
 
-                            <li class="{{ Request::is('reports') ? 'active':''}}">
-                                <a href="/reports"><i class="fa fa-file-excel-o"></i> <span>Reports</span></a>
+                            <li class="{{ Request::is('enrollment_report') ? 'active':''}}">
+                                <a href="/enrollment_report"><i class="fa fa-file-excel-o"></i> <span>Enrollment Report</span></a>
+                            </li>
+
+                            <li class="{{ Request::is('terminal_reports') ? 'active':''}}">
+                                <a href="/terminal_report"><i class="fa fa-file-excel-o"></i> <span>Terminal Report</span></a>
                             </li>
 
                         </ul>
@@ -120,7 +124,7 @@
                             <span></span>
                             <span></span>
                         </div>
-                        
+
                     </div>
                     <!-- profile info & task notification -->
                     <div class="col-md-6 col-sm-4 clearfix">

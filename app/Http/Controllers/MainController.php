@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 class MainController extends Controller
 {
     function login(){
-       
+
         return view('nes.login');
     }
 
@@ -55,15 +55,15 @@ class MainController extends Controller
     }
 
     function studentlist(){
-        
+
     }
 
     function courses(){
-        
+
     }
 
     function session(){
-        
+
     }
 
     function userlist(){
@@ -75,7 +75,7 @@ class MainController extends Controller
     }
 
     function logs(){
-       
+
     }
 
     function userlog(){
@@ -117,7 +117,7 @@ class MainController extends Controller
         }
 
     }
-    
+
     function check(Request $request){
         //Validate login inputs
         $request->validate([
@@ -158,7 +158,7 @@ class MainController extends Controller
             $request->validate([
                 'old_password' => 'required',
                 'new_password' => 'required|confirmed',
-            ]); 
+            ]);
 
             $admin = Admin::find(session('loggedUser'));
 
@@ -177,7 +177,7 @@ class MainController extends Controller
         {
             return view('nes.change-contact');
         }
-        
+
         public function updateContacts(Request $request)
         {
 
@@ -190,7 +190,7 @@ class MainController extends Controller
 
             if($save){
                 return back()->with('status',"Contacts updated successfully!");
-    
+
             }else{
                 return back()->with('error',"Unsuccessful update");
             }
@@ -204,16 +204,29 @@ class MainController extends Controller
             // }
         }
 
-        function reports()
+        function enrollment_report()
         {
-            // return view('nes.reports');  
+            // return view('nes.reports');
 
             $data = DB::table('students')
             // ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')
             ->select('students.*')
             ->get();
 
-            return view('nes.reports',compact('data'));
+            return view('nes.enrollment_report',compact('data'));
+
+        }
+
+        function terminal_report()
+        {
+            // return view('nes.reports');
+
+            $data = DB::table('students')
+            // ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')
+            ->select('students.*')
+            ->get();
+
+            return view('nes.terminal_report',compact('data'));
 
         }
 }
