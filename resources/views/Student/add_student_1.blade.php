@@ -31,7 +31,7 @@
     <h3 class="fs-subtitle">Step 1</h3>
         <div class="row">
             <div class="col-12">
-                <select id="" class="form-control form-control-md mb-4" name="course_id">
+                <select id="" class="form-control form-control-md mb-4" name="course_id" required>
                     <option value="1">Select Course for student</option>
                     @foreach($courses as $course)
                         <option value="{{$course->id}}">{{$course->course_name}}</option>
@@ -56,22 +56,22 @@
             <div class="col-4">
                 <label for=""><b>Firstname:</b></label>
                     <div class="alert-danger pl-2"></div>
-                    <input type="text" name="first_name" class="form-control mb-4" placeholder="Firstname . . .">
+                    <input type="text" name="first_name" class="form-control mb-4" placeholder="Firstname . . ." required>
                     </div>
                     <div class="col-4">
                         <label for=""><b>Middlename:</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <input type="text" name="middle_name" class="form-control mb-4" placeholder="Middlename . . .">
+                        <input type="text" name="middle_name" class="form-control mb-4" placeholder="Middlename . . ." required>
                     </div>
                     <div class="col-4">
                         <label for=""><b>Lastname:</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <input type="text" name="last_name" class="form-control mb-4" placeholder="Lastname . . .">
+                        <input type="text" name="last_name" class="form-control mb-4" placeholder="Lastname . . ." required>
                     </div>
                     <div class="col-8">
                         <label for=""><b>Complete Address:</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <input type="text" name="address" class="form-control mb-4" placeholder="Complete Address . . .">
+                        <input type="text" name="address" class="form-control mb-4" placeholder="Complete Address . . ." required>
                     </div>
                     <div class="col-4">
                         <label for=""><b>Zip Code:</b></label>
@@ -80,7 +80,7 @@
                     <div class="col-4">
                         <label for=""><b>Contact Number (Mobile)</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <input type="text" name="contact_num" class="form-control mb-4" placeholder="Mobile Number . . .">
+                        <input type="text" name="contact_num" class="form-control mb-4" placeholder="Mobile Number . . ." required>
                     </div>
                     <div class="col-4">
                         <label for=""><b>Landline:</b></label>
@@ -127,12 +127,12 @@
                     <div class="col-2 ">
                         <label for=""><b>Age:</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <input type="number" name="age" class="form-control mb-4" placeholder="Age . . .">
+                        <input type="number" name="age" class="form-control mb-4" placeholder="Age . . ." required>
                     </div>
                     <div class="col-12">
                         <label for=""><b>Batch No.</b></label>
                         <div class="alert-danger pl-2"></div>
-                        <input type="number" name="batch_num" class="form-control mb-4">
+                        <input type="number" name="batch_num" class="form-control mb-4" required>
                     </div>
                 </div>  
     <input style="float:right;" type="button" name="next" class="next action-button" value="Next" />
@@ -367,7 +367,7 @@
     <h2 class="fs-title">Activities</h2>
     <h3 class="fs-subtitle">Step 6</h3>
     <div>
-        <label for="" class="mt-4" style="font-size: 12px;"><b>ACTIVITIES: School and Community Organizations</b></label>
+        <label for="" class="mt-4" style="font-size: 14px;"><b>ACTIVITIES: School and Community Organizations</b></label>
     </div>
     <div class="row my-4">
         <table class="table table-bordered" id="organizationTable" >

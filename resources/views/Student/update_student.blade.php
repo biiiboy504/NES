@@ -7,7 +7,8 @@
     @csrf
   <!-- progressbar -->
   <ul id="progressbar">
-    <li class="active">Personal</li>
+    <li class="active">Course</li>
+    <li>Personal</li>
     <li>Family</li>
     <li>Emergency</li>
     <li>Education</li>
@@ -19,6 +20,25 @@
     <li>Review</li>
   </ul>
 
+  <!-- ---------------------START Select Course ----------------------------- -->
+
+
+<fieldset>
+    <h1 class="fs-title">Course</h1>
+    <h3 class="fs-subtitle">Step 1</h3>
+        <div class="row">
+            <div class="col-12">
+                <select id="" class="form-control form-control-md mb-4" name="course_id">
+                    <option value="1">Select Course for student</option>
+                        <option value=""> </option>
+                </select>
+            </div>
+        </div>
+        <input style="float:right;" type="button" name="next" class="next action-button" value="Next"/>
+
+</fieldset>
+
+<!---------------------------END Course --------------------------------------->
   
   <!------------------------ START of Personal Information --------------------->
 
