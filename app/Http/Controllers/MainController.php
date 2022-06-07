@@ -211,4 +211,5 @@ class MainController extends Controller
             return view('nes.reports',compact('data'));
 
         }
+        
 }
