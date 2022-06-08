@@ -279,6 +279,7 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $student = Student::find($id);
         $student->first_name = $request->first_name;
         $student->middle_name = $request->middle_name;
@@ -465,9 +466,9 @@ class StudentController extends Controller
             }
             
         }
-        
-        $enroll = new Enrollees;
-        $enroll->students_id = $studentId;
+        $studentsId = DB::table('enrollees')
+        ->where('students_id','=',$id)->first();
+        $enroll = Enrollees::find($studentsId->id);;
         $enroll->course_id = $request->course_id;
         $enroll->save();
 
@@ -489,8 +490,17 @@ class StudentController extends Controller
 
     public function view_student($id)
     {
+        $courses = DB::table('courses')
+        ->select('courses.*')
+        ->get();
 
         $student_id = $id;
+
+        $studentCourse = DB::table('enrollees')
+        ->join('courses','enrollees.course_id','=','courses.id')
+        ->select('courses.*')
+        ->where('enrollees.students_id','=',$id)->first();
+
         $data = DB::table('students')
         ->join('family_backgrounds', 'students.id', '=', 'family_backgrounds.students_id')
         ->join('educ_backgrounds', 'students.id', '=', 'educ_backgrounds.students_id')
@@ -579,7 +589,9 @@ class StudentController extends Controller
             'health',
             'futurePlan',
             'careerChoiceArr',
-            'student_id'
+            'student_id',
+            'courses',
+            'studentCourse'
         ));
         
         

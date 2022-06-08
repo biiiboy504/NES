@@ -30,7 +30,9 @@
             <div class="col-12">
                 <select id="" class="form-control form-control-md mb-4" name="course_id" style="font-size: 14px;">
                     <option value="1">Select Course for student</option>
-                        <option value=""> </option>
+                    @foreach($courses as $course)
+                        <option {{$course->id == $studentCourse->id ? 'selected': ' '}} value="{{$course->id}}">{{$course->course_name}}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
