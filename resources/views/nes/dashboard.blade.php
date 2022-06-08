@@ -118,7 +118,7 @@
                         <div class="seofct-icon"><i class="ti-book"></i>{{$course->course_name}}</div>
                         <h2>{{$studentCount}}</h2>
                     </div>
-                    <canvas id="seoline" height="50"></canvas>
+                    <canvas id="seolinechart" height="50"></canvas>
                 </div>
             </div>
         </div>
