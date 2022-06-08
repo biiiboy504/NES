@@ -29,8 +29,13 @@ Route::get('/register',[MainController::class,'register'])->name('nes.register')
 Route::post('/save',[MainController::class,'save'])->name('nes.save');
 Route::post('/check',[MainController::class,'check'])->name('nes.check');
 Route::get('/logout',[MainController::class,'logout'])->name('nes.logout');
+<<<<<<< HEAD
 Route::get('/reports',[MainController::class,'reports'])->name('nes.reports');
 Route::get('/terminal-reports',[MainController::class,'reports'])->name('nes.terminal');
+=======
+Route::get('/enrollment_report',[MainController::class,'enrollment_report'])->name('nes.enrollment_report');
+Route::get('/terminal_report',[MainController::class,'terminal_report'])->name('nes.terminal_report');
+>>>>>>> 5f4263f2b96361fcd97226f5f2db66e69714685d
 Route::get('/passwordsettings', [MainController::class, 'changePassword'])->name('change-password');
 Route::get('/contactsettings', [MainController::class, 'changeContact'])->name('change-contact');
 Route::post('/change-password', [MainController::class, 'updatePassword'])->name('update-password');
@@ -66,7 +71,8 @@ Route::post('/edit_student/{id}',[StudentController::class, 'update']);
 // Route::get('/update_student_2/{id}',[EducBackgroundController::class, 'view_student_2']);
 // Route::post('/edit_student_2/{id}',[EducBackgroundController::class, 'update']);
 
-// Route::get('/view/{id}',[StudentController::class, 'read_1']);
+Route::get('/view/{id}',[StudentController::class, 'read_1']);
 // Route::get('/view_2/{id}',[EducBackgroundController::class, 'read_2']);
 
 Route::resource('/logs','App\Http\Controllers\LogsController');
+Route::get('/user_log',[MainController::class, 'userlog']);

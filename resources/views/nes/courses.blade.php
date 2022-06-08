@@ -14,7 +14,7 @@
                         </div>
                         <div class="float-right mb-3">
                             <a href="/courses/create" class="btn text-light" type="button"
-                                style="background-color: #FF66CC;">Add Course</a>
+                                style="background-color: #097a3c;">Add Course</a>
                         </div>
                     </div>
                 </div>

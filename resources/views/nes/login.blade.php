@@ -45,12 +45,16 @@
                 <form action="{{ route('nes.check')}}" method="post">
                     @csrf
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> main
                     <div class="login-form-head" style="background:#66ff99;">
                         <div class="row justify-content-center">
                             <img src="https://res.cloudinary.com/dm7xbiqid/image/upload/v1651808439/nes_logo/nolitc_fmkzmu.png" width="80" alt=""></a>                 
                             <h4 class="align-self-center">ENROLLMENT SYSTEM</h4>
                          </div>
 
+<<<<<<< HEAD
 =======
                     <div class="login-form-head ptb-1" style="background:#66ff99;">
                         <div class="row justify-content-center">
@@ -59,6 +63,8 @@
                         </div>
                         
 >>>>>>> dev-delRosario
+=======
+>>>>>>> main
                     </div>
                     @if(Session::get('fail'))
                         <div class="alert alert-danger" role="alert">
