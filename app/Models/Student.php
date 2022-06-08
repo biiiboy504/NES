@@ -10,23 +10,4 @@ class Student extends Model implements Auditable
 {
     use HasFactory;
     use \OwenIt\Auditing\Auditable;
-
-    protected $fillable = [
-        'first_name',
-        'middle_name',
-        'last_name',
-        'address',
-        'zip_code',
-        'contact_num',
-        'landline',
-        'civil_status',
-        'gender',
-        'height',
-        'weight',
-        'citizenship',
-        'birth_place',
-        'birth_date',
-        'age',
-        'batch_num',
-    ];
 }

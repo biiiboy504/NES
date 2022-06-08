@@ -24,7 +24,7 @@
 
 
 <fieldset>
-    <h1 class="fs-title">Course</h1>
+    <h1 class="fs-title">Update Course</h1>
     <h3 class="fs-subtitle">Step 1</h3>
         <div class="row">
             <div class="col-12">
@@ -362,7 +362,7 @@
         </table>
         <div class="row">
             <div class="col-md-12">
-            <input class="btn btn-secondary text-light" type="button" value="Add a Row" onclick="addRowActivities()">
+            <input class="action-button" type="button" value="Add Row" onclick="addRowActivities()">
             </div>
         </div>
             
@@ -535,7 +535,7 @@
         </table>
         <div class="row">
             <div class="col-md-12">
-                <input class="btn btn-secondary btn-sm text-light" type="button" value="Add a Row" onclick="addRowExperience()">
+                <input class="action-button" type="button" value="Add Row" onclick="addRowExperience()">
             </div>
         </div>
         <br>
