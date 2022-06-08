@@ -1882,6 +1882,7 @@ p.card-text {
 }
 .action-button:hover, .action-button:focus {
   	color: white;
+    border-color: #66ff99;
     transform: scale(1.1);
 }
 

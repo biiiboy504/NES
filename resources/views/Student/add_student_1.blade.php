@@ -31,7 +31,7 @@
     <h3 class="fs-subtitle">Step 1</h3>
         <div class="row">
             <div class="col-12">
-                <select id="" class="form-control form-control-md mb-4" name="course_id" required>
+                <select id="" class="form-control form-control-md mb-4" name="course_id" style="font-size: 14px;">
                     <option value="1">Select Course for student</option>
                     @foreach($courses as $course)
                         <option value="{{$course->id}}">{{$course->course_name}}</option>
@@ -40,7 +40,6 @@
             </div>
         </div>
         <input style="float:right;" type="button" name="next" class="next action-button" value="Next"/>
-
 </fieldset>
 
 <!---------------------------END Course --------------------------------------->
