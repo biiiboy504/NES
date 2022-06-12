@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="float-left">
-                                <h4 class="header-title">Login/Logout</h4>    
+                                <h4 class="header-title">User Login</h4>    
                             </div>
                         </div>
                     </div>
