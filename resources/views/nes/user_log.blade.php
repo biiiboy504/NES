@@ -21,7 +21,7 @@
                             <tr>
                                 <th>Id</th>
                                 <th>User ID</th>
-                                <th>Last Login</th>
+                                <th>Last Login At</th>
                                 <th>Date Created</th>
                             </tr>
                         </thead>
