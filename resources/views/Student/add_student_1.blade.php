@@ -31,12 +31,16 @@
     <h3 class="fs-subtitle">Step 1</h3>
         <div class="row">
             <div class="col-12">
-                <select id="" class="form-control form-control-md mb-4" name="course_id" style="font-size: 14px;">
+                @if($errors->first('course_id'))
+                    <div class="alert-danger">{{$errors->first('course_id')}}</div>
+                @endif
+                <select id="" class="@error('course_id') is-invalid @enderror form-control form-control-md mb-4" name="course_id" style="font-size: 14px;">
                     <option value="1">Select Course for student</option>
                     @foreach($courses as $course)
                         <option value="{{$course->id}}">{{$course->course_name}}</option>
                     @endforeach
                 </select>
+                    
             </div>
         </div>
         <input style="float:right;" type="button" name="next" class="next action-button" value="Next"/>
@@ -54,23 +58,31 @@
         <div class="row">
             <div class="col-4">
                 <label for=""><b>Firstname:</b></label>
-                    <div class="alert-danger pl-2"></div>
-                    <input type="text" name="first_name" class="form-control mb-4" placeholder="Firstname . . ." required>
+                    @if($errors->first('first_name'))
+                        <div class="alert-danger">{{$errors->first('first_name')}}</div>
+                    @endif
+                    <input type="text" name="first_name" class="form-control" placeholder="Firstname . . ." >
                     </div>
                     <div class="col-4">
                         <label for=""><b>Middlename:</b></label>
-                        <div class="alert-danger pl-2"></div>
-                        <input type="text" name="middle_name" class="form-control mb-4" placeholder="Middlename . . ." required>
+                        @if($errors->first('middle_name'))
+                            <div class="alert-danger">{{$errors->first('middle_name')}}</div>
+                        @endif
+                        <input type="text" name="middle_name" class="form-control mb-4" placeholder="Middlename . . ." >
                     </div>
                     <div class="col-4">
                         <label for=""><b>Lastname:</b></label>
-                        <div class="alert-danger pl-2"></div>
-                        <input type="text" name="last_name" class="form-control mb-4" placeholder="Lastname . . ." required>
+                        @if($errors->first('last_name'))
+                            <div class="alert-danger">{{$errors->first('last_name')}}</div>
+                        @endif
+                        <input type="text" name="last_name" class="form-control mb-4" placeholder="Lastname . . ." >
                     </div>
                     <div class="col-8">
                         <label for=""><b>Complete Address:</b></label>
-                        <div class="alert-danger pl-2"></div>
-                        <input type="text" name="address" class="form-control mb-4" placeholder="Complete Address . . ." required>
+                        @if($errors->first('address'))
+                            <div class="alert-danger">{{$errors->first('address')}}</div>
+                        @endif
+                        <input type="text" name="address" class="form-control mb-4" placeholder="Complete Address . . ." >
                     </div>
                     <div class="col-4">
                         <label for=""><b>Zip Code:</b></label>
@@ -78,8 +90,10 @@
                     </div>
                     <div class="col-4">
                         <label for=""><b>Contact Number (Mobile)</b></label>
-                        <div class="alert-danger pl-2"></div>
-                        <input type="text" name="contact_num" class="form-control mb-4" placeholder="Mobile Number . . ." required>
+                        @if($errors->first('contact_num'))
+                            <div class="alert-danger">{{$errors->first('contact_num')}}</div>
+                        @endif
+                        <input type="text" name="contact_num" class=" form-control mb-4" placeholder="Mobile Number . . ." >
                     </div>
                     <div class="col-4">
                         <label for=""><b>Landline:</b></label>
@@ -87,7 +101,10 @@
                     </div>
                     <div class="col-4">
                         <label for=""><b>Civil Status:</b></label>
-                        <select class="form-control form-control-md mb-4" name="civil_status">
+                        @if($errors->first('civil_status'))
+                            <div class="alert-danger">{{$errors->first('civil_status')}}</div>
+                        @endif
+                        <select class=" form-control form-control-md mb-4" name="civil_status">
                         <option value="">---Select Civil Status---</option>
                         <option value="Married">Married</option>
                         <option value="Single">Single</option>
@@ -95,8 +112,10 @@
                     </div>
                     <div class="col-3">
                         <label for=""><b>Gender:</b></label>
-                        <div class="alert-danger pl-2"></div>
-                        <select class="form-control form-control-md mb-4" name="gender">
+                        @if($errors->first('gender'))
+                            <div class="alert-danger">{{$errors->first('gender')}}</div>
+                        @endif
+                        <select class=" form-control form-control-md mb-4" name="gender">
                         <option value="">-Select Gender-</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -112,6 +131,9 @@
                     </div>
                     <div class="col-3">
                         <label for=""><b>Citizenship:</b></label>
+                        @if($errors->first('citizenship'))
+                            <div class="alert-danger">{{$errors->first('citizenship')}}</div>
+                        @endif
                         <input type="text" name="citizenship" class="form-control mb-4" placeholder="Citizenship . . .">
                     </div>
                     <div class="col-7">
@@ -120,18 +142,24 @@
                     </div>
                     <div class="col-3">
                         <label for=""><b>Birthdate:</b></label>
-                        <div class="alert-danger pl-2"></div>
+                        @if($errors->first('birth_date'))
+                            <div class="alert-danger">{{$errors->first('birth_date')}}</div>
+                        @endif
                         <input type="date" name="birth_date" class="form-control mb-4">
                     </div>
                     <div class="col-2 ">
                         <label for=""><b>Age:</b></label>
-                        <div class="alert-danger pl-2"></div>
-                        <input type="number" name="age" class="form-control mb-4" placeholder="Age . . ." required>
+                        @if($errors->first('age'))
+                            <div class="alert-danger">{{$errors->first('age')}}</div>
+                        @endif
+                        <input type="number" name="age" class="form-control mb-4" placeholder="Age . . ." >
                     </div>
                     <div class="col-12">
                         <label for=""><b>Batch No.</b></label>
-                        <div class="alert-danger pl-2"></div>
-                        <input type="number" name="batch_num" class="form-control mb-4" required>
+                        @if($errors->first('batch_num'))
+                            <div class="alert-danger">{{$errors->first('batch_num')}}</div>
+                        @endif
+                        <input type="number" name="batch_num" class="form-control mb-4" >
                     </div>
                 </div>  
     <input style="float:right;" type="button" name="next" class="next action-button" value="Next" />
@@ -489,11 +517,11 @@
             <div class="col-12 mt-3">
                 <label for=""><b>Do you have any serious accident or sickness?:</b></label>
                 <div class="alert-danger pl-2"></div>
-                <input type="text" name="other_complications" class="form-control mb-4" placeholder="">
+                    <input type="text" name="other_complications" class="form-control mb-4" placeholder="">
+                </div>
             </div>
-        </div>
-        <input style="float:right;" type="button" name="next" class="next action-button" value="Next"/>
-        <input style="float:right;"  type="button" name="previous" class="previous action-button" value="Previous" />
+            <input style="float:right;" type="button" name="next" class="next action-button" value="Next"/>
+            <input style="float:right;"  type="button" name="previous" class="previous action-button" value="Previous" />
         
   </fieldset>
 
@@ -547,7 +575,6 @@
                 <label for="otherWorkExperience">Other Work Experience</label>
                 <input class="form-control" id="otherWorkExperience" name="otherWorkExperience" type="text">
             </div>
-       
     </div>
     <input style="float:right;" type="button" name="next" class="next action-button" value="Next"/>
     <input style="float:right;"  type="button" name="previous" class="previous action-button" value="Previous" />

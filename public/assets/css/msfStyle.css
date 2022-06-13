@@ -57,6 +57,7 @@ body {
 }
 #msform input:hover, #msform select:hover{
 	box-shadow: 0 0 0 1px #66ff99;
+	transform: scale(1.02);
 }
 
 #msform select:focus {
@@ -79,10 +80,17 @@ body {
 	transition: .2s;
   
 }
-#msform .action-button:hover, #msform .action-button:focus {
+#msform .action-button:hover{
 	transform: scale(1.1);
 	border-color: #66ff99;
   	color: white;
+}
+
+#msform .action-button:focus{
+	background-color: #66ff99;
+	border-color: #097a3c;
+	color: white;
+	transform: scale(0.9);
 }
 
 #msform input[type=text], select {
@@ -197,8 +205,12 @@ ul.ks-cboxtags li input[type="checkbox"] {
   opacity: 0;
 }
 ul.ks-cboxtags li input[type="checkbox"]:focus + label {
-  border: 2px solid #e9a1ff;
+  border: 2px solid #66ff99;
 }
+ul.ks-cboxtags li input[type="checkbox"]:hover + label {
+	transform: scale(1.02);
+	border-color: #66ff99;
+  }
 
 /*headings*/
 .fs-title {
@@ -273,6 +285,11 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   #progressbar li.active:before,  #progressbar li.active:after{
 	background: #66ff99;
 	color: black;
+  }
+
+  #msform .alert-danger{
+	background-color: transparent;
+	color: #c53442;
   }
   
 

@@ -64,35 +64,25 @@ class StudentController extends Controller
     {
 
 
-        // $validatedData = $request->validate([
+        $validatedData = $request->validate([
 
-        //     'first_name' => 'required|alpha',
-        //     'middle_name' => 'required|alpha',
-        //     'last_name' => 'required|alpha',
-        //     'address' => 'required',
-        //     'zip_code' => 'nullable',
-        //     'contact_num' => 'required|numeric',
-        //     'landline' => 'nullable',
-        //     'civil_status' => 'nullable',
-        //     'gender' => 'required',
-        //     'height' => 'nullable',
-        //     'weight' => 'nullable',
-        //     'citizenship' => 'nullable',
-        //     'birth_place' => 'nullable',
-        //     'birth_date' => 'required|date_format:m-d-Y',
-        //     'age' => 'required|numeric',
-        //     'batch_num' => 'required|numeric'
-        // ], [
-        //     'first_name.required' => 'Firstname is required',
-        //     'middle_name.required' => 'Middlename is required',
-        //     'last_name.required' => 'Lastname is required',
-        //     'address.required' => 'Address is required',
-        //     'contact_num.required' => 'Contact No. is required',
-        //     'gender.required' => 'Gender is required',
-        //     'birth_date.required' => 'Birthdate is required',
-        //     'age.required' => 'Age is required',
-        //     'batch_num.required' => 'Batch No. is required'
-        // ]);
+            'first_name' => 'required|alpha',
+            'middle_name' => 'required|alpha',
+            'last_name' => 'required|alpha',
+            'address' => 'required',
+            'zip_code' => 'nullable',
+            'contact_num' => 'required|numeric',
+            'landline' => 'nullable',
+            'civil_status' => 'required',
+            'gender' => 'required',
+            'height' => 'nullable',
+            'weight' => 'nullable',
+            'citizenship' => 'required',
+            'birth_place' => 'nullable',
+            'birth_date' => 'required|date_format:m-d-Y',
+            'age' => 'required|numeric',
+            'batch_num' => 'required|numeric'
+        ]);
 
         
         $student = new Student;
